@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
-  - Fire
-=======
-  - InterctiveZone
->>>>>>> Stashed changes
+  - Rueda
+  - Pedales
   layers:
   - Default
   - TransparentFX
@@ -16,11 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< Updated upstream
-  - LED_Square_example
-=======
-  - RaycastDetect
->>>>>>> Stashed changes
+  - 
   - 
   - 
   - 
