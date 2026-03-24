@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Exploracion Practica/ExploracionPractica.unity
+    guid: 6a572fdbcd18ec84297ffc302765c8db
+  - enabled: 1
+    path: Assets/SalaVideos/SalaVideos.unity
+    guid: 6ad51b9661bf7eb41bc5fe0df2912fea
   m_configObjects: {}
