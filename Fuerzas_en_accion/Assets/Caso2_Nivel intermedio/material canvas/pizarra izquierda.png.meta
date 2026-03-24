@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -173,7 +173,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pizarra izquierda_0
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 200
+        width: 501
+        height: 836
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df7c61bad0e7ba41b9cce3ceba162a0
+      internalID: -1079376975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_1
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 833
+        width: 324
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962a11b6a484c2d46b69121043674665
+      internalID: -1246149803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_2
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 833
+        width: 231
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b45c9eab2df744e907f1f617b2db7f
+      internalID: -2106276259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 634
+        width: 489
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d7c9f714e23ea4d9b9d96f15886cda
+      internalID: 307795454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_4
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 604
+        width: 352
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a65cd0f43ee2b44b1ef39ae93e080e
+      internalID: -1047658922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_5
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 481
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235111c92578b4d42afc6ab8bcc99d13
+      internalID: 1246554969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_6
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 427
+        width: 11
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1939369dd79c546409b81d6d41601a51
+      internalID: 1080035300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 454
+        width: 35
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742cb416086604e4ba2b5999bbe0a32c
+      internalID: 1861406943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_8
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 437
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc87564a99bddd24faf1292c6921ca3f
+      internalID: -552106965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_9
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 439
+        width: 53
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c18c9b7a6ca96439a0d29cd46c18ad
+      internalID: -998921040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_10
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 436
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f275a2909a40e489380fad9109ae74
+      internalID: -2042675054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_11
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 441
+        width: 35
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40afe23b032bef242a217d8c3624f400
+      internalID: 1785198845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_12
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 422
+        width: 48
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c952d295e00a9134e90ff554abfa6325
+      internalID: -106138066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_13
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 249
+        width: 352
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a362d63c66db9f84c8a28040eeec87c9
+      internalID: 642706310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pizarra izquierda_14
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 367
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bbffdebfc9477439ef802c294e9636
+      internalID: 176116499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -184,7 +499,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pizarra izquierda_0: -1079376975
+      pizarra izquierda_1: -1246149803
+      pizarra izquierda_10: -2042675054
+      pizarra izquierda_11: 1785198845
+      pizarra izquierda_12: -106138066
+      pizarra izquierda_13: 642706310
+      pizarra izquierda_14: 176116499
+      pizarra izquierda_2: -2106276259
+      pizarra izquierda_3: 307795454
+      pizarra izquierda_4: -1047658922
+      pizarra izquierda_5: 1246554969
+      pizarra izquierda_6: 1080035300
+      pizarra izquierda_7: 1861406943
+      pizarra izquierda_8: -552106965
+      pizarra izquierda_9: -998921040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
