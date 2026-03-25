@@ -2105,6 +2105,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4421684576511260554, guid: 14a7f41f5df027d48aa346c525babe20, type: 3}
+      propertyPath: fuerza
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421684576511260554, guid: 14a7f41f5df027d48aa346c525babe20, type: 3}
       propertyPath: objetosARotar.Array.data[0]
       value: 
       objectReference: {fileID: 2548072586019081221}

@@ -17,14 +17,13 @@ public class PlayerController : MonoBehaviour
     // Rotacion de objetos
     public Transform[] objetosARotar;
 
-    // Diccionario para velocidad angular por objeto
     Dictionary<Transform, float> angularVelocities = new Dictionary<Transform, float>();
 
-    // Parámetros físicos
     public float friccion = 0.3f;
-    public float fuerza = 500f; // Fuerza con la que se hace el giro
+    public float fuerza = 500f;
 
     bool isDragging = false;
+    Transform objetoActivo = null;
 
     CharacterController controller;
 
@@ -32,9 +31,14 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        foreach (Transform obj in objetosARotar)
+        // VALIDACIÓN OBJETOS
+        if (objetosARotar != null && objetosARotar.Length > 0)
         {
-            angularVelocities[obj] = 0f;
+            foreach (Transform obj in objetosARotar)
+            {
+                if (obj != null)
+                    angularVelocities[obj] = 0f;
+            }
         }
     }
 
@@ -42,10 +46,9 @@ public class PlayerController : MonoBehaviour
     {
         DetectarClick();
 
-        // Actualiza la rotacion
         RotarObjetos();
 
-        // --- CONTROL DEL CURSOR CON TAB ---
+        // Cursor
         if (Input.GetKey(KeyCode.Tab))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = false;
         }
 
-        // Movimiento WASD
+        // Movimiento
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -74,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move((move * speed + velocity) * Time.deltaTime);
 
-        // Mouse cámara
+        // Cámara
         if (Cursor.lockState == CursorLockMode.Locked)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -90,6 +93,10 @@ public class PlayerController : MonoBehaviour
 
     void DetectarClick()
     {
+        // SI NO HAY OBJETOS, SALIR
+        if (objetosARotar == null || objetosARotar.Length == 0)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = playerCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
@@ -100,8 +107,7 @@ public class PlayerController : MonoBehaviour
                 if (hit.transform.CompareTag("Rueda") || hit.transform.CompareTag("Pedales"))
                 {
                     isDragging = true;
-
-                    // reinicia la referencia del mouse
+                    objetoActivo = hit.transform;
                     lastMouseX = Input.mousePosition.x;
                 }
             }
@@ -110,17 +116,34 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
+            objetoActivo = null;
         }
     }
 
     void RotarObjetos()
     {
+        // SI NO HAY OBJETOS, NO HACER NADA
+        if (objetosARotar == null || objetosARotar.Length == 0)
+            return;
+
         float currentMouseX = Input.mousePosition.x;
-        float mouseDelta = currentMouseX - lastMouseX;
+        float rawMouseDelta = currentMouseX - lastMouseX;
         lastMouseX = currentMouseX;
+
+        float direction = 1f;
+
+        if (objetoActivo != null)
+        {
+            Vector3 dirToObj = (objetoActivo.position - playerCamera.position).normalized;
+            direction = Vector3.Dot(playerCamera.right, dirToObj);
+        }
+
+        float mouseDelta = rawMouseDelta * direction;
 
         foreach (Transform obj in objetosARotar)
         {
+            if (obj == null) continue; // seguridad extra
+
             float masaActual = 1f;
 
             if (obj.CompareTag("Pedales"))
@@ -128,21 +151,17 @@ public class PlayerController : MonoBehaviour
             else if (obj.CompareTag("Rueda"))
                 masaActual = 2.5f;
 
-            float angularVelocity = angularVelocities[obj];
+            float angularVelocity = angularVelocities.ContainsKey(obj) ? angularVelocities[obj] : 0f;
 
-            // Aplica fuerza si sostiene el click y arrastra
             if (isDragging && Input.GetMouseButton(0))
             {
-                float direccion = Vector3.Dot(playerCamera.right, obj.forward) > 0 ? 1f : -1f;
-                float torque = mouseDelta * fuerza * direccion;
+                float torque = mouseDelta * fuerza;
                 float angularAcceleration = torque / masaActual;
                 angularVelocity += angularAcceleration * Time.deltaTime;
             }
 
-            // Fricción simulada
             angularVelocity *= (1 - friccion * Time.deltaTime);
 
-            // Corte de velocidad
             if (Mathf.Abs(angularVelocity) < 0.01f)
             {
                 angularVelocity = 0f;
