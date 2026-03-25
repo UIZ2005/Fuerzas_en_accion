@@ -183,7 +183,7 @@ TextureImporter:
         width: 501
         height: 836
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,7 +204,7 @@ TextureImporter:
         width: 324
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,7 +225,7 @@ TextureImporter:
         width: 231
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,7 +246,7 @@ TextureImporter:
         width: 489
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -267,7 +267,7 @@ TextureImporter:
         width: 352
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,10 +283,10 @@ TextureImporter:
       name: pizarra izquierda_5
       rect:
         serializedVersion: 2
-        x: 1607
-        y: 481
-        width: 24
-        height: 34
+        x: 1340
+        y: 355
+        width: 314
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,7 +309,7 @@ TextureImporter:
         width: 11
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -330,7 +330,7 @@ TextureImporter:
         width: 35
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,69 +338,6 @@ TextureImporter:
       bones: []
       spriteID: 742cb416086604e4ba2b5999bbe0a32c
       internalID: 1861406943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pizarra izquierda_8
-      rect:
-        serializedVersion: 2
-        x: 1456
-        y: 437
-        width: 30
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc87564a99bddd24faf1292c6921ca3f
-      internalID: -552106965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pizarra izquierda_9
-      rect:
-        serializedVersion: 2
-        x: 1505
-        y: 439
-        width: 53
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18c18c9b7a6ca96439a0d29cd46c18ad
-      internalID: -998921040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pizarra izquierda_10
-      rect:
-        serializedVersion: 2
-        x: 1579
-        y: 436
-        width: 26
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6f275a2909a40e489380fad9109ae74
-      internalID: -2042675054
       vertices: []
       indices: 
       edges: []
@@ -414,7 +351,7 @@ TextureImporter:
         width: 35
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,27 +359,6 @@ TextureImporter:
       bones: []
       spriteID: 40afe23b032bef242a217d8c3624f400
       internalID: 1785198845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pizarra izquierda_12
-      rect:
-        serializedVersion: 2
-        x: 1449
-        y: 422
-        width: 48
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c952d295e00a9134e90ff554abfa6325
-      internalID: -106138066
       vertices: []
       indices: 
       edges: []
@@ -456,7 +372,7 @@ TextureImporter:
         width: 352
         height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,27 +380,6 @@ TextureImporter:
       bones: []
       spriteID: a362d63c66db9f84c8a28040eeec87c9
       internalID: 642706310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pizarra izquierda_14
-      rect:
-        serializedVersion: 2
-        x: 1459
-        y: 367
-        width: 28
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96bbffdebfc9477439ef802c294e9636
-      internalID: 176116499
       vertices: []
       indices: 
       edges: []
@@ -507,6 +402,7 @@ TextureImporter:
       pizarra izquierda_12: -106138066
       pizarra izquierda_13: 642706310
       pizarra izquierda_14: 176116499
+      pizarra izquierda_15: 1554365448
       pizarra izquierda_2: -2106276259
       pizarra izquierda_3: 307795454
       pizarra izquierda_4: -1047658922
