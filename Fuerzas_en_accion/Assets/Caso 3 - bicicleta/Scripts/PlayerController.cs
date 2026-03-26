@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
         foreach (Transform obj in objetosARotar)
         {
-            if (obj == null) continue; // seguridad extra
+            if (obj == null) continue;
 
             float masaActual = 1f;
 
