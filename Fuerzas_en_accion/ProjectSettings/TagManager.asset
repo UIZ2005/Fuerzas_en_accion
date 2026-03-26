@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - InterctiveZone
+<<<<<<< HEAD
   - Hologram
+=======
+  - Balon
+>>>>>>> e5e9052cdd975b0de8547a6ec2446c2ae029a8cd
   layers:
   - Default
   - TransparentFX
