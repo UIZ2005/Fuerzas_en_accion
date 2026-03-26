@@ -24,7 +24,7 @@ public class ParpadeoAnimacionTexto : MonoBehaviour
     {
         text = GetComponent<TextMeshPro>();
 
-        // crear instancia del material para no modificar el global
+        // instanciar material
         materialInstance = Instantiate(text.fontMaterial);
         text.fontMaterial = materialInstance;
 
