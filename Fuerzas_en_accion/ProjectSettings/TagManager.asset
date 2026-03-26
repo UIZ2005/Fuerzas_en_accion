@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - InterctiveZone
+  - Balon
   layers:
   - Default
   - TransparentFX

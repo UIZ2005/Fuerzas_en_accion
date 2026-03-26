@@ -4,102 +4,123 @@ using UnityEngine;
 
 public class fisicasBalon : MonoBehaviour
 {
+
     private Rigidbody rb;
 
-    [Header("Fuerzas")]
-    public float fuerza = 8f;
-    public float alturaImpacto = 0.5f;
+    [Header("Fuerza")]
+    public float fuerzaMax = 20f;
+    public float velocidadCarga = 15f;
 
-    [Header("Debug")]
-    public bool mostrarDebug = true;
+    private float fuerzaActual = 0f;
+    private bool cargando = false;
+
+    private Vector3 puntoImpacto;
+
+    [Header("Visual")]
+    public Transform flechaFuerza;
+    public float escalaMax = 3f;
+
+    [Header("Camara FPS")]
+    public Camera playerCamera;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (flechaFuerza != null)
+            flechaFuerza.localScale = Vector3.zero;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        DetectarClick();
+
+        if (cargando)
         {
-            rb.AddForce(Vector3.forward * 20f, ForceMode.Impulse);
+            CargarFuerza();
+            ActualizarFlecha();
         }
 
-        // EMPUJE DESDE EL CENTRO (sin torque)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetMouseButtonUp(0) && cargando)
         {
-            EmpujeCentro();
+            AplicarFuerza();
+            ResetFuerza();
         }
+    }
 
-        // EMPUJE DESDE EL BORDE (genera torque)
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+    void DetectarClick()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            EmpujeConTorque();
-        }
+            Debug.Log("Click detectado");
 
-        // EMPUJE MÁS FUERTE (más aceleración angular)
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            EmpujeFuerte();
-        }
+            Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            Debug.DrawRay(ray.origin, ray.direction * 20f, Color.green, 1f);
 
-        MostrarDebug();
-    }
+            RaycastHit hit;
 
-    // Empuje desde el centro (casi sin rotación)
-    void EmpujeCentro()
-    {
-        rb.AddForce(Vector3.right * fuerza, ForceMode.Impulse);
-    }
-
-    //  Empuje desde un punto desplazado, genera torque real
-    void EmpujeConTorque()
-    {
-        Vector3 puntoImpacto = transform.position + Vector3.up * alturaImpacto;
-
-        rb.AddForceAtPosition(Vector3.right * fuerza, puntoImpacto, ForceMode.Impulse);
-    }
-
-    // Empuje más fuerte (más torque y velocidad)
-    void EmpujeFuerte()
-    {
-        Vector3 puntoImpacto = transform.position + Vector3.up * alturaImpacto;
-
-        rb.AddForceAtPosition(Vector3.forward * fuerza * 2f, puntoImpacto, ForceMode.Impulse);
-    }
-
-    //  Detectar superficie (inclinación)
-    void FixedUpdate()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
-        {
-            Vector3 normal = hit.normal;
-
-            if (mostrarDebug)
+            if (Physics.Raycast(ray, out hit, 100f))
             {
-                Debug.DrawRay(transform.position, normal, Color.green);
-                Debug.Log("Inclinación superficie: " + Vector3.Angle(normal, Vector3.up));
+                Debug.Log("Golpeó: " + hit.collider.name);
+
+                // USAR TAG (IMPORTANTE)
+                if (hit.collider.CompareTag("Balon"))
+                {
+                    Debug.Log(" LE DISTE AL BALÓN");
+
+                    cargando = true;
+                    puntoImpacto = hit.point;
+                }
             }
         }
     }
 
-    
-    void MostrarDebug()
+    void CargarFuerza()
     {
-        if (!mostrarDebug) return;
-
-        Debug.Log("Velocidad: " + rb.velocity.magnitude);
-        Debug.Log("Velocidad Angular: " + rb.angularVelocity.magnitude);
+        fuerzaActual += velocidadCarga * Time.deltaTime;
+        fuerzaActual = Mathf.Clamp(fuerzaActual, 0, fuerzaMax);
     }
 
-    
-    void OnCollisionEnter(Collision collision)
+    void AplicarFuerza()
     {
-        if (mostrarDebug)
-        {
-            Debug.Log("Colisionó con: " + collision.gameObject.name);
-        }
+        Vector3 direccion = (transform.position - puntoImpacto).normalized;
+
+        rb.AddForceAtPosition(direccion * fuerzaActual, puntoImpacto, ForceMode.Impulse);
+
+        // CÁLCULO DE TORQUE
+        Vector3 r = puntoImpacto - transform.position;
+        Vector3 torque = Vector3.Cross(r, direccion * fuerzaActual);
+
+        Debug.Log("Fuerza: " + fuerzaActual);
+        Debug.Log("Torque: " + torque);
+        Debug.Log("Magnitud torque: " + torque.magnitude);
+
+        // VECTOR DE GIRO
+        Debug.DrawRay(transform.position, torque, Color.red, 2f);
+    }
+
+    void ActualizarFlecha()
+    {
+        if (flechaFuerza == null) return;
+
+        Vector3 direccion = (transform.position - puntoImpacto).normalized;
+
+        float escala = (fuerzaActual / fuerzaMax) * escalaMax;
+
+        flechaFuerza.position = puntoImpacto;
+        flechaFuerza.rotation = Quaternion.LookRotation(direccion);
+        flechaFuerza.localScale = new Vector3(escala, 0.1f, 0.1f);
+
+        // VECTOR FUERZA
+        Debug.DrawRay(puntoImpacto, direccion * escala, Color.green);
+    }
+
+    void ResetFuerza()
+    {
+        fuerzaActual = 0;
+        cargando = false;
+
+        if (flechaFuerza != null)
+            flechaFuerza.localScale = Vector3.zero;
     }
 }
