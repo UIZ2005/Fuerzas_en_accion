@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -44632,6 +44632,7 @@ GameObject:
   - component: {fileID: 7890411046376273770}
   - component: {fileID: 2926671658007205287}
   - component: {fileID: 8843546478807764052}
+  - component: {fileID: 8843546478807764053}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -44654,6 +44655,18 @@ MonoBehaviour:
   distancia: 1.5
   select: {fileID: 2100000, guid: 642337dcbc7189e4c99ff3d0c233d2c2, type: 2}
   normal: {fileID: 2100000, guid: 2b805350e1fc6c2498c17de536f8c6d3, type: 2}
+--- !u!114 &8843546478807764053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843546478807764051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b435e6749e1b24891ed208514723ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8873072976992983306
 MeshFilter:
   m_ObjectHideFlags: 0
