@@ -10,6 +10,8 @@ public class selected : MonoBehaviour
     GameObject ultimoreconocido = null;
     public Material select;
     public Material normal;
+    public Material bad;
+    public Material Good;
     void Start()
     {
         mask = LayerMask.GetMask("RaycastDetect");
@@ -26,7 +28,10 @@ public class selected : MonoBehaviour
             selectObject(hit.transform);
             if (hit.collider.tag == "InterctiveZone")
             {
-
+                if (Input.GetMouseButtonDown(0))
+                {
+                    hit.collider.gameObject.GetComponent<InteractiveObj>().click();
+                }
             }
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
