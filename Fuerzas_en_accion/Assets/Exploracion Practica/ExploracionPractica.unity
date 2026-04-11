@@ -170,7 +170,7 @@ MonoBehaviour:
   questionAnimator: {fileID: 894426831}
   panelInicial: {fileID: 1402660502}
   duration: 1.2
-  overlayImage: {fileID: 0}
+  overlayImage: {fileID: 791983700}
   audioSource: {fileID: 7661626}
   audioDelay: 0.45
   audioPitch: 0.75
@@ -3814,7 +3814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.10980392, g: 0.15686275, b: 0.2, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
