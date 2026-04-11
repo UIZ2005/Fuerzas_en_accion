@@ -17,6 +17,14 @@ public class UIraycast : MonoBehaviour
 
         GameObject newHover = results.Count > 0 ? results[0].gameObject : null;
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            foreach (var result in results)
+            {
+                ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
+            }
+        }
+
         if (newHover != currentHover)
         {
             if (currentHover != null)
