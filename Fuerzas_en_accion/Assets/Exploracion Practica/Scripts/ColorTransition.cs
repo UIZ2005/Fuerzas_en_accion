@@ -64,7 +64,7 @@ public class ColorTransition : MonoBehaviour
     }
 
     // =====================================================
-    // ANIMACIÓN DE ENTRADA INICIAL ⭐
+    // ANIMACIÓN DE ENTRADA INICIAL
     // =====================================================
     IEnumerator IntroTransition(CanvasGroup panel)
     {
