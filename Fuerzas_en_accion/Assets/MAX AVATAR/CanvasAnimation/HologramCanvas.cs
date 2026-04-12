@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 
 public class HologramCanvas : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class HologramCanvas : MonoBehaviour
     public float interactionDistance = 5f;
 
     public GameObject videoContainer;
+    public VideoPlayer videoPlayer;
+
     private Animator panelAnimator;
 
     void Start()
@@ -22,9 +25,20 @@ public class HologramCanvas : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, interactionDistance))
             {
-                if (hit.collider.CompareTag("Hologram"))
+                HologramData data = hit.collider.GetComponent<HologramData>();
+
+                if (data != null)
                 {
+                    // activar UI
                     videoContainer.SetActive(true);
+
+                    // asignar video correcto
+                    videoPlayer.clip = data.videoClip;
+
+                    // reproducir
+                    videoPlayer.Play();
+
+                    // animación
                     panelAnimator.SetTrigger("Open");
                 }
             }
