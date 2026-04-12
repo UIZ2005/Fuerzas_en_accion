@@ -23,26 +23,20 @@ public class videoController : MonoBehaviour
     public Animator animator;
     public PlayerController player;
 
+    public GameObject panelVideo;
 
+    public ControladorPreguntas preguntaController;
 
     void Start()
     {
-        // iniciar con volumen al 100%
         if (sliderVolumen != null)
             sliderVolumen.value = 1f;
 
-        videoPlayer.Play();
-
         CambiarIcono();
-
-
-        
     }
 
     void Update()
     {
-
-        // Solo funciona cuando el video está abierto
         if (!player.enUI) return;
 
         CambiarIcono();
@@ -50,30 +44,43 @@ public class videoController : MonoBehaviour
         if (videoPlayer.isPlaying && videoPlayer.length > 0)
         {
             sliderProgreso.value = (float)(videoPlayer.time / videoPlayer.length);
-
         }
 
-        //  ESPACIO  Play / Pause
+        // Controles
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             PlayPause();
-        }
 
-        // FLECHA DERECHA  Adelantar 10s
         if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
             videoPlayer.time = Mathf.Min((float)videoPlayer.length, (float)videoPlayer.time + 10f);
-        }
 
-        // FLECHA IZQUIERDA Retroceder 10s
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
             videoPlayer.time = Mathf.Max(0f, (float)videoPlayer.time - 10f);
-        }
-
     }
 
-    //  PLAY / PAUSE
+    
+    public void CargarVideo(HologramData data)
+    {
+        StartCoroutine(PrepararVideo(data));
+    }
+
+    IEnumerator PrepararVideo(HologramData data)
+    {
+        videoPlayer.clip = data.videoClip;
+
+        videoPlayer.Prepare();
+
+        // Espera a que el video esté listo
+        while (!videoPlayer.isPrepared)
+        {
+            yield return null;
+        }
+
+        //  inicializa preguntas DESPUÉS de preparar video
+        preguntaController.Inicializar(data.pregunta, videoPlayer);
+
+        videoPlayer.Play();
+    }
+
     public void PlayPause()
     {
         if (videoPlayer.isPlaying)
@@ -84,6 +91,17 @@ public class videoController : MonoBehaviour
         CambiarIcono();
     }
 
+
+    public void Adelantar()
+    {
+        videoPlayer.time = Mathf.Min((float)videoPlayer.length, (float)videoPlayer.time + 10f);
+    }
+
+    public void Retroceder()
+    {
+        videoPlayer.time = Mathf.Max(0f, (float)videoPlayer.time - 10f);
+    }
+
     void CambiarIcono()
     {
         if (videoPlayer.isPlaying)
@@ -92,38 +110,26 @@ public class videoController : MonoBehaviour
             iconoPlayPause.sprite = iconoPlay;
     }
 
-    //  ADELANTAR 
-    public void Adelantar()
-    {
-        videoPlayer.time += 10f;
-    }
-
-    //  RETROCEDER 
-    public void Retroceder()
-    {
-        videoPlayer.time -= 10f;
-        if (videoPlayer.time < 0) videoPlayer.time = 0;
-    }
-
-    //  VOLUMEN
     public void CambiarVolumen()
     {
         if (audioSource != null)
             audioSource.volume = sliderVolumen.value;
     }
+
     public void CerrarVideo()
     {
-         // SOLO anima
+        StartCoroutine(DesactivarVideo());
     }
-    public void DesactivarVideo()
+
+    IEnumerator DesactivarVideo()
     {
         animator.SetTrigger("Close");
-        Debug.Log("Botón presionado");
-        videoPlayer.Stop();
-        
-        gameObject.SetActive(false);
 
-        player.enUI = false; // vuelve activar el cursos y camara
+        yield return new WaitForSeconds(1f);
+
+        videoPlayer.Stop();
+        gameObject.SetActive(false);
+        player.enUI = false;
     }
 
 }
