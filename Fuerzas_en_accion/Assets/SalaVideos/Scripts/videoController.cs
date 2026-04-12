@@ -41,7 +41,10 @@ public class videoController : MonoBehaviour
 
     void Update()
     {
-        
+
+        // Solo funciona cuando el video está abierto
+        if (!player.enUI) return;
+
         CambiarIcono();
 
         if (videoPlayer.isPlaying && videoPlayer.length > 0)
@@ -49,7 +52,25 @@ public class videoController : MonoBehaviour
             sliderProgreso.value = (float)(videoPlayer.time / videoPlayer.length);
 
         }
-    
+
+        //  ESPACIO  Play / Pause
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayPause();
+        }
+
+        // FLECHA DERECHA  Adelantar 10s
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            videoPlayer.time = Mathf.Min((float)videoPlayer.length, (float)videoPlayer.time + 10f);
+        }
+
+        // FLECHA IZQUIERDA Retroceder 10s
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            videoPlayer.time = Mathf.Max(0f, (float)videoPlayer.time - 10f);
+        }
+
     }
 
     //  PLAY / PAUSE
