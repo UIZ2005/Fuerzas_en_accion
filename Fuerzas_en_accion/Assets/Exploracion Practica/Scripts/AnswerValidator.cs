@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class AnswerValidator : MonoBehaviour
 {
+
+
     [Header("Referencia")]
     public DropZone dropZone;
     public QuestionAnimator questionAnimator;
@@ -14,6 +15,20 @@ public class AnswerValidator : MonoBehaviour
     public Button[] nextPanelButtons;
 
     private string selectedButtonName;
+
+    // 🔊 FEEDBACK
+    public GameObject subtitlePanel;
+
+    [Header("Feedback")]
+    public AudioSource audioSource;
+
+    public AudioClip correctAudio;
+    public AudioClip incorrectAudio;
+
+    public TextMeshProUGUI subtitleText;
+
+    [TextArea] public string correctSubtitle;
+    [TextArea] public string incorrectSubtitle;
 
     public void ValidarRespuesta()
     {
@@ -32,7 +47,6 @@ public class AnswerValidator : MonoBehaviour
     {
         foreach (Button btn in nextPanelButtons)
         {
-            // Si NO es el seleccionado → desaparecer
             if (btn.gameObject.name != selectedButtonName)
             {
                 btn.gameObject.SetActive(false);
@@ -50,7 +64,7 @@ public class AnswerValidator : MonoBehaviour
         ColorBlock cb = btn.colors;
         TMP_Text tmpText = btn.GetComponentInChildren<TMP_Text>();
 
-        // BOTON 3 = verde
+        // 🟢 RESPUESTA CORRECTA
         if (btn.gameObject.name == "Boton3")
         {
             cb.normalColor = Color.green;
@@ -59,11 +73,10 @@ public class AnswerValidator : MonoBehaviour
             cb.pressedColor = Color.green;
             btn.colors = cb;
 
-            // texto NO cambia
+            StartCoroutine(PlayFeedback(correctAudio, correctSubtitle));
         }
-        else
+        else // 🔴 RESPUESTA INCORRECTA
         {
-            // BOTON 1 y 2 = rojo
             cb.normalColor = Color.red;
             cb.highlightedColor = Color.red;
             cb.selectedColor = Color.red;
@@ -72,6 +85,33 @@ public class AnswerValidator : MonoBehaviour
 
             if (tmpText != null)
                 tmpText.color = Color.white;
+
+            StartCoroutine(PlayFeedback(incorrectAudio, incorrectSubtitle));
         }
+    }
+
+    IEnumerator PlayFeedback(AudioClip clip, string subtitle)
+    {
+        // Evitar que se encimen audios
+        audioSource.Stop();
+
+        // 🟫 Activar panel
+        subtitlePanel.SetActive(true);
+
+        // 🧾 Mostrar subtítulo
+        subtitleText.text = subtitle;
+
+        // 🎧 Reproducir audio
+        audioSource.clip = clip;
+        audioSource.Play();
+
+        // ⏳ Esperar a que termine el audio
+        yield return new WaitForSeconds(clip.length);
+
+        // 🧾 Ocultar subtítulo
+        subtitleText.text = "";
+
+        // 🟫 Ocultar panel
+        subtitlePanel.SetActive(false);
     }
 }

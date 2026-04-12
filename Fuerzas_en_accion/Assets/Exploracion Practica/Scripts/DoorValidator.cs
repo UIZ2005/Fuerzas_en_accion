@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DoorValidator : MonoBehaviour
 {
@@ -19,10 +20,22 @@ public class DoorValidator : MonoBehaviour
     [Header("Puerta")]
     public Transform puerta;
 
-    [Header("Audio")]
-    public AudioSource audioSource;
+    [Header("Audio SFX (puerta)")]
+    public AudioSource sfxSource;
     public AudioClip abrirBien;
     public AudioClip abrirMal;
+
+    [Header("Audio Voz (diálogo)")]
+    public AudioSource voiceSource;
+    public AudioClip correctVoice;
+    public AudioClip incorrectVoice;
+
+    [Header("Feedback")]
+    public TextMeshProUGUI subtitleText;
+    public GameObject subtitlePanel;
+
+    [TextArea] public string correctSubtitle;
+    [TextArea] public string incorrectSubtitle;
 
     [Header("Animador preguntas")]
     public QuestionAnimator questionAnimator;
@@ -37,9 +50,6 @@ public class DoorValidator : MonoBehaviour
 
     private bool validating = false;
 
-    // =====================================================
-    // BOTÓN VALIDAR
-    // =====================================================
     public void ValidarRespuesta()
     {
         if (validating) return;
@@ -52,16 +62,37 @@ public class DoorValidator : MonoBehaviour
     {
         bool success = IsCorrectConfiguration();
 
+        subtitlePanel.SetActive(true);
+
         if (success)
         {
-            audioSource.PlayOneShot(abrirBien);
+            sfxSource.PlayOneShot(abrirBien);
+
+            voiceSource.Stop();
+            voiceSource.clip = correctVoice;
+            voiceSource.Play();
+
+            subtitleText.text = correctSubtitle;
+
             yield return StartCoroutine(OpenDoorGood());
         }
         else
         {
-            audioSource.PlayOneShot(abrirMal);
+            sfxSource.PlayOneShot(abrirMal);
+
+            voiceSource.Stop();
+            voiceSource.clip = incorrectVoice;
+            voiceSource.Play();
+
+            subtitleText.text = incorrectSubtitle;
+
             yield return StartCoroutine(OpenDoorBad());
         }
+
+        yield return new WaitForSeconds(voiceSource.clip.length);
+
+        subtitleText.text = "";
+        subtitlePanel.SetActive(false);
 
         yield return new WaitForSeconds(0.3f);
 
@@ -70,45 +101,23 @@ public class DoorValidator : MonoBehaviour
         validating = false;
     }
 
-    // =====================================================
-    // VALIDACIÓN CORRECTA
-    // =====================================================
     bool IsCorrectConfiguration()
     {
         int occupiedCount = 0;
-        SnapController detectedVector = null;
 
         foreach (DropDoor zone in dropDoors)
         {
             if (zone.currentVector != null)
-            {
                 occupiedCount++;
-                detectedVector = zone.currentVector;
-            }
         }
 
-        // Si no hay ninguno colocado  malo
-        if (occupiedCount == 0)
-            return false;
-
-        // Si hay más de uno  malo
-        if (occupiedCount != 1)
-            return false;
-
-        // Si zona correcta vacía malo
-        if (dropDoorCorrecto.currentVector == null)
-            return false;
-
-        // Si vector incorrecto malo
-        if (dropDoorCorrecto.currentVector.transform != vectorCorrecto)
-            return false;
+        if (occupiedCount != 1) return false;
+        if (dropDoorCorrecto.currentVector == null) return false;
+        if (dropDoorCorrecto.currentVector.transform != vectorCorrecto) return false;
 
         return true;
     }
 
-    // =====================================================
-    // ANIMACIÓN MALA
-    // =====================================================
     IEnumerator OpenDoorBad()
     {
         Vector3 startRot = puerta.localEulerAngles;
@@ -117,38 +126,25 @@ public class DoorValidator : MonoBehaviour
         float half = badDuration / 2f;
         float time = 0f;
 
-        // Abrir poco
         while (time < half)
         {
             time += Time.deltaTime;
-            float t = time / half;
-
-            puerta.localEulerAngles =
-                Vector3.Lerp(startRot, badRot, t);
-
+            puerta.localEulerAngles = Vector3.Lerp(startRot, badRot, time / half);
             yield return null;
         }
 
-        // Cerrar
         time = 0f;
 
         while (time < half)
         {
             time += Time.deltaTime;
-            float t = Mathf.SmoothStep(0, 1, time / half);
-
-            puerta.localEulerAngles =
-                Vector3.Lerp(badRot, startRot, t);
-
+            puerta.localEulerAngles = Vector3.Lerp(badRot, startRot, time / half);
             yield return null;
         }
 
         puerta.localEulerAngles = startRot;
     }
 
-    // =====================================================
-    // ANIMACIÓN BUENA
-    // =====================================================
     IEnumerator OpenDoorGood()
     {
         Vector3 startRot = puerta.localEulerAngles;
@@ -159,11 +155,7 @@ public class DoorValidator : MonoBehaviour
         while (time < goodDuration)
         {
             time += Time.deltaTime;
-            float t = Mathf.SmoothStep(0, 1, time / goodDuration);
-
-            puerta.localEulerAngles =
-                Vector3.Lerp(startRot, endRot, t);
-
+            puerta.localEulerAngles = Vector3.Lerp(startRot, endRot, time / goodDuration);
             yield return null;
         }
 

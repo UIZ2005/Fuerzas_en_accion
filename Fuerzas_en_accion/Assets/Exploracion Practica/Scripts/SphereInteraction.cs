@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SphereInteraction : MonoBehaviour
 {
@@ -9,13 +10,20 @@ public class SphereInteraction : MonoBehaviour
     public GameObject esferaMorada;
     public GameObject esferaAzul;
 
-    [Header("Pivot de la llave (IMPORTANTE: usa un objeto vacío en la cabeza)")]
+    [Header("Pivot de la llave")]
     public Transform llave;
 
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip abrirBien;
     public AudioClip abrirMal;
+
+    [Header("Feedback")]
+    public TextMeshProUGUI subtitleText;
+    public GameObject subtitlePanel;
+
+    [TextArea] public string correctSubtitle;
+    [TextArea] public string incorrectSubtitle;
 
     [Header("Cambio de panel")]
     public QuestionAnimator questionAnimator;
@@ -37,26 +45,59 @@ public class SphereInteraction : MonoBehaviour
         if (colorName != "Morada") esferaMorada.SetActive(false);
         if (colorName != "Azul") esferaAzul.SetActive(false);
 
-        // Ejecutar animación según esfera
-        if (colorName == "Rosada")
+        bool isCorrect = (colorName == "Rosada");
+
+        // ============================
+        // EJECUCIÓN + AUDIO + FEEDBACK
+        // ============================
+
+        if (isCorrect)
         {
-            audioSource.PlayOneShot(abrirBien);
+            audioSource.Stop();
+            audioSource.clip = abrirBien;
+            audioSource.Play();
+
+            //  Panel +  texto
+            subtitlePanel.SetActive(true);
+            subtitleText.text = correctSubtitle;
+
             yield return StartCoroutine(RotateSmoothX(120f, 2f));
         }
         else if (colorName == "Morada")
         {
-            audioSource.PlayOneShot(abrirMal);
+            audioSource.Stop();
+            audioSource.clip = abrirMal;
+            audioSource.Play();
+
+            subtitlePanel.SetActive(true);
+            subtitleText.text = incorrectSubtitle;
+
             yield return StartCoroutine(RotateAndReturnX(60f, 1.3f));
         }
         else if (colorName == "Azul")
         {
-            audioSource.PlayOneShot(abrirMal);
+            audioSource.Stop();
+            audioSource.clip = abrirMal;
+            audioSource.Play();
+
+            subtitlePanel.SetActive(true);
+            subtitleText.text = incorrectSubtitle;
+
             yield return StartCoroutine(RotateAndShakeX(20f, 1.5f));
         }
 
+        //  Esperar a que termine el audio
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+        //  Ocultar texto
+        subtitleText.text = "";
+
+        // Ocultar panel
+        subtitlePanel.SetActive(false);
+
         yield return new WaitForSeconds(0.3f);
 
-        // Pasar al siguiente panel
+        // Cambiar de panel
         questionAnimator.MostrarSiguientePregunta();
     }
 
@@ -84,7 +125,7 @@ public class SphereInteraction : MonoBehaviour
     }
 
     // =====================================================
-    // MORADA gira 60° y vuelve
+    // MORADA → gira y vuelve
     // =====================================================
     IEnumerator RotateAndReturnX(float angle, float duration)
     {
@@ -94,7 +135,6 @@ public class SphereInteraction : MonoBehaviour
         float half = duration / 2f;
         float time = 0f;
 
-        // Ida
         while (time < half)
         {
             time += Time.deltaTime;
@@ -103,7 +143,6 @@ public class SphereInteraction : MonoBehaviour
             yield return null;
         }
 
-        // Regreso
         time = 0f;
         while (time < half)
         {
@@ -117,7 +156,7 @@ public class SphereInteraction : MonoBehaviour
     }
 
     // =====================================================
-    // AZUL gira poco + vibra
+    // AZUL → giro leve + vibración
     // =====================================================
     IEnumerator RotateAndShakeX(float angle, float duration)
     {
@@ -126,7 +165,6 @@ public class SphereInteraction : MonoBehaviour
 
         float time = 0f;
 
-        // Giro pequeño
         while (time < duration)
         {
             time += Time.deltaTime;
@@ -135,7 +173,6 @@ public class SphereInteraction : MonoBehaviour
             yield return null;
         }
 
-        // Vibración
         for (int i = 0; i < 5; i++)
         {
             llave.localEulerAngles += new Vector3(2f, 0, 0);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class VectorValidator : MonoBehaviour
 {
@@ -22,6 +23,19 @@ public class VectorValidator : MonoBehaviour
     [Header("Animador preguntas")]
     public QuestionAnimator questionAnimator;
 
+    // FEEDBACK
+    [Header("Feedback")]
+    public AudioSource audioSource;
+
+    public AudioClip correctAudio;
+    public AudioClip incorrectAudio;
+
+    public TextMeshProUGUI subtitleText;
+    public GameObject subtitlePanel;
+
+    [TextArea] public string correctSubtitle;
+    [TextArea] public string incorrectSubtitle;
+
     private Vector3 savedPosR;
     private Vector3 savedPosF;
 
@@ -38,7 +52,7 @@ public class VectorValidator : MonoBehaviour
         isCorrectR = Vector3.Distance(vectorR.position, detectorVectorR.position) <= tolerance;
         isCorrectF = Vector3.Distance(vectorF.position, detectorVectorF.position) <= tolerance;
 
-        // Ir siguiente pregunta
+        // Ir a la siguiente pregunta
         questionAnimator.MostrarSiguientePregunta();
 
         // Esperar transición y aplicar feedback
@@ -47,11 +61,11 @@ public class VectorValidator : MonoBehaviour
 
     void ApplyFeedback()
     {
-        // Mantener misma posición en retroalimentación
+        // Mantener misma posición en retroalimentación (con desplazamiento)
         retroVectorR.transform.position = new Vector3(
-        savedPosR.x + 100f,
-        savedPosR.y,
-        savedPosR.z
+            savedPosR.x + 100f,
+            savedPosR.y,
+            savedPosR.z
         );
 
         retroVectorF.transform.position = new Vector3(
@@ -63,5 +77,41 @@ public class VectorValidator : MonoBehaviour
         // Pintar colores
         retroVectorR.color = isCorrectR ? Color.green : Color.red;
         retroVectorF.color = isCorrectF ? Color.green : Color.red;
+
+        // Validación global
+        bool allCorrect = isCorrectR && isCorrectF;
+
+        if (allCorrect)
+        {
+            StartCoroutine(PlayFeedback(correctAudio, correctSubtitle));
+        }
+        else
+        {
+            StartCoroutine(PlayFeedback(incorrectAudio, incorrectSubtitle));
+        }
+    }
+
+    IEnumerator PlayFeedback(AudioClip clip, string subtitle)
+    {
+
+        audioSource.Stop();
+
+
+        subtitlePanel.SetActive(true);
+
+
+        subtitleText.text = subtitle;
+
+
+        audioSource.clip = clip;
+        audioSource.Play();
+
+
+        yield return new WaitForSeconds(clip.length);
+
+
+        subtitleText.text = "";
+
+        subtitlePanel.SetActive(false);
     }
 }
