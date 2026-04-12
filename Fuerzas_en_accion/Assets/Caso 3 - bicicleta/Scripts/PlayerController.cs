@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
 
+
+    //esto es para que cuando abro un video la camara y el cursos siempre esten
+    public bool enUI = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -49,7 +53,7 @@ public class PlayerController : MonoBehaviour
         RotarObjetos();
 
         // Cursor
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) || enUI) // ese uni es lo del video que se puso arriba
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -61,8 +65,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // Movimiento
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = enUI ? 0 : Input.GetAxis("Horizontal");
+        float z = enUI ? 0 : Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
@@ -78,7 +82,7 @@ public class PlayerController : MonoBehaviour
         controller.Move((move * speed + velocity) * Time.deltaTime);
 
         // Cámara
-        if (Cursor.lockState == CursorLockMode.Locked)
+        if (!enUI && Cursor.lockState == CursorLockMode.Locked)
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

@@ -8,8 +8,11 @@ public class HologramCanvas : MonoBehaviour
 
     public GameObject videoContainer;
     public VideoPlayer videoPlayer;
+    public GameObject image;
+    public AudioSource Fondo;
 
     private Animator panelAnimator;
+    public PlayerController player;
 
     void Start()
     {
@@ -26,9 +29,15 @@ public class HologramCanvas : MonoBehaviour
             if (Physics.Raycast(ray, out hit, interactionDistance))
             {
                 HologramData data = hit.collider.GetComponent<HologramData>();
+                Debug.Log("Objeto clickeado: " + hit.collider.name);
 
                 if (data != null)
                 {
+                    Fondo.Pause();
+
+                    //Activar el background que es eso de bg
+                    image.SetActive(true);
+
                     // activar UI
                     videoContainer.SetActive(true);
 
@@ -37,6 +46,8 @@ public class HologramCanvas : MonoBehaviour
 
                     // reproducir
                     videoPlayer.Play();
+
+                    player.enUI = true;
 
                     // animación
                     panelAnimator.SetTrigger("Open");
