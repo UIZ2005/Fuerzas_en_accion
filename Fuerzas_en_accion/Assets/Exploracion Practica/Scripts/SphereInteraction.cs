@@ -84,7 +84,7 @@ public class SphereInteraction : MonoBehaviour
     }
 
     // =====================================================
-    // MORADA → gira 60° y vuelve
+    // MORADA gira 60° y vuelve
     // =====================================================
     IEnumerator RotateAndReturnX(float angle, float duration)
     {
@@ -117,7 +117,7 @@ public class SphereInteraction : MonoBehaviour
     }
 
     // =====================================================
-    // AZUL → gira poco + vibra
+    // AZUL gira poco + vibra
     // =====================================================
     IEnumerator RotateAndShakeX(float angle, float duration)
     {
