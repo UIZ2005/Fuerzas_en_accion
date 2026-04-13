@@ -8,6 +8,11 @@ public class videoController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
 
+    [Header("Audio UI")]
+    public AudioSource uiAudioSource;
+    public AudioClip cerrarSonido;
+
+
     [Header("Botón Play/Pause")]
     public Image iconoPlayPause;
     public Sprite iconoPlay;
@@ -125,11 +130,17 @@ public class videoController : MonoBehaviour
     {
         animator.SetTrigger("Close");
 
-        yield return new WaitForSeconds(1f);
+        if (uiAudioSource != null && cerrarSonido != null)
+        {
+            uiAudioSource.PlayOneShot(cerrarSonido);
+        }
+
+        yield return new WaitForSeconds(2f);
 
         videoPlayer.Stop();
+
         gameObject.SetActive(false);
         player.enUI = false;
-    }
+    } 
 
 }
