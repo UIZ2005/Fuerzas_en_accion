@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class InteractiveObj : MonoBehaviour
 {
+    [Header("Para Los Puntos")]
     public Material material;
     public bool iscorrect;
     private selected scrpit;
@@ -12,6 +13,13 @@ public class InteractiveObj : MonoBehaviour
     private barraProgreso progreso;
     public TextMeshProUGUI textoPregunta;
     public GameObject buttons;
+
+    [Header("Para los vectores")]
+    public bool isVec = false;
+    public float time;
+    public GameObject DiagramaButton;
+
+    
     void Start()
     {
         scrpit = FindAnyObjectByType<selected>();
@@ -28,10 +36,56 @@ public class InteractiveObj : MonoBehaviour
     {
         scrpit.enabled = false;
         GetComponent<MeshRenderer>().material = material;
-        StartCoroutine(preciono());
+        if (isVec)
+        {
+            StartCoroutine(PrecionoVector());
+        }
+        else
+        {
+            StartCoroutine(precionoPunto());
+        }
+
 
     }
-    IEnumerator preciono()
+    public void cambiarTexto(string text)
+    {
+        StartCoroutine(changeText(text, time));
+    }
+    IEnumerator PrecionoVector()
+    {
+        if (iscorrect)
+        {
+            textoPregunta.text = "¡Exacto!\r\nCuando la fuerza es perpendicular al brazo de palanca, el torque es máximo";
+            //si la respuesta fue correcta
+
+        }
+        else
+        {
+            textoPregunta.text = "Recuerda que el torque depende del seno del ángulo. A 90° se genera el máximo efecto";
+            //si la respuesta fue incorrecta
+        }
+        yield return new WaitForSeconds(2.5f);
+        if (iscorrect)
+        {
+            DiagramaButton.SetActive(true);
+            textoPregunta.text = "Ahora, vamos a ver cuáles fuerzas son las que se aplican en un columpio, para eso abre el diagrama de fuerzas";
+            progreso.Avanzar();
+            foreach (InteractiveObj obj in puntosInteractivos)
+            {
+                obj.gameObject.SetActive(false);
+            }
+            //si la respuesta fue correcta
+
+        }
+        else
+        {
+            textoPregunta.text = "¿Qué ángulo de fuerza genera el mayor torque?";
+            //si la respuesta fue incorrecta
+        }
+        scrpit.enabled = true;
+        yield return null;
+    }
+    IEnumerator precionoPunto()
     {
         if (iscorrect)
         {
@@ -52,7 +106,10 @@ public class InteractiveObj : MonoBehaviour
             progreso.Avanzar();
             foreach (InteractiveObj obj in puntosInteractivos)
             {
-                obj.gameObject.SetActive(false);
+                if (!obj.isVec)
+                {
+                    obj.gameObject.SetActive(false);
+                } 
             }
             //si la respuesta fue correcta
 
@@ -60,11 +117,22 @@ public class InteractiveObj : MonoBehaviour
         else
         {
             textoPregunta.text = "¿Dónde será más fácil que el columpio se mueva?";
-            scrpit.enabled = true;
+            
             //si la respuesta fue incorrecta
         }
-        
+        scrpit.enabled = true;
+
         yield return null;
     }
- 
+
+    
+    IEnumerator changeText(string text, float time)
+    {
+        yield return new WaitForSeconds(time);
+        textoPregunta.text = text;
+        yield return null;
+    }
+
+
+
 }

@@ -3718,7 +3718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &175679526
 Transform:
   m_ObjectHideFlags: 0
@@ -6104,8 +6104,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2126734972}
   - {fileID: 1093543096}
+  - {fileID: 2126734972}
   m_Father: {fileID: 175679526}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &322933716
@@ -7016,6 +7016,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1745689418}
+        m_TargetAssemblyTypeName: InteractiveObj, Assembly-CSharp
+        m_MethodName: cambiarTexto
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\xBFQu\xE9 \xE1ngulo de fuerza genera el mayor torque?"
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 473372759}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -10331,6 +10343,9 @@ MonoBehaviour:
   iscorrect: 0
   textoPregunta: {fileID: 73530087}
   buttons: {fileID: 0}
+  isVec: 0
+  time: 0
+  DiagramaButton: {fileID: 0}
 --- !u!1 &469083621
 GameObject:
   m_ObjectHideFlags: 0
@@ -11734,8 +11749,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12331,8 +12346,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1893055356}
   - {fileID: 1785604742}
+  - {fileID: 1893055356}
   m_Father: {fileID: 175679526}
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!95 &550547482
@@ -18613,8 +18628,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20760,8 +20775,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -22840,10 +22855,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D RightArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      propertyPath: m_TagString
+      value: InterctiveZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745689418}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745689419}
   m_SourcePrefab: {fileID: 100100000, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
 --- !u!4 &1093543096 stripped
 Transform:
@@ -27865,6 +27890,9 @@ MonoBehaviour:
   iscorrect: 0
   textoPregunta: {fileID: 73530087}
   buttons: {fileID: 0}
+  isVec: 0
+  time: 0
+  DiagramaButton: {fileID: 0}
 --- !u!1001 &1371342448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30976,6 +31004,9 @@ MonoBehaviour:
   iscorrect: 1
   textoPregunta: {fileID: 73530087}
   buttons: {fileID: 473372759}
+  isVec: 0
+  time: 0
+  DiagramaButton: {fileID: 0}
 --- !u!1 &1548366932
 GameObject:
   m_ObjectHideFlags: 0
@@ -33845,8 +33876,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -35453,6 +35484,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742603056}
   m_Mesh: {fileID: 8116109073759690336, guid: c64fbb807a83b4348ad7750dc26f045d, type: 3}
+--- !u!1 &1745689415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+  m_PrefabInstance: {fileID: 1093543095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745689418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745689415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678d1ab45e8ee3647a33a0a9f56fe691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 420fbfec42c85fc4f8e5a2a63726032d, type: 2}
+  iscorrect: 1
+  textoPregunta: {fileID: 73530087}
+  buttons: {fileID: 0}
+  isVec: 1
+  time: 2.5
+  DiagramaButton: {fileID: 294742930}
+--- !u!64 &1745689419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745689415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7929139438592967118, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
 --- !u!1 &1745807670
 GameObject:
   m_ObjectHideFlags: 0
@@ -36659,10 +36736,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D RightArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      propertyPath: m_TagString
+      value: InterctiveZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845924705}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1845924706}
   m_SourcePrefab: {fileID: 100100000, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
 --- !u!4 &1785604742 stripped
 Transform:
@@ -37833,6 +37920,52 @@ Transform:
   - {fileID: 930150336}
   m_Father: {fileID: 582236175}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1845924702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
+  m_PrefabInstance: {fileID: 1785604741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1845924705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845924702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678d1ab45e8ee3647a33a0a9f56fe691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 98c742f6e3752f243894ccc8fa21f504, type: 2}
+  iscorrect: 0
+  textoPregunta: {fileID: 73530087}
+  buttons: {fileID: 0}
+  isVec: 1
+  time: 2.5
+  DiagramaButton: {fileID: 294742930}
+--- !u!64 &1845924706
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845924702}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7929139438592967118, guid: 611faf5cb907e404f9508e94c0b70a45, type: 3}
 --- !u!1001 &1851899067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38512,7 +38645,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893055355}
-  m_LocalRotation: {x: 0.27059802, y: -0.6532815, z: 0.27059802, w: -0.6532815}
+  m_LocalRotation: {x: 0.27059802, y: -0.65328145, z: 0.27059802, w: -0.65328145}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38523,7 +38656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.015810013, y: -0}
+  m_AnchoredPosition: {x: -0.015810017, y: 0}
   m_SizeDelta: {x: 4, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893055357
@@ -43323,7 +43456,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126734968}
   m_LocalRotation: {x: -0.000000014901163, y: -0.7071068, z: -0.000000014901163, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0195}
+  m_LocalPosition: {x: 0, y: 0, z: 0.019499779}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43333,7 +43466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.015810013, y: -0.0196}
+  m_AnchoredPosition: {x: -0.01581031, y: -0.019600052}
   m_SizeDelta: {x: 4, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2136975343
@@ -45676,8 +45809,6 @@ MonoBehaviour:
   distancia: 3
   select: {fileID: 2100000, guid: 642337dcbc7189e4c99ff3d0c233d2c2, type: 2}
   normal: {fileID: 2100000, guid: 2b805350e1fc6c2498c17de536f8c6d3, type: 2}
-  bad: {fileID: 0}
-  Good: {fileID: 0}
 --- !u!114 &8843546478807764053
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,8 +10,6 @@ public class selected : MonoBehaviour
     GameObject ultimoreconocido = null;
     public Material select;
     public Material normal;
-    public Material bad;
-    public Material Good;
     void Start()
     {
         mask = LayerMask.GetMask("RaycastDetect");
