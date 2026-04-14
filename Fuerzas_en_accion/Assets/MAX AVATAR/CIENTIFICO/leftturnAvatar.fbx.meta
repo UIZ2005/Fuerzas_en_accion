@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a063f6da4b6dd874baa02a811c01a50a
+guid: 4807fdf1ceac2414aa6dcbb422131b0f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -17,21 +17,14 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 37.314548 mm\n\t'mixamorig:LeftLeg' : position error = 4.647646
-      mm\n\t'mixamorig:LeftFoot' : position error = 1.301929 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 13.772684 mm\n\t'mixamorig:RightUpLeg' : position error
-      = 40.732815 mm\n\t'mixamorig:RightLeg' : position error = 4.225660 mm\n\t'mixamorig:RightFoot'
-      : position error = 1.358985 mm\n\t'mixamorig:RightToeBase' : position error
-      = 13.485472 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -40,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Swagger Walk
+      name: mixamo.com
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 84
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -53,7 +46,7 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
