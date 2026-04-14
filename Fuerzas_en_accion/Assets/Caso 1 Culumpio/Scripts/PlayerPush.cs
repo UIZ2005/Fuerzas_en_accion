@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerPush : MonoBehaviour
 {
     public float pushForce = 2f;
-
+    private AudioManager audio;
+    private void Start()
+    {
+        audio = FindAnyObjectByType<AudioManager>();
+    }
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody rb = hit.collider.attachedRigidbody;

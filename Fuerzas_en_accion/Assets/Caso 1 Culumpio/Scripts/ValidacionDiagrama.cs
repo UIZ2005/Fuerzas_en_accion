@@ -15,9 +15,14 @@ public class ValidacionDiagrama : MonoBehaviour
     public GameObject VecH3;
 
     public GameObject[] vectores;
+    private barraProgreso progreso;
+    public GameObject diagrama;
+
+    private AudioManager audio;
     void Start()
     {
-        
+        audio = FindAnyObjectByType<AudioManager>();
+        progreso = FindAnyObjectByType<barraProgreso>();
     }
 
     // Update is called once per frame
@@ -50,39 +55,48 @@ public class ValidacionDiagrama : MonoBehaviour
                             if (z > 340f || z < 15f)
                             {
                                 GetComponent<Image>().color = Color.green;
+                                progreso.Avanzar();
+                                audio.seleccionAudio(1);
+                                diagrama.SetActive(false);
                             }
                             else
                             {
                                 GetComponent<Image>().color = Color.red;
+                                audio.seleccionAudio(2);
                                 //el vector de gravedad tiene mala orientacion
                             }
                         }
                         else
                         {
+                            audio.seleccionAudio(2);
                             GetComponent<Image>().color = Color.red;
                             //el vector gravedad esta mal ubicado
                         }
                     }
                     else
                     {
+                        audio.seleccionAudio(2);
                         GetComponent<Image>().color = Color.red;
                         //el vector normal tiene mal orientacion
                     }
                 }
                 else
                 {
+                    audio.seleccionAudio(2);
                     GetComponent<Image>().color = Color.red;
                     //El vector Normal esta mal ubicado
                 }
             }
             else
             {
+                audio.seleccionAudio(2);
                 GetComponent<Image>().color = Color.red;
                 //El vector de fuerza tiene mal orientacion
             }
         }
         else
         {
+            audio.seleccionAudio(2);
             GetComponent<Image>().color = Color.red;
             // El vector de fuerza esta mal ubicado
         }

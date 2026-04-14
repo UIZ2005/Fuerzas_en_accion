@@ -8,6 +8,8 @@ TagManager:
   - Balon
   - Rueda
   - Pedales
+  - FxTemporaire
+  - Columpio
   layers:
   - Default
   - TransparentFX

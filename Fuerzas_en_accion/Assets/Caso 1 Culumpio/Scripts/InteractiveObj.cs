@@ -19,9 +19,11 @@ public class InteractiveObj : MonoBehaviour
     public float time;
     public GameObject DiagramaButton;
 
+    private AudioManager audio;
     
     void Start()
     {
+        audio = FindAnyObjectByType<AudioManager>();
         scrpit = FindAnyObjectByType<selected>();
         puntosInteractivos = FindObjectsOfType<InteractiveObj>();
         progreso = FindAnyObjectByType<barraProgreso>();
@@ -56,12 +58,14 @@ public class InteractiveObj : MonoBehaviour
         if (iscorrect)
         {
             textoPregunta.text = "¡Exacto!\r\nCuando la fuerza es perpendicular al brazo de palanca, el torque es máximo";
+            audio.seleccionAudio(1);
             //si la respuesta fue correcta
 
         }
         else
         {
             textoPregunta.text = "Recuerda que el torque depende del seno del ángulo. A 90° se genera el máximo efecto";
+            audio.seleccionAudio(2);
             //si la respuesta fue incorrecta
         }
         yield return new WaitForSeconds(2.5f);
@@ -72,7 +76,7 @@ public class InteractiveObj : MonoBehaviour
             progreso.Avanzar();
             foreach (InteractiveObj obj in puntosInteractivos)
             {
-                obj.gameObject.SetActive(false);
+                obj.gameObject.transform.parent.gameObject.SetActive(false);
             }
             //si la respuesta fue correcta
 
@@ -90,12 +94,14 @@ public class InteractiveObj : MonoBehaviour
         if (iscorrect)
         {
             textoPregunta.text = "¡Correcto!\r\nMientras más lejos del eje que apliques la fuerza, mayor torque y más fácil moverás el columpio";
+            audio.seleccionAudio(1);
             //si la respuesta fue correcta
 
         }
         else
         {
             textoPregunta.text = "No te preocupes.\r\nRecuerda que: la distancia al punto de giro multiplica el efecto de la fuerza";
+            audio.seleccionAudio(2);
             //si la respuesta fue incorrecta
         }
         yield return new WaitForSeconds(5);
