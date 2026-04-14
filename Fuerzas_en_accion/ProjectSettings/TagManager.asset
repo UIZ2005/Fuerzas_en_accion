@@ -10,6 +10,7 @@ TagManager:
   - Pedales
   - FxTemporaire
   - Columpio
+  - Boton
   layers:
   - Default
   - TransparentFX
