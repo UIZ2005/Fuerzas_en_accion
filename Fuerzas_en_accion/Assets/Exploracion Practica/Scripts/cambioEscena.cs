@@ -18,4 +18,9 @@ public class cambioEscena : MonoBehaviour
             Debug.LogWarning("No se asignó nombre de escena.");
         }
     }
+    public void Escena(string nombreEscena)
+    {
+        SceneManager.LoadScene(nombreEscena);
+
+    }
 }

@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SalaVideos/SalaVideos.unity
     guid: 6ad51b9661bf7eb41bc5fe0df2912fea
+  - enabled: 1
+    path: Assets/SalaVideos/SalaVideos 1.unity
+    guid: 21620bd986f53684684f4853b06a0e85
+  - enabled: 1
+    path: Assets/Caso 1 Culumpio/Caso1.unity
+    guid: c65bca04af5f74345910fab77855b402
+  - enabled: 1
+    path: Assets/Caso 3 - bicicleta/EscenaCaso3.unity
+    guid: f1e190b64badf4047bac15a9a3709943
+  - enabled: 1
+    path: Assets/Caso2_Nivel intermedio/Nivel intermedio.unity
+    guid: aa63e550fc523a14baea81c8061d2748
   m_configObjects: {}
