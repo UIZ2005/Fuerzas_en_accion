@@ -2531,7 +2531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &569161019
 Transform:
   m_ObjectHideFlags: 0
@@ -9600,7 +9600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1885308474
 Transform:
   m_ObjectHideFlags: 0
@@ -9855,6 +9855,7 @@ MonoBehaviour:
   objetosARotar: []
   friccion: 0.3
   fuerza: 500
+  enUI: 0
 --- !u!143 &2142380651
 CharacterController:
   m_ObjectHideFlags: 0
