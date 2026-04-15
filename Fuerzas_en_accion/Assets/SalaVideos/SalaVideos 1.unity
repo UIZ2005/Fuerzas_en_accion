@@ -4610,7 +4610,7 @@ MonoBehaviour:
   m_fontSizeMax: 28.57
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4638,7 +4638,11 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
+<<<<<<< HEAD
+  m_margin: {x: -194.49289, y: 4.6972427, z: -190.43951, w: 3.4408493}
+=======
   m_margin: {x: -5.2246246, y: -3.8711472, z: 1.0193481, w: 0}
+>>>>>>> c7a4c8f94df71a9659abe7b03e69a89080a47886
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4666,10 +4670,17 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1288218496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 359.9664, y: -28.951355}
+  m_SizeDelta: {x: 319.9328, y: 67.9027}
+=======
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 769.1819, y: 103.1299}
+>>>>>>> c7a4c8f94df71a9659abe7b03e69a89080a47886
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740529869
 MonoBehaviour:
@@ -4686,7 +4697,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: -1
+  m_PreferredWidth: 800
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -8085,8 +8096,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
+  m_AnchoredPosition: {x: 3, y: -185}
+  m_SizeDelta: {x: -332.5672, y: -433.5973}
+=======
   m_AnchoredPosition: {x: 9.840515, y: -475}
   m_SizeDelta: {x: 0, y: 0}
+>>>>>>> c7a4c8f94df71a9659abe7b03e69a89080a47886
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288218497
 MonoBehaviour:
@@ -8139,10 +8155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
-    m_Top: 10
-    m_Bottom: 10
+    m_Left: 200
+    m_Right: 200
+    m_Top: -5
+    m_Bottom: -5
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -9528,7 +9544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1558734894
 RectTransform:
   m_ObjectHideFlags: 0
