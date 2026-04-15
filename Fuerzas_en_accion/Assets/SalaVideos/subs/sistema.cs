@@ -24,12 +24,15 @@ public class sistema : MonoBehaviour
     }
 
     IEnumerator StartSequence()
+
     {
+        Debug.Log("si entro a la funcoin");
         yield return new WaitForSeconds(2f);
 
         for (int i = 0; i < dialogue.Length; i++)
         {
             subtitlePanel.SetActive(true);
+            Debug.Log("se activo el panel");
 
             audioSource.clip = dialogue[i].audio;
             audioSource.Play();

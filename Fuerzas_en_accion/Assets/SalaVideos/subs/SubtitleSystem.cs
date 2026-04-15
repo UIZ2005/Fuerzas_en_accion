@@ -7,6 +7,7 @@ public class SubtitleSystem : MonoBehaviour
     public GameObject subtitlePanel;
     public TextMeshProUGUI subtitleText;
     public AudioSource audioSource;
+    public float EsperaInicial = 5f;
 
     [System.Serializable]
     public class DialogueLine
@@ -24,7 +25,7 @@ public class SubtitleSystem : MonoBehaviour
 
     IEnumerator StartSequence()
     {
-        yield return new WaitForSeconds(5f); // espera inicial
+        yield return new WaitForSeconds(EsperaInicial); // espera inicial
 
         for (int i = 0; i < dialogue.Length; i++)
         {
