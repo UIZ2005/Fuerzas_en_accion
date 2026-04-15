@@ -5,6 +5,7 @@ public class cambioEscena : MonoBehaviour
 {
     [Header("Nombre de la escena a cargar")]
     public string sceneName;
+    public bool CambioPorContacto=false;
 
     // Método para botones UI
     public void LoadScene()
@@ -22,5 +23,12 @@ public class cambioEscena : MonoBehaviour
     {
         SceneManager.LoadScene(nombreEscena);
 
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(CambioPorContacto && other.CompareTag("Player"))
+        {
+            LoadScene();
+        }
     }
 }
