@@ -1560,7 +1560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.921021, y: 0}
+  m_AnchoredPosition: {x: 11.921143, y: 0}
   m_SizeDelta: {x: -250.6278, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279620981
@@ -3054,15 +3054,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7005ecaa10c774092cff6df8add44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoClip: {fileID: 32900000, guid: 613aa15548e4bd14c80117a21a076f49, type: 3}
+  videoClip: {fileID: 32900000, guid: d1a83ee54978fc544991220738e93d09, type: 3}
   pregunta:
-    texto: 77777777777
+    texto: "En el sistema mostrado, \xBFc\xF3mo se determina la direcci\xF3n del
+      vector torque a partir del sentido de rotaci\xF3n en el plano?"
     opciones:
-    - 1
-    - 2
-    - 3
-    respuestaCorrecta: 2
-    tiempoEnVideo: 10
+    - "La direcci\xF3n del torque siempre coincide con la direcci\xF3n de la fuerza
+      aplicada."
+    - "El torque no tiene direcci\xF3n, solo magnitud y sentido de giro."
+    - "La direcci\xF3n del torque depende \xFAnicamente de la distancia al punto
+      de giro."
+    - "La direcci\xF3n del torque se obtiene usando la regla de la mano derecha,
+      donde el pulgar indica la direcci\xF3n del vector."
+    respuestaCorrecta: 3
+    tiempoEnVideo: 105
 --- !u!1 &486967906
 GameObject:
   m_ObjectHideFlags: 0
