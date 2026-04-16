@@ -31,4 +31,8 @@ public class cambioEscena : MonoBehaviour
             LoadScene();
         }
     }
+    public void cerrar()
+    {
+        Application.Quit();
+    }
 }
