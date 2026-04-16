@@ -11,9 +11,13 @@ public class HologramCanvas : MonoBehaviour
 
     public GameObject image;
     public AudioSource Fondo;
+    public AudioSource vozAvatar;
 
     private Animator panelAnimator;
     public PlayerController player;
+
+
+    public SubtitleSystem subtitleSystem;
 
     void Start()
     {
@@ -33,7 +37,8 @@ public class HologramCanvas : MonoBehaviour
 
                 if (data != null)
                 {
-                    Fondo.Pause();
+                    Fondo.Stop(); // mejor que Pause
+                    subtitleSystem.DetenerSubtitulos(); // quita la voz del avatar
 
                     image.SetActive(true);
                     videoContainer.SetActive(true);

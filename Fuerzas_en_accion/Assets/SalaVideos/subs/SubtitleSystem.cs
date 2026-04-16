@@ -9,6 +9,11 @@ public class SubtitleSystem : MonoBehaviour
     public AudioSource audioSource;
     public float EsperaInicial = 5f;
 
+    Coroutine currentCoroutine;
+
+  
+
+
     [System.Serializable]
     public class DialogueLine
     {
@@ -20,7 +25,7 @@ public class SubtitleSystem : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(StartSequence());
+        currentCoroutine = StartCoroutine(StartSequence());
     }
 
     IEnumerator StartSequence()
@@ -51,5 +56,17 @@ public class SubtitleSystem : MonoBehaviour
             //  pausa de 3 segundos
             yield return new WaitForSeconds(3f);
         }
+    }
+
+    public void DetenerSubtitulos()
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+
+        audioSource.Stop();
+        subtitleText.text = "";
+        subtitlePanel.SetActive(false);
     }
 }

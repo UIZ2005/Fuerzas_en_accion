@@ -9,7 +9,7 @@ public class videoController : MonoBehaviour
     public VideoPlayer videoPlayer;
 
     [Header("Audio UI")]
-    public AudioSource uiAudioSource;
+    //public AudioSource uiAudioSource;
     public AudioClip cerrarSonido;
 
 
@@ -130,10 +130,7 @@ public class videoController : MonoBehaviour
     {
         animator.SetTrigger("Close");
 
-        if (uiAudioSource != null && cerrarSonido != null)
-        {
-            uiAudioSource.PlayOneShot(cerrarSonido);
-        }
+       
 
         yield return new WaitForSeconds(2f);
 
