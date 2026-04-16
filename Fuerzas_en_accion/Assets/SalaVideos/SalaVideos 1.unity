@@ -1917,7 +1917,7 @@ MonoBehaviour:
   subtitlePanel: {fileID: 1558734893}
   subtitleText: {fileID: 740529865}
   audioSource: {fileID: 282661932}
-  EsperaInicial: 5
+  EsperaInicial: 2
   dialogue:
   - audio: {fileID: 8300000, guid: cbc41cec78946fd4387f55462e731503, type: 3}
     subtitle: "Antes de entrenar, d\xE9jame mostrarte c\xF3mo el torque est\xE1 presente
