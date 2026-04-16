@@ -15,13 +15,22 @@ public class ChangeCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("ENTER");
+        
         Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.Auto);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("EXIT");
+        
+        Cursor.SetCursor(normalCursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void enter()
+    {
+        Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.Auto);
+    }
+    public void exit()
+    {
         Cursor.SetCursor(normalCursor, Vector2.zero, CursorMode.Auto);
     }
 }

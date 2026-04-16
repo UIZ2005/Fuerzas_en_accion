@@ -13,9 +13,14 @@ public class DraggableSprite : MonoBehaviour
     private bool isDragging = false;
     private float zDepth;
     private Vector3 offset;
+    private ChangeCursor cursor;
 
+    [Header("Detectores")]
+    public Animator detectorVectorR;
+    public Animator detectorVectorF;
     void Start()
     {
+        cursor = GetComponent<ChangeCursor>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         cam = Camera.main;
 
@@ -36,18 +41,24 @@ public class DraggableSprite : MonoBehaviour
     void OnMouseEnter()
     {
         spriteRenderer.color = hoverColor;
+        cursor.enter();
     }
 
     void OnMouseExit()
     {
         if (!isDragging)
+            cursor.exit();
             spriteRenderer.color = originalColor;
     }
 
     void OnMouseDown()
     {
         isDragging = true;
-
+        if (detectorVectorF != null)
+        {
+            detectorVectorF.SetBool("isDrag", true);
+            detectorVectorR.SetBool("isDrag", true);
+        }
         Vector3 mouseScreen = Input.mousePosition;
         mouseScreen.z = zDepth;
 
@@ -59,6 +70,13 @@ public class DraggableSprite : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
+        Debug.Log(transform.position);
+
+        if (detectorVectorF != null)
+        {
+            detectorVectorF.SetBool("isDrag", false);
+            detectorVectorR.SetBool("isDrag", false);
+        }
         spriteRenderer.color = originalColor;
     }
 
