@@ -5983,7 +5983,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.4495051, g: 0.70938414, b: 0.7660377, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12422,6 +12422,8 @@ MonoBehaviour:
   audioSource: {fileID: 1911159536}
   acierto: {fileID: 8300000, guid: 67dfe05b33eb97c47af34abbf10fad73, type: 3}
   error: {fileID: 8300000, guid: 01b78cc4aa4524443a73cd88a96c3408, type: 3}
+  cursorMano: {fileID: 2800000, guid: d12265deb21123f47a93860d7afa7f11, type: 3}
+  cursorNormal: {fileID: 2800000, guid: 72f8deaa0edde6e40b7fa80d884ed1e6, type: 3}
 --- !u!82 &1911159536
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12434,7 +12436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

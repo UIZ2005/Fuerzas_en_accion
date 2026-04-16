@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -26,6 +27,10 @@ public class ControladorPreguntas : MonoBehaviour
 
     private Pregunta preguntaActual;
     private VideoPlayer videoPlayer;
+
+    [Header("Cursor")]
+    public Texture2D cursorMano;
+    public Texture2D cursorNormal;
 
     private bool preguntaMostrada = false; //
 
@@ -52,6 +57,16 @@ public class ControladorPreguntas : MonoBehaviour
         }
     }
 
+    void CambiarCursorMano()
+    {
+        Cursor.SetCursor(cursorMano, Vector2.zero, CursorMode.Auto);
+    }
+
+    void RestaurarCursor()
+    {
+        Cursor.SetCursor(cursorNormal, Vector2.zero, CursorMode.Auto);
+    }
+
     void MostrarPregunta()
     {
         videoPlayer.Pause();
@@ -72,6 +87,28 @@ public class ControladorPreguntas : MonoBehaviour
 
                 botones[i].onClick.RemoveAllListeners();
                 botones[i].onClick.AddListener(() => EvaluarRespuesta(index));
+
+
+                // esto es para que pase de cursor a mano
+
+                EventTrigger trigger = botones[i].GetComponent<EventTrigger>();
+
+                if (trigger == null)
+                    trigger = botones[i].gameObject.AddComponent<EventTrigger>();
+
+                trigger.triggers.Clear();
+
+                // Entrar (hover)
+                EventTrigger.Entry entryEnter = new EventTrigger.Entry();
+                entryEnter.eventID = EventTriggerType.PointerEnter;
+                entryEnter.callback.AddListener((data) => { CambiarCursorMano(); });
+                trigger.triggers.Add(entryEnter);
+
+                // Salir
+                EventTrigger.Entry entryExit = new EventTrigger.Entry();
+                entryExit.eventID = EventTriggerType.PointerExit;
+                entryExit.callback.AddListener((data) => { RestaurarCursor(); });
+                trigger.triggers.Add(entryExit);
             }
             else
             {
