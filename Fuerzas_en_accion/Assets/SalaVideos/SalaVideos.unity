@@ -5867,8 +5867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitlePanel: {fileID: 1317895507}
-  subtitleText: {fileID: 1396568641}
+  subtitlePanel: {fileID: 0}
+  subtitleText: {fileID: 0}
   audioSource: {fileID: 914889212}
   EsperaInicial: 5
   dialogue:
@@ -10577,7 +10577,9 @@ MonoBehaviour:
   videoController: {fileID: 0}
   image: {fileID: 0}
   Fondo: {fileID: 0}
+  vozAvatar: {fileID: 0}
   player: {fileID: 0}
+  subtitleSystem: {fileID: 0}
 --- !u!1 &1731404458
 GameObject:
   m_ObjectHideFlags: 0
