@@ -8,18 +8,30 @@ public class Subs : MonoBehaviour
     public GameObject panel;
     public TextMeshProUGUI texto;
 
+    [Header("Mensajes (editar desde Unity)")]
+    [TextArea]
+    public string mensajeActivado;
+
+    [TextArea]
+    public string mensajeDesactivado;
+
+    [Header("Animación")]
+    public float duracionEntrada = 0.2f;
+    public float tiempoVisible = 3f;
+    public float duracionSalida = 0.2f;
+
     private Coroutine rutina;
 
-    //BOTÓN ACTIVAR
+    // BOTÓN ACTIVAR
     public void ActivarSubtitulos()
     {
-        MostrarMensaje("Subtítulos activados");
+        MostrarMensaje(mensajeActivado);
     }
 
-    //BOTÓN DESACTIVAR
+    // BOTÓN DESACTIVAR
     public void DesactivarSubtitulos()
     {
-        MostrarMensaje("Subtítulos desactivados");
+        MostrarMensaje(mensajeDesactivado);
     }
 
     void MostrarMensaje(string mensaje)
@@ -36,13 +48,11 @@ public class Subs : MonoBehaviour
     {
         panel.SetActive(true);
 
-        //Escala inicial (invisible)
         panel.transform.localScale = Vector3.zero;
 
-        //Animación de entrada (pop)
         float t = 0f;
-        float duracionEntrada = 0.2f;
 
+        // Entrada
         while (t < duracionEntrada)
         {
             t += Time.deltaTime;
@@ -53,12 +63,11 @@ public class Subs : MonoBehaviour
 
         panel.transform.localScale = Vector3.one;
 
-        // Tiempo visible
-        yield return new WaitForSeconds(3f);
+        // Visible
+        yield return new WaitForSeconds(tiempoVisible);
 
-        // Animación de salida
+        // Salida
         t = 0f;
-        float duracionSalida = 0.2f;
 
         while (t < duracionSalida)
         {

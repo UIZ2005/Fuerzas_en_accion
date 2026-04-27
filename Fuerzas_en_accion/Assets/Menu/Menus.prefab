@@ -1485,6 +1485,7 @@ Transform:
   - {fileID: 2859828386579904159}
   - {fileID: 6346046708028803464}
   - {fileID: 5279942215650302949}
+  - {fileID: 6791177387567659467}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4456860715526260058
@@ -1635,6 +1636,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalCursor: {fileID: 2800000, guid: 72f8deaa0edde6e40b7fa80d884ed1e6, type: 3}
   handCursor: {fileID: 2800000, guid: d12265deb21123f47a93860d7afa7f11, type: 3}
+--- !u!1 &4489632058786520350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6791177387567659467}
+  - component: {fileID: 3006225404793085113}
+  m_Layer: 0
+  m_Name: subAvatarControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6791177387567659467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489632058786520350}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -769.82837, y: -305.27924, z: -101.3736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5712595877674348584}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3006225404793085113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489632058786520350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47b47083cc28aa4a81ee3ff6776e5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 3756253559946616100}
+  texto: {fileID: 625230884459590963}
+  mensajeActivado: Voz del avatar activada
+  mensajeDesactivado: Voz del avatar silenciada
+  duracionEntrada: 0.2
+  tiempoVisible: 3
+  duracionSalida: 0.2
 --- !u!1 &4598483165088394758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1843,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2594319046589321762}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4754822271310698101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1991,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3006225404793085113}
+        m_TargetAssemblyTypeName: Subs, Assembly-CSharp
+        m_MethodName: DesactivarSubtitulos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2594319046589321762}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2551,6 +2639,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 3756253559946616100}
   texto: {fileID: 625230884459590963}
+  mensajeActivado: Subtitulos Activados
+  mensajeDesactivado: Subtitulos Desactivados
+  duracionEntrada: 0.2
+  tiempoVisible: 3
+  duracionSalida: 0.2
 --- !u!1 &6553938763616983147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,6 +3214,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3006225404793085113}
+        m_TargetAssemblyTypeName: Subs, Assembly-CSharp
+        m_MethodName: ActivarSubtitulos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2594319046589321762}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8059038059693276345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,6 +3385,18 @@ MonoBehaviour:
       - m_Target: {fileID: 158317113593773395}
         m_TargetAssemblyTypeName: Subs, Assembly-CSharp
         m_MethodName: ActivarSubtitulos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2594319046589321762}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

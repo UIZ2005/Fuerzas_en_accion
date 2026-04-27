@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class ValidacionDiagrama : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Subtítulos Sistema 2")]
+    public Sistema2 sistema2;
+
+
     public GameObject Fuerza;
     public GameObject Gravedad;
     public GameObject Normal;
@@ -19,86 +22,92 @@ public class ValidacionDiagrama : MonoBehaviour
     public GameObject diagrama;
 
     private AudioManager audio;
+
+    [Header("Subtítulos")]
+    public SubtitleSystem subtitleSystem;
+
     void Start()
     {
         audio = FindAnyObjectByType<AudioManager>();
         progreso = FindAnyObjectByType<barraProgreso>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void validacion()
     {
-       
         if (Fuerza.transform.position == VecH1.transform.position)
         {
-           
-
             float z = vectores[0].transform.eulerAngles.z;
 
-            if(z > 340f || z < 15f)
+            if (z > 340f || z < 15f)    
             {
-                //el vector de fuerza se encuentra bien
+                // Fuerza correcta
 
-               
                 if (Normal.transform.position == VecH2.transform.position)
                 {
                     z = vectores[1].transform.eulerAngles.z;
+
                     if (z > 340f || z < 15f)
                     {
-                        if(Gravedad.transform.position == VecH3.transform.position)
+                        // Normal correcta
+
+                        if (Gravedad.transform.position == VecH3.transform.position)
                         {
                             z = vectores[2].transform.eulerAngles.z;
+
                             if (z > 340f || z < 15f)
                             {
+                                //  TODO CORRECTO
                                 GetComponent<Image>().color = Color.green;
                                 progreso.Avanzar();
                                 audio.seleccionAudio(1);
                                 diagrama.SetActive(false);
+
+                                // SUBTÍTULOS SISTEMA 2
+                                if (sistema2 != null)
+                                {
+                                    sistema2.Ejecutar();
+                                }
                             }
                             else
                             {
+                                //  Gravedad mal orientada
                                 GetComponent<Image>().color = Color.red;
                                 audio.seleccionAudio(2);
-                                //el vector de gravedad tiene mala orientacion
                             }
                         }
                         else
                         {
-                            audio.seleccionAudio(2);
+                            //  Gravedad mal ubicada
                             GetComponent<Image>().color = Color.red;
-                            //el vector gravedad esta mal ubicado
+                            audio.seleccionAudio(2);
                         }
                     }
                     else
                     {
-                        audio.seleccionAudio(2);
+                        //  Normal mal orientada
                         GetComponent<Image>().color = Color.red;
-                        //el vector normal tiene mal orientacion
+                        audio.seleccionAudio(2);
                     }
                 }
                 else
                 {
-                    audio.seleccionAudio(2);
+                    //  Normal mal ubicada
                     GetComponent<Image>().color = Color.red;
-                    //El vector Normal esta mal ubicado
+                    audio.seleccionAudio(2);
                 }
             }
             else
             {
-                audio.seleccionAudio(2);
+                //  Fuerza mal orientada
                 GetComponent<Image>().color = Color.red;
-                //El vector de fuerza tiene mal orientacion
+                audio.seleccionAudio(2);
             }
         }
         else
         {
-            audio.seleccionAudio(2);
+            //  Fuerza mal ubicada
             GetComponent<Image>().color = Color.red;
-            // El vector de fuerza esta mal ubicado
+            audio.seleccionAudio(2);
         }
     }
 }
