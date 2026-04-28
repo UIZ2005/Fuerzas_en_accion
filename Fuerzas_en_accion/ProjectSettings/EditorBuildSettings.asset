@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MAX AVATAR/MENU INICIAL.unity
+    guid: 3b5b5be4a91076740ae078a5ac0c7c99
+  - enabled: 1
     path: Assets/laboratorioInicial/laboratorioInicial.unity
     guid: bff4df5f3bb934b4984ccb37082c2010
   - enabled: 1
