@@ -8,7 +8,7 @@ public class MenuInicial : MonoBehaviour
     // Start is called before the first frame update
     public void Jugar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("laboratorioInicial");
     }
 
     // Update is called once per frame
