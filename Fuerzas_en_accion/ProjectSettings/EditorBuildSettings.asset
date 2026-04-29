@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MInijuego/Minijuego.unity
     guid: fe41e4c1c87200e4a910588ff257bbfc
+  - enabled: 1
+    path: Assets/SalaTrofeos/SalaBloqueados/sala bloqueados.unity
+    guid: afb3853629b0b2b41a46452bbccf5744
   m_configObjects: {}
