@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Caso2_Nivel intermedio/Nivel intermedio.unity
     guid: aa63e550fc523a14baea81c8061d2748
+  - enabled: 1
+    path: Assets/MInijuego/Minijuego.unity
+    guid: fe41e4c1c87200e4a910588ff257bbfc
   m_configObjects: {}

@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class cronometro : MonoBehaviour
 {
     [Header("Tiempo")]
-    public float tiempoTotal = 180f; // 3 minutos
-    private float tiempoActual;
+    public float tiempoTotal = 60f;    private float tiempoActual;
 
     [Header("UI")]
     public Image barraCircular;
@@ -22,9 +20,11 @@ public class cronometro : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip sonidoAlerta;
+    public AudioClip sonidoUltimos5s;
     public AudioClip sonidoFinal;
 
     private bool alertaActivada = false;
+    private bool sonido5sActivado = false;
     private bool finalizado = false;
 
     void Start()
@@ -45,10 +45,23 @@ public class cronometro : MonoBehaviour
             Finalizar();
         }
 
-        //  Activar alerta en 30 segundos
+        // Activar alerta en 30 segundos
         if (tiempoActual <= 30f && !alertaActivada)
         {
             ActivarAlerta();
+        }
+
+        // Sonido en los últimos 5 segundos
+        if (tiempoActual <= 5f && !sonido5sActivado)
+        {
+            sonido5sActivado = true;
+
+            if (audioSource != null && sonidoUltimos5s != null)
+            {
+                audioSource.clip = sonidoUltimos5s;
+                audioSource.loop = false;
+                audioSource.Play();
+            }
         }
 
         ActualizarUI();
@@ -56,13 +69,11 @@ public class cronometro : MonoBehaviour
 
     void ActualizarUI()
     {
-        // Texto mm:ss
         int minutos = Mathf.FloorToInt(tiempoActual / 60);
         int segundos = Mathf.FloorToInt(tiempoActual % 60);
 
         textoTiempo.text = string.Format("{0:00}:{1:00}", minutos, segundos);
 
-        // Barra circular (0 a 1)
         barraCircular.fillAmount = tiempoActual / tiempoTotal;
     }
 
@@ -70,12 +81,9 @@ public class cronometro : MonoBehaviour
     {
         alertaActivada = true;
 
-        // Cambiar color
-        
         barraCircular.color = colorAlerta;
         recuadro.color = colorAlerta;
 
-        // Sonido alerta
         if (audioSource != null && sonidoAlerta != null)
         {
             audioSource.PlayOneShot(sonidoAlerta, 0.6f);
@@ -86,7 +94,13 @@ public class cronometro : MonoBehaviour
     {
         finalizado = true;
 
-        // sonido final
+        // Detener cualquier audio
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+
+        // Sonido final
         if (audioSource != null && sonidoFinal != null)
         {
             audioSource.PlayOneShot(sonidoFinal, 0.8f);
