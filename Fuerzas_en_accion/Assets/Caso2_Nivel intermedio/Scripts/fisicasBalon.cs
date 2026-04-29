@@ -26,6 +26,10 @@ public class fisicasBalon : MonoBehaviour
     public Transform puntoMano;
     public LanzamientoBalon lanzador;
 
+
+    [Header("Sonido")]                        
+    public AudioSource audioSource;           
+    public AudioClip sonidoEmpuje;            
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,8 +40,7 @@ public class fisicasBalon : MonoBehaviour
 
     void Update()
     {
-        // CharacterController interfiere con Rigidbody,
-        // forzamos posición manualmente cada frame
+        
         if (agarrado && puntoMano != null)
         {
             transform.position = puntoMano.position;
@@ -55,6 +58,7 @@ public class fisicasBalon : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && cargando)
         {
             AplicarFuerza();
+            ReproducirSonidoEmpuje();
             ResetFuerza();
         }
     }
@@ -104,7 +108,11 @@ public class fisicasBalon : MonoBehaviour
         Debug.Log("Magnitud torque: " + torque.magnitude);
         Debug.DrawRay(transform.position, torque, Color.red, 2f);
     }
-
+    void ReproducirSonidoEmpuje()               
+    {
+        if (audioSource != null && sonidoEmpuje != null)
+            audioSource.PlayOneShot(sonidoEmpuje);
+    }
     void ActualizarFlecha()
     {
         if (flechaFuerza == null) return;
@@ -139,8 +147,7 @@ public class fisicasBalon : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
-        // SetParent ya no es necesario porque forzamos posición en Update,
-        // pero lo dejamos para que la jerarquía se vea limpia en el editor
+        
         transform.SetParent(puntoMano);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
