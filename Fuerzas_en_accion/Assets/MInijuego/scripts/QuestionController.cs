@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class QuestionController : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class QuestionController : MonoBehaviour
     public CanvasGroup panelVectores3;
     public CanvasGroup panelCorrecto;
 
+    [Header("Texto Puntaje")]
+    public TextMeshProUGUI scoreText;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip correctSound;
+
     [Header("Configuración")]
     public float fadeDuration = 0.5f;
     public float panelVisibleTime = 2f;
@@ -23,11 +31,12 @@ public class QuestionController : MonoBehaviour
 
     void Start()
     {
-        // Inicializar paneles
         panelVectores.alpha = 1;
         panelVectores2.alpha = 0;
         panelVectores3.alpha = 0;
         panelCorrecto.alpha = 0;
+
+        UpdateScoreUI();
     }
 
     void Update()
@@ -40,9 +49,6 @@ public class QuestionController : MonoBehaviour
         }
     }
 
-    // =========================
-    // VALIDACIÓN PRINCIPAL
-    // =========================
     bool CheckRotation()
     {
         Quaternion current = target.rotation;
@@ -62,9 +68,6 @@ public class QuestionController : MonoBehaviour
         return false;
     }
 
-    // =========================
-    // COMPARACIÓN EXACTA
-    // =========================
     bool IsCloseToRotation(Quaternion current, Vector3 targetEuler, float tolerance)
     {
         Quaternion targetRot = Quaternion.Euler(targetEuler);
@@ -72,23 +75,19 @@ public class QuestionController : MonoBehaviour
         return angle <= tolerance;
     }
 
-    // =========================
-    // PREGUNTA 3 (RANGOS)
-    // =========================
     bool CheckRangeRotation(Quaternion current)
     {
         Vector3 rot = NormalizeEuler(current.eulerAngles);
 
-        bool xOk = Mathf.Abs(rot.x - 0) <= 5;
+        
+        bool xOk = Mathf.Abs(rot.x - 0) <= 20;
+
         bool yOk = rot.y >= 150 && rot.y <= 170;
         bool zOk = rot.z >= -40 && rot.z <= -20;
 
         return xOk && yOk && zOk;
     }
 
-    // =========================
-    // NORMALIZAR ÁNGULOS
-    // =========================
     Vector3 NormalizeEuler(Vector3 euler)
     {
         return new Vector3(
@@ -104,15 +103,21 @@ public class QuestionController : MonoBehaviour
         return angle;
     }
 
-    // =========================
-    // MANEJO DE RESPUESTA
-    // =========================
     IEnumerator HandleCorrectAnswer()
     {
         isTransitioning = true;
-        score += 10;
 
-        // Mostrar panel correcto
+        
+        score += 10;
+        UpdateScoreUI();
+
+        // SONIDO
+        if (audioSource != null && correctSound != null)
+        {
+            audioSource.PlayOneShot(correctSound);
+        }
+
+        // Panel correcto
         yield return StartCoroutine(Fade(panelCorrecto, 0, 1));
         yield return new WaitForSeconds(panelVisibleTime);
         yield return StartCoroutine(Fade(panelCorrecto, 1, 0));
@@ -134,9 +139,14 @@ public class QuestionController : MonoBehaviour
         isTransitioning = false;
     }
 
-    // =========================
-    // PANEL ACTUAL
-    // =========================
+    void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Puntos: " + score;
+        }
+    }
+
     CanvasGroup GetCurrentPanel()
     {
         switch (currentQuestion)
@@ -148,9 +158,6 @@ public class QuestionController : MonoBehaviour
         return null;
     }
 
-    // =========================
-    // FADE
-    // =========================
     IEnumerator Fade(CanvasGroup cg, float start, float end)
     {
         float time = 0;
