@@ -34895,6 +34895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 66501818}
   texto: {fileID: 1772322557}
+  panelAOcultar: {fileID: 626743225}
   audioSource: {fileID: 0}
   dialogo:
   - audio: {fileID: 0}
@@ -44187,7 +44188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937f00988396ff34b83fad624dc9dc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sistema2: {fileID: 0}
+  sistema2: {fileID: 1669942279}
   Fuerza: {fileID: 1913959718}
   Gravedad: {fileID: 1265481093}
   Normal: {fileID: 41701777}

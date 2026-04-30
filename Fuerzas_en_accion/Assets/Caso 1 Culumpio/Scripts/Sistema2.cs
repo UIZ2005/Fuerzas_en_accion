@@ -8,6 +8,9 @@ public class Sistema2 : MonoBehaviour
     public GameObject panel;
     public TextMeshProUGUI texto;
 
+    [Header("Panel a ocultar")]
+    public GameObject panelAOcultar;
+
     [Header("Audio")]
     public AudioSource audioSource;
 
@@ -24,7 +27,6 @@ public class Sistema2 : MonoBehaviour
 
     private Coroutine rutina;
 
-    //ESTE MÉTODO LO LLAMAS DESDE TU VALIDACIÓN
     public void Ejecutar()
     {
         if (rutina != null)
@@ -35,8 +37,15 @@ public class Sistema2 : MonoBehaviour
 
     IEnumerator Secuencia()
     {
+        // OCULTAR OTRO PANEL
+        if (panelAOcultar != null)
+        {
+            panelAOcultar.SetActive(false);
+        }
+
         for (int i = 0; i < dialogo.Length; i++)
         {
+            // MOSTRAR PANEL DE SUBTÍTULOS
             panel.SetActive(true);
 
             texto.text = dialogo[i].subtitulo;
