@@ -8,7 +8,10 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("diagrama")]
-    public GameObject botondiagrama;
+    public GameObject diagrama;
+    public GameObject diagrama1;
+    public GameObject diagrama2;
+    public GameObject diagrama3;
 
     [Header("Pregunta 1")]
     public GameObject pregunta1;
@@ -56,7 +59,8 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
                 AC1.gameObject.GetComponent<Image>().color = Color.green;
                 audio.seleccionAudio(1);
                 pregunta1.SetActive(false);
-                botondiagrama.SetActive(true);
+                diagrama.SetActive(false);
+                diagrama1.SetActive(true);
             }
             else
             {
@@ -78,7 +82,8 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
         {
             //todo esta bien, pasa a la siguiente pregunta
             audio.seleccionAudio(1);
-            botondiagrama.SetActive(true);
+            diagrama1.SetActive(false);
+            diagrama2.SetActive(true);
             pregunta2.SetActive(false);
         }
         else
@@ -99,7 +104,7 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
             {
                 audio.seleccionAudio(1);
                 pregunta3.SetActive(false);
-                pregunta3_2.SetActive(false);
+                pregunta3_2.SetActive(true);
             }
             else
             {
@@ -117,19 +122,20 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
     }
     public void Q3_2()
     {
-        if (Balon.text == "69.4")
+        if (Balon2.text == "69.4")
         {
-            Balon.gameObject.GetComponent<Image>().color = Color.green;
+            Balon2.gameObject.GetComponent<Image>().color = Color.green;
             //Balon esta bien
-            if (Cilindro.text == "104.2")
+            if (Cilindro2.text == "104.2")
             {
                 audio.seleccionAudio(1);
                 pregunta3_2.SetActive(false);
-                botondiagrama.SetActive(true);
+                diagrama2.SetActive(false);
+                diagrama3.SetActive(true);
             }
             else
             {
-                Cilindro.gameObject.GetComponent<Image>().color = Color.red;
+                Cilindro2.gameObject.GetComponent<Image>().color = Color.red;
                 audio.seleccionAudio(2);
             }
         }
@@ -137,7 +143,7 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
         {
             //El torque esta malo
 
-            Balon.gameObject.GetComponent<Image>().color = Color.red;
+            Balon2.gameObject.GetComponent<Image>().color = Color.red;
             audio.seleccionAudio(2);
         }
     }
