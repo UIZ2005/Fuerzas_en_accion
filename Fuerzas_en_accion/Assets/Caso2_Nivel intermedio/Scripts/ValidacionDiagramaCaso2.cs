@@ -26,6 +26,8 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
     public string answer ="f";
 
     private AudioManager audio;
+
+    public GameObject pregunta;
     void Start()
     {
         audio = FindAnyObjectByType<AudioManager>();
@@ -82,6 +84,7 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
                                     progreso.Avanzar();
                                     audio.seleccionAudio(1);
                                     diagrama.SetActive(false);
+                                    pregunta.SetActive(true);
                                 }
                                 else
                                 {
@@ -173,6 +176,7 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
                                 progreso.Avanzar();
                                 audio.seleccionAudio(1);
                                 diagrama.SetActive(false);
+                                pregunta.SetActive(true);
                             }
                             else
                             {
@@ -270,6 +274,7 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
                                 progreso.Avanzar();
                                 audio.seleccionAudio(1);
                                 diagrama.SetActive(false);
+                                pregunta.SetActive(true);
                             }
                             else
                             {
