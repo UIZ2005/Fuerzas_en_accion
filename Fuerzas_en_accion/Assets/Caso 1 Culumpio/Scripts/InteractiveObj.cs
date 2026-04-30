@@ -20,7 +20,26 @@ public class InteractiveObj : MonoBehaviour
     public GameObject DiagramaButton;
 
     private AudioManager audio;
-    
+
+    [Header("Audio de Narración (Subtítulos)")]
+    public AudioSource vozSource;
+
+    // AUDIOS ESPECÍFICOS (UNO POR TEXTO)
+    [Header("Audios Vector")]
+    public AudioClip audioVecCorrecto;
+    public AudioClip audioVecIncorrecto;
+    public AudioClip audioVecSiguiente;
+
+    [Header("Audios Punto")]
+    public AudioClip audioPuntoCorrecto;
+    public AudioClip audioPuntoIncorrecto;
+    public AudioClip audioPuntoSiguiente;
+    public AudioClip audioPuntoPreguntaError;
+
+    [Header("Audios Extra")]
+
+    public AudioClip audioAnguloFuerza;
+
     void Start()
     {
         audio = FindAnyObjectByType<AudioManager>();
@@ -29,116 +48,134 @@ public class InteractiveObj : MonoBehaviour
         progreso = FindAnyObjectByType<barraProgreso>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void click()
     {
         scrpit.enabled = false;
         GetComponent<MeshRenderer>().material = material;
+
         if (isVec)
-        {
             StartCoroutine(PrecionoVector());
+        else
+            StartCoroutine(precionoPunto());
+    }
+
+    // MÉTODO TEXTO + AUDIO
+    IEnumerator MostrarLinea(string texto, AudioClip audioClip, float fallbackTime)
+    {
+        textoPregunta.text = texto;
+
+        if (audioClip != null && vozSource != null)
+        {
+            vozSource.clip = audioClip;
+            vozSource.Play();
+            yield return new WaitForSeconds(audioClip.length);
         }
         else
         {
-            StartCoroutine(precionoPunto());
+            yield return new WaitForSeconds(fallbackTime);
         }
-
-
     }
-    public void cambiarTexto(string text)
-    {
-        StartCoroutine(changeText(text, time));
-    }
+
     IEnumerator PrecionoVector()
     {
         if (iscorrect)
         {
-            textoPregunta.text = "¡Exacto!\r\nCuando la fuerza es perpendicular al brazo de palanca, el torque es máximo";
-            audio.seleccionAudio(1);
-            //si la respuesta fue correcta
+            yield return StartCoroutine(MostrarLinea(
+                "¡Exacto!\nCuando la fuerza es perpendicular al brazo de palanca, el torque es máximo",
+                audioVecCorrecto,
+                2.5f
+            ));
 
+            audio.seleccionAudio(1);
         }
         else
         {
-            textoPregunta.text = "Recuerda que el torque depende del seno del ángulo. A 90° se genera el máximo efecto";
+            yield return StartCoroutine(MostrarLinea(
+                "Recuerda que el torque depende del seno del ángulo. A 90° se genera el máximo efecto",
+                audioVecIncorrecto,
+                2.5f
+            ));
+
             audio.seleccionAudio(2);
-            //si la respuesta fue incorrecta
         }
-        yield return new WaitForSeconds(2.5f);
+
         if (iscorrect)
         {
             DiagramaButton.SetActive(true);
-            textoPregunta.text = "Ahora, vamos a ver cuáles fuerzas son las que se aplican en un columpio, para eso abre el diagrama de fuerzas";
+
+            yield return StartCoroutine(MostrarLinea(
+                "Ahora, vamos a ver cuáles fuerzas son las que se aplican en un columpio, para eso abre el diagrama de fuerzas",
+                audioVecSiguiente,
+                2.5f
+            ));
+
             progreso.Avanzar();
+
             foreach (InteractiveObj obj in puntosInteractivos)
             {
                 obj.gameObject.transform.parent.gameObject.SetActive(false);
             }
-            //si la respuesta fue correcta
-
         }
         else
         {
-            textoPregunta.text = "¿Qué ángulo de fuerza genera el mayor torque?";
-            //si la respuesta fue incorrecta
+            yield return StartCoroutine(MostrarLinea(
+                "¿Qué ángulo de fuerza genera el mayor torque?",
+                audioAnguloFuerza,
+                2f
+            ));
         }
+
         scrpit.enabled = true;
-        yield return null;
     }
+
     IEnumerator precionoPunto()
     {
         if (iscorrect)
         {
-            textoPregunta.text = "¡Correcto!\r\nMientras más lejos del eje que apliques la fuerza, mayor torque y más fácil moverás el columpio";
-            audio.seleccionAudio(1);
-            //si la respuesta fue correcta
+            yield return StartCoroutine(MostrarLinea(
+                "¡Correcto!\nMientras más lejos del eje que apliques la fuerza, mayor torque y más fácil moverás el columpio",
+                audioPuntoCorrecto,
+                5f
+            ));
 
+            audio.seleccionAudio(1);
         }
         else
         {
-            textoPregunta.text = "No te preocupes.\r\nRecuerda que: la distancia al punto de giro multiplica el efecto de la fuerza";
+            yield return StartCoroutine(MostrarLinea(
+                "No te preocupes.\nRecuerda que: la distancia al punto de giro multiplica el efecto de la fuerza",
+                audioPuntoIncorrecto,
+                5f
+            ));
+
             audio.seleccionAudio(2);
-            //si la respuesta fue incorrecta
         }
-        yield return new WaitForSeconds(5);
+
         if (iscorrect)
         {
             buttons.SetActive(true);
-            textoPregunta.text = "Si aplicas la misma fuerza en el asiento pero el columpio tuviera cuerdas más largas, ¿el torque aumentaría, disminuiría o se mantendría igual?";
+
+            yield return StartCoroutine(MostrarLinea(
+                "Si aplicas la misma fuerza en el asiento pero el columpio tuviera cuerdas más largas, ¿el torque aumentaría, disminuiría o se mantendría igual?",
+                audioPuntoSiguiente,
+                5f
+            ));
+
             progreso.Avanzar();
+
             foreach (InteractiveObj obj in puntosInteractivos)
             {
                 if (!obj.isVec)
                 {
                     obj.gameObject.SetActive(false);
-                } 
+                };
             }
-            //si la respuesta fue correcta
-
         }
         else
         {
             textoPregunta.text = "¿Dónde será más fácil que el columpio se mueva?";
-            
-            //si la respuesta fue incorrecta
         }
+
         scrpit.enabled = true;
-
-        yield return null;
     }
-
-    
-    IEnumerator changeText(string text, float time)
-    {
-        yield return new WaitForSeconds(time);
-        textoPregunta.text = text;
-        yield return null;
-    }
-
-
-
 }
