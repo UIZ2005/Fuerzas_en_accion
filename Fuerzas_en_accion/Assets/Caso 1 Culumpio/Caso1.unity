@@ -10527,6 +10527,7 @@ MonoBehaviour:
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
+  audioAnguloFuerza: {fileID: 0}
 --- !u!1 &469083621
 GameObject:
   m_ObjectHideFlags: 0
@@ -28999,6 +29000,7 @@ MonoBehaviour:
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
+  audioAnguloFuerza: {fileID: 0}
 --- !u!1001 &1371342448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32038,11 +32040,12 @@ MonoBehaviour:
   vozSource: {fileID: 1537075583}
   audioVecCorrecto: {fileID: 8300000, guid: e5aec08b6489c424ea591638676a71f8, type: 3}
   audioVecIncorrecto: {fileID: 8300000, guid: 6ec7d114b9f652f4088c16c4119a2705, type: 3}
-  audioVecSiguiente: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  audioVecSiguiente: {fileID: 8300000, guid: 82c4dff3f67e3b04db5fa99da91b1d31, type: 3}
   audioPuntoCorrecto: {fileID: 8300000, guid: e5aec08b6489c424ea591638676a71f8, type: 3}
   audioPuntoIncorrecto: {fileID: 8300000, guid: 6ec7d114b9f652f4088c16c4119a2705, type: 3}
   audioPuntoSiguiente: {fileID: 8300000, guid: b8d1d715e41a71d4fb5e002539ee9234, type: 3}
   audioPuntoPreguntaError: {fileID: 8300000, guid: 274065d0c4b70af48b430f28f29287c9, type: 3}
+  audioAnguloFuerza: {fileID: 8300000, guid: 64e8c7423b4da764883c33c20a536deb, type: 3}
 --- !u!82 &1537075583
 AudioSource:
   m_ObjectHideFlags: 0
@@ -37091,14 +37094,15 @@ MonoBehaviour:
   isVec: 1
   time: 2.5
   DiagramaButton: {fileID: 294742930}
-  vozSource: {fileID: 0}
-  audioVecCorrecto: {fileID: 0}
+  vozSource: {fileID: 656593429}
+  audioVecCorrecto: {fileID: 8300000, guid: e6060c2326a29514ead1d4fa870de75e, type: 3}
   audioVecIncorrecto: {fileID: 0}
-  audioVecSiguiente: {fileID: 0}
+  audioVecSiguiente: {fileID: 8300000, guid: 82c4dff3f67e3b04db5fa99da91b1d31, type: 3}
   audioPuntoCorrecto: {fileID: 0}
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
+  audioAnguloFuerza: {fileID: 8300000, guid: 64e8c7423b4da764883c33c20a536deb, type: 3}
 --- !u!64 &1745689419
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39729,14 +39733,15 @@ MonoBehaviour:
   isVec: 1
   time: 2.5
   DiagramaButton: {fileID: 294742930}
-  vozSource: {fileID: 0}
+  vozSource: {fileID: 656593429}
   audioVecCorrecto: {fileID: 0}
-  audioVecIncorrecto: {fileID: 0}
+  audioVecIncorrecto: {fileID: 8300000, guid: 7b4b7d7830e198e46b5652eee56a6660, type: 3}
   audioVecSiguiente: {fileID: 0}
   audioPuntoCorrecto: {fileID: 0}
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
+  audioAnguloFuerza: {fileID: 0}
 --- !u!64 &1845924706
 MeshCollider:
   m_ObjectHideFlags: 0
