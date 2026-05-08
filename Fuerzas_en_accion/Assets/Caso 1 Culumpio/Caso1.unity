@@ -35148,12 +35148,12 @@ MonoBehaviour:
   panel: {fileID: 66501818}
   texto: {fileID: 1772322557}
   panelAOcultar: {fileID: 626743225}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 656593429}
   dialogo:
-  - audio: {fileID: 0}
+  - audio: {fileID: 8300000, guid: 49774ca4cca569d4f8757425ccc0f2c6, type: 3}
     subtitulo: "\xA1Excelente trabajo! Has aprendido que el torque no solo est\xE1
       en f\xF3rmulas"
-  - audio: {fileID: 0}
+  - audio: {fileID: 8300000, guid: 0841f7435f5fd864eb679f87fbe55363, type: 3}
     subtitulo: "tambi\xE9n est\xE1 en juegos tan cotidianos como empujar un columpio."
 --- !u!1 &1673199697
 GameObject:
@@ -37095,14 +37095,14 @@ MonoBehaviour:
   time: 2.5
   DiagramaButton: {fileID: 294742930}
   vozSource: {fileID: 656593429}
-  audioVecCorrecto: {fileID: 8300000, guid: e6060c2326a29514ead1d4fa870de75e, type: 3}
-  audioVecIncorrecto: {fileID: 0}
-  audioVecSiguiente: {fileID: 8300000, guid: 82c4dff3f67e3b04db5fa99da91b1d31, type: 3}
+  audioVecCorrecto: {fileID: 8300000, guid: e685bb9cc9d146c47a7dd7de23cf1bf4, type: 3}
+  audioVecIncorrecto: {fileID: 8300000, guid: d0f96368e69001e4a9cb0a40fa5cf806, type: 3}
+  audioVecSiguiente: {fileID: 8300000, guid: ca09a7cee3cd23840ab967ef3be30374, type: 3}
   audioPuntoCorrecto: {fileID: 0}
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
-  audioAnguloFuerza: {fileID: 8300000, guid: 64e8c7423b4da764883c33c20a536deb, type: 3}
+  audioAnguloFuerza: {fileID: 8300000, guid: 1f1d66b240b353f4ca3f72ef648c597f, type: 3}
 --- !u!64 &1745689419
 MeshCollider:
   m_ObjectHideFlags: 0

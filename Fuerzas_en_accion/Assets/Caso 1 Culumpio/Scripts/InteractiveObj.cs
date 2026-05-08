@@ -168,7 +168,8 @@ public class InteractiveObj : MonoBehaviour
                 if (!obj.isVec)
                 {
                     obj.gameObject.SetActive(false);
-                };
+                }
+                ;
             }
         }
         else
