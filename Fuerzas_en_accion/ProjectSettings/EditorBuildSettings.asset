@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SalaTrofeos/SalaBloqueados/sala bloqueados.unity
     guid: afb3853629b0b2b41a46452bbccf5744
+  - enabled: 1
+    path: Assets/Caso2_Nivel intermedio/Nivel intermedio 2.unity
+    guid: 5429af236aef72b4f9a618e256e1e727
   m_configObjects: {}

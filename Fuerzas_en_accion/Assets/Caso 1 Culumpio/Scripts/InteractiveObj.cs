@@ -106,7 +106,7 @@ public class InteractiveObj : MonoBehaviour
             yield return StartCoroutine(MostrarLinea(
                 "Ahora, vamos a ver cuáles fuerzas son las que se aplican en un columpio, para eso abre el diagrama de fuerzas",
                 audioVecSiguiente,
-                4 + f
+                4f
             ));
 
             progreso.Avanzar();
