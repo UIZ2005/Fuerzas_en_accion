@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class ValidacionPreguntasCaso2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [Header("diagrama")]
+    [Header("Diagrama")]
     public GameObject diagrama;
     public GameObject diagrama1;
     public GameObject diagrama2;
@@ -37,158 +36,292 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
     public TMP_InputField Balon4;
     public TMP_InputField Balon4_1;
 
-
     [Header("Pregunta 4.2")]
     public GameObject pregunta4_2;
     public TMP_InputField Balon4_2;
 
+    [Header("Sistema de Subtítulos")]
+    public GameObject panelSubtitulos;          // Panel que contiene el subtítulo
+    public TextMeshProUGUI textoSubtitulos;     // Texto donde se mostrará el subtítulo
+
+    [Header("Audios de Retroalimentación")]
+    public AudioClip audioCorrecto;             // Audio para respuesta correcta
+    public AudioClip audioIncorrecto;           // Audio para respuesta incorrecta
+
+    // Textos fijos solicitados
+    private string dialogoCorrecto =
+        "Correcto muy bien! Hiciste el cálculo adecuadamente.";
+
+    private string dialogoIncorrecto =
+        "¿Seguro hiciste bien el cálculo?";
+
     private AudioManager audio;
+    private AudioSource audioSourceSubtitulos;
+
     void Start()
     {
         audio = FindAnyObjectByType<AudioManager>();
+
+        // Obtener o crear AudioSource para reproducir los audios de subtítulos
+        audioSourceSubtitulos = GetComponent<AudioSource>();
+        if (audioSourceSubtitulos == null)
+        {
+            audioSourceSubtitulos = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Ocultar panel al iniciar
+        if (panelSubtitulos != null)
+        {
+            panelSubtitulos.SetActive(false);
+        }
     }
+
+    // ==========================================================
+    // SISTEMA DE SUBTÍTULOS
+    // ==========================================================
+
+    private IEnumerator MostrarSubtituloConAudio(
+        string texto,
+        AudioClip clip,
+        System.Action accionAlFinal = null)
+    {
+        // Mostrar panel
+        if (panelSubtitulos != null)
+            panelSubtitulos.SetActive(true);
+
+        // Asignar texto
+        if (textoSubtitulos != null)
+            textoSubtitulos.text = texto;
+
+        // Duración por defecto si no hay audio
+        float duracion = 2f;
+
+        // Reproducir audio
+        if (clip != null && audioSourceSubtitulos != null)
+        {
+            audioSourceSubtitulos.clip = clip;
+            audioSourceSubtitulos.Play();
+            duracion = clip.length;
+        }
+
+        // Esperar hasta que termine el audio
+        yield return new WaitForSeconds(duracion);
+
+        // Ocultar panel
+        if (panelSubtitulos != null)
+            panelSubtitulos.SetActive(false);
+
+        // Ejecutar acción posterior (cambiar de pregunta, ocultar paneles, etc.)
+        if (accionAlFinal != null)
+        {
+            accionAlFinal.Invoke();
+        }
+    }
+
+    private void MostrarRespuestaCorrecta(System.Action accionAlFinal = null)
+    {
+        // Sonido original del juego
+        if (audio != null)
+            audio.seleccionAudio(1);
+
+        // Mostrar subtítulo y esperar a que termine el audio
+        StartCoroutine(MostrarSubtituloConAudio(
+            dialogoCorrecto,
+            audioCorrecto,
+            accionAlFinal
+        ));
+    }
+
+    private void MostrarRespuestaIncorrecta()
+    {
+        // Sonido original del juego
+        if (audio != null)
+            audio.seleccionAudio(2);
+
+        // Mostrar subtítulo y audio sin cambiar de pantalla
+        StartCoroutine(MostrarSubtituloConAudio(
+            dialogoIncorrecto,
+            audioIncorrecto
+        ));
+    }
+
+    // ==========================================================
+    // PREGUNTA 1
+    // ==========================================================
 
     public void Q1()
     {
         if (Torque1.text == "0.30")
         {
             Torque1.gameObject.GetComponent<Image>().color = Color.green;
+
             if (AC1.text == "86.6")
             {
-                //todo esta bien, pasa a la siguiente pregunta
                 AC1.gameObject.GetComponent<Image>().color = Color.green;
-                audio.seleccionAudio(1);
-                pregunta1.SetActive(false);
-                diagrama.SetActive(false);
-                diagrama1.SetActive(true);
+
+                MostrarRespuestaCorrecta(() =>
+                {
+                    pregunta1.SetActive(false);
+                    diagrama.SetActive(false);
+                    diagrama1.SetActive(true);
+                });
             }
             else
             {
-                //La aceleracion angular esta mala
                 AC1.gameObject.GetComponent<Image>().color = Color.red;
-                audio.seleccionAudio(2);
+                MostrarRespuestaIncorrecta();
             }
         }
         else
         {
-            //El torque esta malo
             Torque1.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
+
+    // ==========================================================
+    // PREGUNTA 2
+    // ==========================================================
+
     public void Q2()
     {
         if (Torque2.text == "0.46")
         {
-            //todo esta bien, pasa a la siguiente pregunta
-            audio.seleccionAudio(1);
-            diagrama1.SetActive(false);
-            diagrama2.SetActive(true);
-            pregunta2.SetActive(false);
+            Torque2.gameObject.GetComponent<Image>().color = Color.green;
+
+            MostrarRespuestaCorrecta(() =>
+            {
+                diagrama1.SetActive(false);
+                diagrama2.SetActive(true);
+                pregunta2.SetActive(false);
+            });
         }
         else
         {
-            //El torque esta malo
-
             Torque2.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
+
+    // ==========================================================
+    // PREGUNTA 3
+    // ==========================================================
+
     public void Q3()
     {
         if (Balon.text == "0.6")
         {
             Balon.gameObject.GetComponent<Image>().color = Color.green;
-            //Balon esta bien
+
             if (Cilindro.text == "0.6")
             {
-                audio.seleccionAudio(1);
-                pregunta3.SetActive(false);
-                pregunta3_2.SetActive(true);
+                Cilindro.gameObject.GetComponent<Image>().color = Color.green;
+
+                MostrarRespuestaCorrecta(() =>
+                {
+                    pregunta3.SetActive(false);
+                    pregunta3_2.SetActive(true);
+                });
             }
             else
             {
                 Cilindro.gameObject.GetComponent<Image>().color = Color.red;
-                audio.seleccionAudio(2);
+                MostrarRespuestaIncorrecta();
             }
         }
         else
         {
-            //El torque esta malo
-
             Balon.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
+
+    // ==========================================================
+    // PREGUNTA 3.2
+    // ==========================================================
+
     public void Q3_2()
     {
         if (Balon2.text == "69.4")
         {
             Balon2.gameObject.GetComponent<Image>().color = Color.green;
-            //Balon esta bien
+
             if (Cilindro2.text == "104.2")
             {
-                audio.seleccionAudio(1);
-                pregunta3_2.SetActive(false);
-                diagrama2.SetActive(false);
-                diagrama3.SetActive(true);
+                Cilindro2.gameObject.GetComponent<Image>().color = Color.green;
+
+                MostrarRespuestaCorrecta(() =>
+                {
+                    pregunta3_2.SetActive(false);
+                    diagrama2.SetActive(false);
+                    diagrama3.SetActive(true);
+                });
             }
             else
             {
                 Cilindro2.gameObject.GetComponent<Image>().color = Color.red;
-                audio.seleccionAudio(2);
+                MostrarRespuestaIncorrecta();
             }
         }
         else
         {
-            //El torque esta malo
-
             Balon2.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
+
+    // ==========================================================
+    // PREGUNTA 4
+    // ==========================================================
+
     public void Q4()
     {
         if (Balon4.text == "0")
         {
             Balon4.gameObject.GetComponent<Image>().color = Color.green;
-            //Balon esta bien
+
             if (Balon4_1.text == "2.4")
             {
-                audio.seleccionAudio(1);
-                pregunta4.SetActive(false);
-                pregunta4_2.SetActive(false);
+                Balon4_1.gameObject.GetComponent<Image>().color = Color.green;
+
+                MostrarRespuestaCorrecta(() =>
+                {
+                    pregunta4.SetActive(false);
+                    pregunta4_2.SetActive(false);
+                });
             }
             else
             {
                 Balon4_1.gameObject.GetComponent<Image>().color = Color.red;
-                audio.seleccionAudio(2);
+                MostrarRespuestaIncorrecta();
             }
         }
         else
         {
-            //El torque esta malo
-
             Balon4.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
+
+    // ==========================================================
+    // PREGUNTA 4.2
+    // ==========================================================
+
     public void Q4_2()
     {
         if (Balon4_2.text == "693")
         {
             Balon4_2.gameObject.GetComponent<Image>().color = Color.green;
-            //Balon esta bien
-                audio.seleccionAudio(1);
+
+            MostrarRespuestaCorrecta(() =>
+            {
                 pregunta4_2.SetActive(false);
-    
+            });
         }
         else
         {
-            //El torque esta malo
-
             Balon4_2.gameObject.GetComponent<Image>().color = Color.red;
-            audio.seleccionAudio(2);
+            MostrarRespuestaIncorrecta();
         }
     }
 }
