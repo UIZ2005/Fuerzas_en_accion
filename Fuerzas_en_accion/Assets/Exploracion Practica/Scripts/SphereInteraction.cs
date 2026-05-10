@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SphereInteraction : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class SphereInteraction : MonoBehaviour
     [Header("Feedback")]
     public TextMeshProUGUI subtitleText;
     public GameObject subtitlePanel;
+
+    [Header("Feedback Visual")]
+    public RawImage correctRawImage;
+    public RawImage incorrectRawImage;
 
     [TextArea] public string correctSubtitle;
     [TextArea] public string incorrectSubtitle;
@@ -53,11 +58,17 @@ public class SphereInteraction : MonoBehaviour
 
         if (isCorrect)
         {
+            //  Mostrar imagen correcta
+            correctRawImage.gameObject.SetActive(true);
+
+            //  Ocultar incorrecta
+            incorrectRawImage.gameObject.SetActive(false);
+
             audioSource.Stop();
             audioSource.clip = abrirBien;
             audioSource.Play();
 
-            //  Panel +  texto
+            // Panel + texto
             subtitlePanel.SetActive(true);
             subtitleText.text = correctSubtitle;
 
@@ -65,6 +76,12 @@ public class SphereInteraction : MonoBehaviour
         }
         else if (colorName == "Morada")
         {
+            //  Mostrar imagen incorrecta
+            incorrectRawImage.gameObject.SetActive(true);
+
+            //  Ocultar correcta
+            correctRawImage.gameObject.SetActive(false);
+
             audioSource.Stop();
             audioSource.clip = abrirMal;
             audioSource.Play();
@@ -76,6 +93,12 @@ public class SphereInteraction : MonoBehaviour
         }
         else if (colorName == "Azul")
         {
+            //  Mostrar imagen incorrecta
+            incorrectRawImage.gameObject.SetActive(true);
+
+            //  Ocultar correcta
+            correctRawImage.gameObject.SetActive(false);
+
             audioSource.Stop();
             audioSource.clip = abrirMal;
             audioSource.Play();
@@ -89,8 +112,12 @@ public class SphereInteraction : MonoBehaviour
         //  Esperar a que termine el audio
         yield return new WaitForSeconds(audioSource.clip.length);
 
-        //  Ocultar texto
+        // Ocultar texto
         subtitleText.text = "";
+
+        // Ocultar imágenes
+        correctRawImage.gameObject.SetActive(false);
+        incorrectRawImage.gameObject.SetActive(false);
 
         // Ocultar panel
         subtitlePanel.SetActive(false);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class VectorValidator : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class VectorValidator : MonoBehaviour
 
     public TextMeshProUGUI subtitleText;
     public GameObject subtitlePanel;
+
+    [Header("Feedback Visual")]
+    public RawImage correctRawImage;
+    public RawImage incorrectRawImage;
 
     [TextArea] public string correctSubtitle;
     [TextArea] public string incorrectSubtitle;
@@ -81,12 +86,24 @@ public class VectorValidator : MonoBehaviour
         // Validación global
         bool allCorrect = isCorrectR && isCorrectF;
 
-        if (allCorrect)
-        {
+        if(allCorrect)
+{
+            //  Mostrar imagen correcta
+            correctRawImage.gameObject.SetActive(true);
+
+            //  Ocultar incorrecta
+            incorrectRawImage.gameObject.SetActive(false);
+
             StartCoroutine(PlayFeedback(correctAudio, correctSubtitle));
         }
-        else
+else
         {
+            //  Mostrar imagen incorrecta
+            incorrectRawImage.gameObject.SetActive(true);
+
+            //  Ocultar correcta
+            correctRawImage.gameObject.SetActive(false);
+
             StartCoroutine(PlayFeedback(incorrectAudio, incorrectSubtitle));
         }
     }
@@ -111,6 +128,10 @@ public class VectorValidator : MonoBehaviour
 
 
         subtitleText.text = "";
+
+        // Ocultar imágenes
+        correctRawImage.gameObject.SetActive(false);
+        incorrectRawImage.gameObject.SetActive(false);
 
         subtitlePanel.SetActive(false);
     }

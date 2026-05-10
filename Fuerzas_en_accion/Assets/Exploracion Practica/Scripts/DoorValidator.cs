@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DoorValidator : MonoBehaviour
 {
@@ -34,6 +35,10 @@ public class DoorValidator : MonoBehaviour
     public TextMeshProUGUI subtitleText;
     public GameObject subtitlePanel;
 
+    [Header("Feedback Visual")]
+    public RawImage correctRawImage;
+    public RawImage incorrectRawImage;
+
     [TextArea] public string correctSubtitle;
     [TextArea] public string incorrectSubtitle;
 
@@ -50,6 +55,16 @@ public class DoorValidator : MonoBehaviour
 
     private bool validating = false;
 
+    void ShowFeedbackVisual(bool correct)
+{
+    // Activar panel primero
+    subtitlePanel.SetActive(true);
+
+    // Mostrar imagen correspondiente
+    correctRawImage.gameObject.SetActive(correct);
+    incorrectRawImage.gameObject.SetActive(!correct);
+}
+
     public void ValidarRespuesta()
     {
         if (validating) return;
@@ -62,10 +77,13 @@ public class DoorValidator : MonoBehaviour
     {
         bool success = IsCorrectConfiguration();
 
-        subtitlePanel.SetActive(true);
+
 
         if (success)
         {
+            //  Mostrar feedback correcto
+            ShowFeedbackVisual(true);
+
             sfxSource.PlayOneShot(abrirBien);
 
             voiceSource.Stop();
@@ -78,6 +96,9 @@ public class DoorValidator : MonoBehaviour
         }
         else
         {
+            //  Mostrar feedback incorrecto
+            ShowFeedbackVisual(false);
+
             sfxSource.PlayOneShot(abrirMal);
 
             voiceSource.Stop();
@@ -92,6 +113,12 @@ public class DoorValidator : MonoBehaviour
         yield return new WaitForSeconds(voiceSource.clip.length);
 
         subtitleText.text = "";
+
+        // Ocultar imágenes
+        correctRawImage.gameObject.SetActive(false);
+        incorrectRawImage.gameObject.SetActive(false);
+
+        // Ocultar panel
         subtitlePanel.SetActive(false);
 
         yield return new WaitForSeconds(0.3f);

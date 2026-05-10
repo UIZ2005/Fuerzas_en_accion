@@ -27,6 +27,10 @@ public class AnswerValidator : MonoBehaviour
 
     public TextMeshProUGUI subtitleText;
 
+    [Header("Feedback Visual")]
+    public RawImage correctRawImage;
+    public RawImage incorrectRawImage;
+
     [TextArea] public string correctSubtitle;
     [TextArea] public string incorrectSubtitle;
 
@@ -73,6 +77,12 @@ public class AnswerValidator : MonoBehaviour
             cb.pressedColor = Color.green;
             btn.colors = cb;
 
+            // ✅ ACTIVAR imagen correcta
+            correctRawImage.gameObject.SetActive(true);
+
+            // ❌ DESACTIVAR incorrecta
+            incorrectRawImage.gameObject.SetActive(false);
+
             StartCoroutine(PlayFeedback(correctAudio, correctSubtitle));
         }
         else // 🔴 RESPUESTA INCORRECTA
@@ -85,6 +95,12 @@ public class AnswerValidator : MonoBehaviour
 
             if (tmpText != null)
                 tmpText.color = Color.white;
+
+            // ✅ ACTIVAR imagen incorrecta
+            incorrectRawImage.gameObject.SetActive(true);
+
+            // ❌ DESACTIVAR correcta
+            correctRawImage.gameObject.SetActive(false);
 
             StartCoroutine(PlayFeedback(incorrectAudio, incorrectSubtitle));
         }
@@ -113,5 +129,9 @@ public class AnswerValidator : MonoBehaviour
 
         // 🟫 Ocultar panel
         subtitlePanel.SetActive(false);
+
+        // Ocultar imágenes
+        correctRawImage.gameObject.SetActive(false);
+        incorrectRawImage.gameObject.SetActive(false);
     }
 }
