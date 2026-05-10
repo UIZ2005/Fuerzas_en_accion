@@ -83,7 +83,7 @@ public class InteractiveObj : MonoBehaviour
             yield return StartCoroutine(MostrarLinea(
                 "¡Exacto!\nCuando la fuerza es perpendicular al brazo de palanca, el torque es máximo",
                 audioVecCorrecto,
-                2.5f
+                4f
             ));
 
             audio.seleccionAudio(1);
@@ -93,7 +93,7 @@ public class InteractiveObj : MonoBehaviour
             yield return StartCoroutine(MostrarLinea(
                 "Recuerda que el torque depende del seno del ángulo. A 90° se genera el máximo efecto",
                 audioVecIncorrecto,
-                2.5f
+                3f
             ));
 
             audio.seleccionAudio(2);
@@ -106,7 +106,7 @@ public class InteractiveObj : MonoBehaviour
             yield return StartCoroutine(MostrarLinea(
                 "Ahora, vamos a ver cuáles fuerzas son las que se aplican en un columpio, para eso abre el diagrama de fuerzas",
                 audioVecSiguiente,
-                2.5f
+                4f
             ));
 
             progreso.Avanzar();
@@ -168,7 +168,8 @@ public class InteractiveObj : MonoBehaviour
                 if (!obj.isVec)
                 {
                     obj.gameObject.SetActive(false);
-                };
+                }
+                ;
             }
         }
         else
