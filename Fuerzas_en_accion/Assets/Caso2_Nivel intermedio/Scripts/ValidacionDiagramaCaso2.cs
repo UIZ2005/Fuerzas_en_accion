@@ -307,4 +307,4 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
 
         MostrarRespuestaIncorrecta();
     }
-}
+}                                                                                                                                                                                                                                                                       

@@ -54,7 +54,7 @@ public class SubtitleSystem : MonoBehaviour
             subtitlePanel.SetActive(false);
 
             //  pausa de 3 segundos
-            yield return new WaitForSeconds(3f);
+            //yield return new WaitForSeconds(3f);
         }
     }
 

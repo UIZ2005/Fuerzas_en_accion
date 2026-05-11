@@ -14,6 +14,12 @@ public class QuestionController : MonoBehaviour
     public CanvasGroup panelVectores3;
     public CanvasGroup panelCorrecto;
 
+    [Header("Panel adicional al acertar")]
+    public GameObject panelAcierto;
+
+    [Header("Tiempo del panel adicional")]
+    public float tiempoPanelAcierto = 7f;   // Se desactiva después de 2 segundos
+
     [Header("Texto Puntaje")]
     public TextMeshProUGUI scoreText;
 
@@ -35,6 +41,12 @@ public class QuestionController : MonoBehaviour
         panelVectores2.alpha = 0;
         panelVectores3.alpha = 0;
         panelCorrecto.alpha = 0;
+
+        // Asegurarse de que el panel adicional inicie desactivado
+        if (panelAcierto != null)
+        {
+            panelAcierto.SetActive(false);
+        }
 
         UpdateScoreUI();
     }
@@ -79,9 +91,7 @@ public class QuestionController : MonoBehaviour
     {
         Vector3 rot = NormalizeEuler(current.eulerAngles);
 
-        
         bool xOk = Mathf.Abs(rot.x - 0) <= 20;
-
         bool yOk = rot.y >= 150 && rot.y <= 170;
         bool zOk = rot.z >= -40 && rot.z <= -20;
 
@@ -107,7 +117,7 @@ public class QuestionController : MonoBehaviour
     {
         isTransitioning = true;
 
-        
+        // Sumar puntos
         score += 10;
         UpdateScoreUI();
 
@@ -117,7 +127,16 @@ public class QuestionController : MonoBehaviour
             audioSource.PlayOneShot(correctSound);
         }
 
-        // Panel correcto
+        // ACTIVAR PANEL ADICIONAL AL ACERTAR
+        if (panelAcierto != null)
+        {
+            panelAcierto.SetActive(true);
+
+            // Iniciar corrutina para desactivarlo después de 2 segundos
+            StartCoroutine(DesactivarPanelAcierto());
+        }
+
+        // Mostrar panel correcto
         yield return StartCoroutine(Fade(panelCorrecto, 0, 1));
         yield return new WaitForSeconds(panelVisibleTime);
         yield return StartCoroutine(Fade(panelCorrecto, 1, 0));
@@ -137,6 +156,16 @@ public class QuestionController : MonoBehaviour
         yield return StartCoroutine(Fade(GetCurrentPanel(), 0, 1));
 
         isTransitioning = false;
+    }
+
+    IEnumerator DesactivarPanelAcierto()
+    {
+        yield return new WaitForSeconds(tiempoPanelAcierto);
+
+        if (panelAcierto != null)
+        {
+            panelAcierto.SetActive(false);
+        }
     }
 
     void UpdateScoreUI()
