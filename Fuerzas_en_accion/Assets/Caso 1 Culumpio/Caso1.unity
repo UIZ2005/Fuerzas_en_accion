@@ -16889,6 +16889,7 @@ MonoBehaviour:
   check2: {fileID: 391058965}
   check3: {fileID: 169765889}
   candado: {fileID: 1029243792}
+  claveTrofeo: TrofeoBronce
 --- !u!1 &746976428
 GameObject:
   m_ObjectHideFlags: 0
@@ -32250,6 +32251,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1865056248366311061, guid: facf4a3c58d888d44a39a29f4af076e2, type: 3}
+--- !u!1 &1520800755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1520800756}
+  m_Layer: 0
+  m_Name: Reiniciar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1520800756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520800755}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 915.02673, y: 573.95264, z: 433.43423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521359098
 GameObject:
   m_ObjectHideFlags: 0
@@ -48973,3 +49005,4 @@ SceneRoots:
   - {fileID: 1728356211}
   - {fileID: 590846685}
   - {fileID: 1326661377}
+  - {fileID: 1520800756}

@@ -3564,6 +3564,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 52.854404, y: 5.6603203, z: 0.37678474}
   m_Center: {x: 7.6641507, y: -2.3301907, z: 1.9620479}
+--- !u!1 &1571635900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571635902}
+  - component: {fileID: 1571635901}
+  m_Layer: 0
+  m_Name: DesbloquearTrofeo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1571635901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571635900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a954df9671ce6894781423ce1e9a8772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoTrofeo: 2
+--- !u!4 &1571635902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571635900}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0998244, y: 2.7432952, z: 1.5643736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632919357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5092,3 +5137,4 @@ SceneRoots:
   - {fileID: 1632919361}
   - {fileID: 935944594}
   - {fileID: 1706315483}
+  - {fileID: 1571635902}

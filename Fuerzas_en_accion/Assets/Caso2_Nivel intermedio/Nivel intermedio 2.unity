@@ -6204,6 +6204,7 @@ MonoBehaviour:
   check2: {fileID: 62335487}
   check3: {fileID: 159146103}
   candado: {fileID: 1589131733}
+  claveTrofeo: TrofeoPlata
 --- !u!1 &398460660
 GameObject:
   m_ObjectHideFlags: 0
@@ -21324,7 +21325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1482474188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25752,6 +25753,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785004085}
   m_CullTransparentMesh: 1
+--- !u!1 &1786946625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786946626}
+  - component: {fileID: 1786946627}
+  m_Layer: 0
+  m_Name: DesbloquearTrofeo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786946626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786946625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0998244, y: 2.7432952, z: 1.5643736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1786946627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786946625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a954df9671ce6894781423ce1e9a8772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoTrofeo: 1
 --- !u!1 &1787464683
 GameObject:
   m_ObjectHideFlags: 0
@@ -47643,3 +47689,4 @@ SceneRoots:
   - {fileID: 1395504584}
   - {fileID: 183105991}
   - {fileID: 1433476488}
+  - {fileID: 1786946626}

@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class barraProgreso : MonoBehaviour
 {
-
     public Image barra;
 
     public GameObject check1;
     public GameObject check2;
     public GameObject check3;
 
-    public GameObject candado; 
+    public GameObject candado;
 
     private int nivel = 0;
+
+    // CLAVE que se guardará en PlayerPrefs.
+    // Cambia este valor en el Inspector según la escena:
+    // "TrofeoBronce", "TrofeoPlata" o "TrofeoOro"
+    [Header("Clave del trofeo a desbloquear")]
+    public string claveTrofeo;
 
     void Start()
     {
@@ -31,9 +35,18 @@ public class barraProgreso : MonoBehaviour
 
     void Update()
     {
+        // Solo para pruebas
         if (Input.GetKeyDown(KeyCode.E))
         {
             Avanzar();
+        }
+
+        // Reinicia el trofeo actual con la tecla R
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerPrefs.DeleteKey(claveTrofeo);
+            PlayerPrefs.Save();
+            Debug.Log("Trofeo reiniciado: " + claveTrofeo);
         }
     }
 
@@ -77,17 +90,15 @@ public class barraProgreso : MonoBehaviour
                 break;
 
             case 4:
-                //  quitar candado
                 if (candado != null)
                 {
                     StartCoroutine(AnimarDesbloqueo());
                 }
                 break;
-
         }
     }
 
-    //  Barra animacion
+    // Barra animación
     IEnumerator AnimarBarra(float objetivo)
     {
         float tiempo = 0;
@@ -106,7 +117,7 @@ public class barraProgreso : MonoBehaviour
         barra.fillAmount = objetivo;
     }
 
-    //  Check animado 
+    // Check animado
     IEnumerator AnimarCheck(GameObject check)
     {
         if (check == null) yield break;
@@ -122,13 +133,12 @@ public class barraProgreso : MonoBehaviour
             tiempo += Time.deltaTime;
             float t = tiempo / duracion;
 
-            // escala con rebote
+            // Escala con rebote
             float scale = Mathf.Lerp(0f, 1.2f, t);
             if (t > 0.7f)
                 scale = Mathf.Lerp(1.2f, 1f, (t - 0.7f) / 0.3f);
 
             rt.localScale = Vector3.one * scale;
-
             cg.alpha = t;
 
             yield return null;
@@ -162,5 +172,11 @@ public class barraProgreso : MonoBehaviour
         }
 
         candado.SetActive(false);
+
+        // Guardar el trofeo correspondiente
+        PlayerPrefs.SetInt(claveTrofeo, 1);
+        PlayerPrefs.Save();
+
+        Debug.Log("Trofeo desbloqueado: " + claveTrofeo);
     }
 }
