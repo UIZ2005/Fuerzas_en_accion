@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0319f4dd6f9ab54bb242b9e51d185e5
+guid: 55bd947a9729d55449c73150ee774287
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hair-cards
-    second: {fileID: 2100000, guid: e75ac09a956e9fe498851c29d5fc64bb, type: 2}
+    second: {fileID: 2100000, guid: 09bb4ff01fd8d5541a71050a6cd312cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,12 +18,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: material
-    second: {fileID: 2100000, guid: 62e46e735a7481b4083eef4bf2d458e4, type: 2}
+    second: {fileID: 2100000, guid: 1c80f8913a98cee42b7946c91022eed9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: modddif_material_0.002
-    second: {fileID: 2100000, guid: 6675114ddfb7aca4f8be3914ba0b43c6, type: 2}
+    second: {fileID: 2100000, guid: f9d60c1c450ff2e41862e729580291dd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,8 +36,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'Hips' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -103,12 +102,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: Adelanto3_Avatar_deportivo(Clone)
-      parentName: 
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -119,7 +113,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
