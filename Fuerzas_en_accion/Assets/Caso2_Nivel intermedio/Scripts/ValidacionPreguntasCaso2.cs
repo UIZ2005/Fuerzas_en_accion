@@ -324,4 +324,4 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
             MostrarRespuestaIncorrecta();
         }
     }
-}
+}       

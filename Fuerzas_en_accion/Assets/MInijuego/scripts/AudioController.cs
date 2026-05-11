@@ -16,6 +16,9 @@ public class AudioController : MonoBehaviour
     public CanvasGroup canvasFinal;
     public float duracionFadeCanvas = 1f;
 
+    [Header("Panel a activar al finalizar")]
+    public GameObject panelActivar;
+
     [Header("Velocidad")]
     public float tiempoRestanteParaAcelerar = 30f; // cuando falten 30s
     public float velocidadAcelerada = 1.5f;
@@ -24,6 +27,12 @@ public class AudioController : MonoBehaviour
     {
         canvasFinal.alpha = 0;
         canvasFinal.gameObject.SetActive(true);
+
+        // Asegurar que el panel adicional comience desactivado
+        if (panelActivar != null)
+        {
+            panelActivar.SetActive(false);
+        }
 
         StartCoroutine(ControlAudio());
         StartCoroutine(AcelerarMusica());
@@ -75,6 +84,13 @@ public class AudioController : MonoBehaviour
             yield return null;
         }
 
+        // Asegurar alpha final
         canvasFinal.alpha = 1;
+
+        // ACTIVAR EL PANEL ASIGNADO
+        if (panelActivar != null)
+        {
+            panelActivar.SetActive(true);
+        }
     }
 }
