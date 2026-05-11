@@ -1,10 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class barraProgreso : MonoBehaviour
 {
+    [Header("UI")]
     public Image barra;
 
     public GameObject check1;
@@ -13,13 +14,25 @@ public class barraProgreso : MonoBehaviour
 
     public GameObject candado;
 
-    private int nivel = 0;
-
-    // CLAVE que se guardará en PlayerPrefs.
-    // Cambia este valor en el Inspector según la escena:
-    // "TrofeoBronce", "TrofeoPlata" o "TrofeoOro"
     [Header("Clave del trofeo a desbloquear")]
-    public string claveTrofeo;
+    // Valores posibles:
+    // "TrofeoBronce"
+    // "TrofeoPlata"
+    // "TrofeoOro"
+    public string claveTrofeo = "TrofeoBronce";
+
+    [Header("Audio del trofeo")]
+    // Asigna un AudioSource en el Inspector
+    public AudioSource audioSourceTrofeo;
+
+    // Asigna aquÃ­ el sonido correspondiente (Bronce, Plata u Oro)
+    public AudioClip sonidoTrofeo;
+
+    // Volumen aproximado a -14 dB
+    [Range(0f, 1f)]
+    public float volumenTrofeo = 0.2f;
+
+    private int nivel = 0;
 
     void Start()
     {
@@ -98,7 +111,7 @@ public class barraProgreso : MonoBehaviour
         }
     }
 
-    // Barra animación
+    // Barra animaciÃ³n
     IEnumerator AnimarBarra(float objetivo)
     {
         float tiempo = 0;
@@ -148,7 +161,7 @@ public class barraProgreso : MonoBehaviour
         cg.alpha = 1;
     }
 
-    // Animación del candado
+    // AnimaciÃ³n del candado
     IEnumerator AnimarDesbloqueo()
     {
         RectTransform rt = candado.GetComponent<RectTransform>();
@@ -178,5 +191,26 @@ public class barraProgreso : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log("Trofeo desbloqueado: " + claveTrofeo);
+
+        // Reproducir el sonido asignado desde el Inspector
+        ReproducirSonidoTrofeo();
+    }
+
+    void ReproducirSonidoTrofeo()
+    {
+        if (audioSourceTrofeo == null)
+        {
+            Debug.LogWarning("No se asignÃ³ un AudioSource para el trofeo.");
+            return;
+        }
+
+        if (sonidoTrofeo == null)
+        {
+            Debug.LogWarning("No se asignÃ³ un AudioClip para el trofeo.");
+            return;
+        }
+
+        audioSourceTrofeo.volume = volumenTrofeo; // 0.2 â‰ˆ -14 dB
+        audioSourceTrofeo.PlayOneShot(sonidoTrofeo);
     }
 }
