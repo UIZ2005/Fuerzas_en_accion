@@ -8,6 +8,8 @@ public class ResetPlayerPrefs : MonoBehaviour
         PlayerPrefs.DeleteKey("TrofeoBronce");
         PlayerPrefs.DeleteKey("TrofeoPlata");
         PlayerPrefs.DeleteKey("TrofeoOro");
+        PlayerPrefs.DeleteKey("Medalla");
+        PlayerPrefs.DeleteKey("SubsInicial");
 
         // Guarda los cambios
         PlayerPrefs.Save();

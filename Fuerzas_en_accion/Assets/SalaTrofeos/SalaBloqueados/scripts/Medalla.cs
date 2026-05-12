@@ -65,9 +65,8 @@ public class Medalla : MonoBehaviour
     // Reinicia todas las medallas (agrega más claves según necesites)
     public static void ReiniciarTodas()
     {
-        PlayerPrefs.DeleteKey("MedallaCaso1");
-        PlayerPrefs.DeleteKey("MedallaCaso2");
-        PlayerPrefs.DeleteKey("MedallaCaso3");
+        PlayerPrefs.DeleteKey("Medalla1");
+
         PlayerPrefs.Save();
 
         Debug.Log("Todas las medallas han sido reiniciadas.");
