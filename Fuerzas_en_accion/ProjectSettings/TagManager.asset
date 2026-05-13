@@ -11,6 +11,8 @@ TagManager:
   - FxTemporaire
   - Columpio
   - Boton
+  - plato
+  - pinon
   layers:
   - Default
   - TransparentFX
