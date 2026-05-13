@@ -22,15 +22,16 @@ public class barraProgreso : MonoBehaviour
     public string claveTrofeo = "TrofeoBronce";
 
     [Header("Audio del trofeo")]
-    // Asigna un AudioSource en el Inspector
     public AudioSource audioSourceTrofeo;
-
-    // Asigna aquí el sonido correspondiente (Bronce, Plata u Oro)
     public AudioClip sonidoTrofeo;
 
     // Volumen aproximado a -14 dB
     [Range(0f, 1f)]
     public float volumenTrofeo = 0.2f;
+
+    [Header("Panel al desbloquear")]
+    // Este panel se activará al finalizar la animación del candado
+    public GameObject panelDesbloqueo;
 
     private int nivel = 0;
 
@@ -44,6 +45,10 @@ public class barraProgreso : MonoBehaviour
 
         if (candado != null)
             candado.SetActive(true);
+
+        // Asegurar que el panel inicie oculto
+        if (panelDesbloqueo != null)
+            panelDesbloqueo.SetActive(false);
     }
 
     void Update()
@@ -111,7 +116,6 @@ public class barraProgreso : MonoBehaviour
         }
     }
 
-    // Barra animación
     IEnumerator AnimarBarra(float objetivo)
     {
         float tiempo = 0;
@@ -130,7 +134,6 @@ public class barraProgreso : MonoBehaviour
         barra.fillAmount = objetivo;
     }
 
-    // Check animado
     IEnumerator AnimarCheck(GameObject check)
     {
         if (check == null) yield break;
@@ -146,7 +149,6 @@ public class barraProgreso : MonoBehaviour
             tiempo += Time.deltaTime;
             float t = tiempo / duracion;
 
-            // Escala con rebote
             float scale = Mathf.Lerp(0f, 1.2f, t);
             if (t > 0.7f)
                 scale = Mathf.Lerp(1.2f, 1f, (t - 0.7f) / 0.3f);
@@ -161,7 +163,6 @@ public class barraProgreso : MonoBehaviour
         cg.alpha = 1;
     }
 
-    // Animación del candado
     IEnumerator AnimarDesbloqueo()
     {
         RectTransform rt = candado.GetComponent<RectTransform>();
@@ -184,6 +185,7 @@ public class barraProgreso : MonoBehaviour
             yield return null;
         }
 
+        // Ocultar el candado
         candado.SetActive(false);
 
         // Guardar el trofeo correspondiente
@@ -192,25 +194,22 @@ public class barraProgreso : MonoBehaviour
 
         Debug.Log("Trofeo desbloqueado: " + claveTrofeo);
 
-        // Reproducir el sonido asignado desde el Inspector
+        // Reproducir sonido del trofeo
         ReproducirSonidoTrofeo();
+
+        // Activar el panel asignado
+        if (panelDesbloqueo != null)
+        {
+            panelDesbloqueo.SetActive(true);
+        }
     }
 
     void ReproducirSonidoTrofeo()
     {
-        if (audioSourceTrofeo == null)
-        {
-            Debug.LogWarning("No se asignó un AudioSource para el trofeo.");
+        if (audioSourceTrofeo == null || sonidoTrofeo == null)
             return;
-        }
 
-        if (sonidoTrofeo == null)
-        {
-            Debug.LogWarning("No se asignó un AudioClip para el trofeo.");
-            return;
-        }
-
-        audioSourceTrofeo.volume = volumenTrofeo; // 0.2 ≈ -14 dB
+        audioSourceTrofeo.volume = volumenTrofeo;
         audioSourceTrofeo.PlayOneShot(sonidoTrofeo);
     }
 }
