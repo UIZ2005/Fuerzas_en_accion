@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movimiento")]
     public float speed = 2.5f;
     public float mouseSensitivity = 100f;
     public float gravity = -9.81f;
@@ -14,10 +15,11 @@ public class PlayerController : MonoBehaviour
     float yVelocity = 0f;
     float lastMouseX;
 
-    // Rotacion de objetos
+    [Header("Objetos")]
     public Transform[] objetosARotar;
 
-    Dictionary<Transform, float> angularVelocities = new Dictionary<Transform, float>();
+    Dictionary<Transform, float> angularVelocities =
+        new Dictionary<Transform, float>();
 
     public float friccion = 0.3f;
     public float fuerza = 500f;
@@ -27,15 +29,30 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
 
-
-    //esto es para que cuando abro un video la camara y el cursos siempre esten
+    [Header("UI")]
     public bool enUI = false;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip sonidoCadena;
+
+    // Aproximadamente -8 dB
+    public float volumenAudio = 0.4f;
+
+
+    public float velocidadMinimaAudio = 5f;
+
+    bool audioActivo = false;
+
+
+    bool haciendoFadeOut = false;
+
+    Coroutine fadeCoroutine;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
 
-        // VALIDACIÓN OBJETOS
         if (objetosARotar != null && objetosARotar.Length > 0)
         {
             foreach (Transform obj in objetosARotar)
@@ -44,6 +61,10 @@ public class PlayerController : MonoBehaviour
                     angularVelocities[obj] = 0f;
             }
         }
+
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+        audioSource.volume = volumenAudio;
     }
 
     void Update()
@@ -52,8 +73,18 @@ public class PlayerController : MonoBehaviour
 
         RotarObjetos();
 
-        // Cursor
-        if (Input.GetKey(KeyCode.Tab) || enUI) // ese uni es lo del video que se puso arriba
+        ActualizarEstadoAudio();
+
+        ManejarCursor();
+
+        MovimientoJugador();
+
+        MovimientoCamara();
+    }
+
+    void ManejarCursor()
+    {
+        if (Input.GetKey(KeyCode.Tab) || enUI)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -63,8 +94,10 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
 
-        // Movimiento
+    void MovimientoJugador()
+    {
         float x = enUI ? 0 : Input.GetAxis("Horizontal");
         float z = enUI ? 0 : Input.GetAxis("Vertical");
 
@@ -80,39 +113,60 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = new Vector3(0, yVelocity, 0);
 
         controller.Move((move * speed + velocity) * Time.deltaTime);
+    }
 
-        // Cámara
+    void MovimientoCamara()
+    {
         if (!enUI && Cursor.lockState == CursorLockMode.Locked)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX =
+                Input.GetAxis("Mouse X") *
+                mouseSensitivity *
+                Time.deltaTime;
+
+            float mouseY =
+                Input.GetAxis("Mouse Y") *
+                mouseSensitivity *
+                Time.deltaTime;
 
             xRotation -= mouseY;
+
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerCamera.localRotation =
+                Quaternion.Euler(xRotation, 0f, 0f);
+
             transform.Rotate(Vector3.up * mouseX);
         }
     }
 
     void DetectarClick()
     {
-        // SI NO HAY OBJETOS, SALIR
         if (objetosARotar == null || objetosARotar.Length == 0)
             return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = playerCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+            Ray ray =
+                playerCamera.GetComponent<Camera>()
+                .ScreenPointToRay(Input.mousePosition);
+
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.CompareTag("Rueda") || hit.transform.CompareTag("Pedales"))
+                if (
+                    hit.transform.CompareTag("Rueda") ||
+                    hit.transform.CompareTag("Pedales")
+                )
                 {
                     isDragging = true;
+
                     objetoActivo = hit.transform;
+
                     lastMouseX = Input.mousePosition.x;
+
+                    IniciarAudio();
                 }
             }
         }
@@ -126,20 +180,26 @@ public class PlayerController : MonoBehaviour
 
     void RotarObjetos()
     {
-        // SI NO HAY OBJETOS, NO HACER NADA
         if (objetosARotar == null || objetosARotar.Length == 0)
             return;
 
         float currentMouseX = Input.mousePosition.x;
-        float rawMouseDelta = currentMouseX - lastMouseX;
+
+        float rawMouseDelta =
+            currentMouseX - lastMouseX;
+
         lastMouseX = currentMouseX;
 
         float direction = 1f;
 
         if (objetoActivo != null)
         {
-            Vector3 dirToObj = (objetoActivo.position - playerCamera.position).normalized;
-            direction = Vector3.Dot(playerCamera.right, dirToObj);
+            Vector3 dirToObj =
+                (objetoActivo.position - playerCamera.position)
+                .normalized;
+
+            direction =
+                Vector3.Dot(playerCamera.right, dirToObj);
         }
 
         float mouseDelta = rawMouseDelta * direction;
@@ -155,16 +215,25 @@ public class PlayerController : MonoBehaviour
             else if (obj.CompareTag("Rueda"))
                 masaActual = 2.5f;
 
-            float angularVelocity = angularVelocities.ContainsKey(obj) ? angularVelocities[obj] : 0f;
+            float angularVelocity =
+                angularVelocities.ContainsKey(obj)
+                ? angularVelocities[obj]
+                : 0f;
 
+            // Aplicar torque mientras arrastra
             if (isDragging && Input.GetMouseButton(0))
             {
                 float torque = mouseDelta * fuerza;
-                float angularAcceleration = torque / masaActual;
-                angularVelocity += angularAcceleration * Time.deltaTime;
+
+                float angularAcceleration =
+                    torque / masaActual;
+
+                angularVelocity +=
+                    angularAcceleration * Time.deltaTime;
             }
 
-            angularVelocity *= (1 - friccion * Time.deltaTime);
+            angularVelocity *=
+                (1 - friccion * Time.deltaTime);
 
             if (Mathf.Abs(angularVelocity) < 0.01f)
             {
@@ -173,7 +242,101 @@ public class PlayerController : MonoBehaviour
 
             angularVelocities[obj] = angularVelocity;
 
-            obj.Rotate(0f, 0f, -angularVelocity * Time.deltaTime);
+            obj.Rotate(
+                0f,
+                0f,
+                -angularVelocity * Time.deltaTime
+            );
         }
+    }
+
+    void ActualizarEstadoAudio()
+    {
+        bool bicicletaEnMovimiento = false;
+
+        foreach (float velocidad in angularVelocities.Values)
+        {
+            if (Mathf.Abs(velocidad) > velocidadMinimaAudio)
+            {
+                bicicletaEnMovimiento = true;
+                break;
+            }
+        }
+
+
+        if (bicicletaEnMovimiento)
+        {
+            if (!audioActivo && !haciendoFadeOut)
+            {
+                IniciarAudio();
+            }
+        }
+        else
+        {
+            
+            if (audioActivo && !haciendoFadeOut)
+            {
+                fadeCoroutine =
+                    StartCoroutine(FadeOutAudio(0.15f));
+            }
+        }
+    }
+
+    void IniciarAudio()
+    {
+        if (sonidoCadena == null) return;
+
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        haciendoFadeOut = false;
+
+        audioSource.clip = sonidoCadena;
+
+        // Variación leve
+        audioSource.pitch =
+            Random.Range(0.95f, 1.05f);
+
+        audioSource.volume = volumenAudio;
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+
+        audioActivo = true;
+    }
+
+    IEnumerator FadeOutAudio(float duracion)
+    {
+        haciendoFadeOut = true;
+
+        float volumenInicial = audioSource.volume;
+
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.deltaTime;
+
+            audioSource.volume =
+                Mathf.Lerp(
+                    volumenInicial,
+                    0f,
+                    tiempo / duracion
+                );
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+
+        audioSource.volume = volumenAudio;
+
+        audioActivo = false;
+
+        haciendoFadeOut = false;
     }
 }
