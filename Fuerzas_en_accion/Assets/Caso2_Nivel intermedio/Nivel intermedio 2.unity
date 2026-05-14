@@ -3239,7 +3239,6 @@ GameObject:
   - component: {fileID: 219922350}
   - component: {fileID: 219922349}
   - component: {fileID: 219922348}
-  - component: {fileID: 219922347}
   m_Layer: 0
   m_Name: audioSubs4
   m_TagString: Untagged
@@ -3247,29 +3246,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &219922347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219922346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 219922349}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &219922348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,10 +3263,10 @@ MonoBehaviour:
   audioSource: {fileID: 219922349}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 328b890e861694a4a8bf5e45822e2d14, type: 3}
     subtitle: "El bal\xF3n y un cilindro hueco.  \xBFQu\xE9 crees que pasar\xE1 con
       el torque en cada caso?"
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: b1666e92489cca140b515c2f14f89848, type: 3}
     subtitle: Para ello puedes realizar el diagrama de cuerpo libre para cualquiera
       de los objetos
 --- !u!82 &219922349
@@ -15385,7 +15361,6 @@ GameObject:
   - component: {fileID: 1005123280}
   - component: {fileID: 1005123279}
   - component: {fileID: 1005123278}
-  - component: {fileID: 1005123277}
   m_Layer: 0
   m_Name: audioSubsInicial
   m_TagString: Untagged
@@ -15393,29 +15368,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1005123277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005123276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 1005123279}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &1005123278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15433,10 +15385,10 @@ MonoBehaviour:
   audioSource: {fileID: 1005123279}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: e6d333a2fbb326543aa0b11e81bf827c, type: 3}
     subtitle: "Observa el bal\xF3n. \xBFTe has preguntado qu\xE9 fuerza es la que
       hace que ocurra esta acci\xF3n?"
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 72db3c95f927f44468be98e703cf6c3a, type: 3}
     subtitle: Por eso, tu primer reto es realizar un diagrama de cuerpo libre, para
       visualizar las fuerzas que generan el torque.
 --- !u!82 &1005123279
@@ -16736,7 +16688,6 @@ GameObject:
   - component: {fileID: 1087347740}
   - component: {fileID: 1087347739}
   - component: {fileID: 1087347738}
-  - component: {fileID: 1087347737}
   m_Layer: 0
   m_Name: audioSubs5
   m_TagString: Untagged
@@ -16744,29 +16695,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1087347737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087347736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 1087347739}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &1087347738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16784,7 +16712,7 @@ MonoBehaviour:
   audioSource: {fileID: 1087347739}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 96d94cc25bb553942b44ce85cbdf274c, type: 3}
     subtitle: Muy bien, recuerda que la fuerza tangencial aplicada en el borde es
       la que genera el valor del torque Ahora, calculemos su valor
 --- !u!82 &1087347739
@@ -20342,7 +20270,6 @@ GameObject:
   - component: {fileID: 1403715952}
   - component: {fileID: 1403715951}
   - component: {fileID: 1403715950}
-  - component: {fileID: 1403715949}
   m_Layer: 0
   m_Name: audioSubs7
   m_TagString: Untagged
@@ -20350,29 +20277,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1403715949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403715948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 1403715951}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &1403715950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20593,7 +20497,6 @@ GameObject:
   - component: {fileID: 1410976776}
   - component: {fileID: 1410976775}
   - component: {fileID: 1410976774}
-  - component: {fileID: 1410976773}
   m_Layer: 0
   m_Name: audioSubs3
   m_TagString: Untagged
@@ -20601,29 +20504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1410976773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410976772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 1410976775}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &1410976774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20641,7 +20521,7 @@ MonoBehaviour:
   audioSource: {fileID: 1410976775}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 19788c399bf9a8040832ecfc8c28b840, type: 3}
     subtitle: Ahora supondremos que el balon esta en una rampa, como crees que serian
       las fuerzas en este caso?
 --- !u!82 &1410976775
@@ -24297,7 +24177,7 @@ MonoBehaviour:
   audioSource: {fileID: 1662915655}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 0}
     subtitle: "\xA1Impresionante! Has comprendido c\xF3mo peque\xF1as fuerzas pueden
       generar grandes efectos."
 --- !u!82 &1662915655
@@ -29034,7 +28914,6 @@ GameObject:
   - component: {fileID: 1943866630}
   - component: {fileID: 1943866629}
   - component: {fileID: 1943866628}
-  - component: {fileID: 1943866627}
   m_Layer: 0
   m_Name: audioSubs2
   m_TagString: Untagged
@@ -29042,29 +28921,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1943866627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943866626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 1943866629}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &1943866628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29082,7 +28938,7 @@ MonoBehaviour:
   audioSource: {fileID: 1943866629}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 1bdf9b607b10f204a96e4d17923bc5ae, type: 3}
     subtitle: "Muy buen trabajo, ahora que ya sabes qu\xE9 fuerza genera el torque,
       puedes calcular cu\xE1l es el valor del torque y la velocidad angular."
 --- !u!82 &1943866629
@@ -30244,7 +30100,6 @@ GameObject:
   - component: {fileID: 2021588588}
   - component: {fileID: 2021588587}
   - component: {fileID: 2021588586}
-  - component: {fileID: 2021588585}
   m_Layer: 0
   m_Name: audioSubs6
   m_TagString: Untagged
@@ -30252,29 +30107,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2021588585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021588584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 2021588587}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &2021588586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30292,10 +30124,10 @@ MonoBehaviour:
   audioSource: {fileID: 2021588587}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 5aefc3a9012246444b433276886f0129, type: 3}
     subtitle: Ahora mira los dos balones en la cancha. Si lo empujas por el borde,
       o por el centro suceden cosas distintas
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: a924b92d8cbee63479f2d14cfe548ff0, type: 3}
     subtitle: "\xA1Adelante! Emp\xFAjalos con click izquierdo y observa lo que pasa
       en cada uno y piensa a qu\xE9 se debe este suceso"
 --- !u!82 &2021588587

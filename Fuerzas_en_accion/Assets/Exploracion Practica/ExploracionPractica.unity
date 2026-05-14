@@ -1346,9 +1346,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2079993640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 721.8474, y: -70.310486}
   m_SizeDelta: {x: 1403.6948, y: 120.621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169854235
@@ -3018,8 +3018,8 @@ MonoBehaviour:
   - {fileID: 250866335}
   subtitlePanel: {fileID: 2079993639}
   audioSource: {fileID: 614491984}
-  correctAudio: {fileID: 8300000, guid: 9bb265ddf95f3e247877f90a2de87508, type: 3}
-  incorrectAudio: {fileID: 8300000, guid: e7d7dae2296d4774a9a849202d031180, type: 3}
+  correctAudio: {fileID: 8300000, guid: baf8b1449f776f64ea2aa5f55662f3ce, type: 3}
+  incorrectAudio: {fileID: 8300000, guid: 1f590b5fd4239fa4cb520ee75e760d19, type: 3}
   subtitleText: {fileID: 169854235}
   correctRawImage: {fileID: 439992857}
   incorrectRawImage: {fileID: 1328793128}
@@ -6757,8 +6757,8 @@ MonoBehaviour:
   esferaAzul: {fileID: 978042291}
   llave: {fileID: 1051776561}
   audioSource: {fileID: 614491984}
-  abrirBien: {fileID: 8300000, guid: 31c2329a3e6443d45aab480d5414ba3f, type: 3}
-  abrirMal: {fileID: 8300000, guid: dc20734962779e442b15f29a4be97aba, type: 3}
+  abrirBien: {fileID: 8300000, guid: 15c9dd0944ba57f4d9bf2c7ba2bd19f7, type: 3}
+  abrirMal: {fileID: 8300000, guid: f5f6b0fd621ced345a494d20031c00b4, type: 3}
   subtitleText: {fileID: 169854235}
   subtitlePanel: {fileID: 2079993639}
   correctRawImage: {fileID: 1420567445}
@@ -7349,8 +7349,8 @@ MonoBehaviour:
   tolerance: 40
   questionAnimator: {fileID: 894426831}
   audioSource: {fileID: 614491984}
-  correctAudio: {fileID: 8300000, guid: 71d0e7bca77ca81428949858663374ee, type: 3}
-  incorrectAudio: {fileID: 8300000, guid: 129862cecd9bead44a448352d59e2ecb, type: 3}
+  correctAudio: {fileID: 8300000, guid: 2e8b44af3f75f854ea3a3a008318f152, type: 3}
+  incorrectAudio: {fileID: 8300000, guid: 8bcc2eb06e6eaf840a8d27c415bbc351, type: 3}
   subtitleText: {fileID: 169854235}
   subtitlePanel: {fileID: 2079993639}
   correctRawImage: {fileID: 89364478}
@@ -14559,8 +14559,8 @@ MonoBehaviour:
   abrirBien: {fileID: 8300000, guid: 6fad6eabc8c433f4c99189fb33186b55, type: 3}
   abrirMal: {fileID: 8300000, guid: 474030c22828ea047900030575beee74, type: 3}
   voiceSource: {fileID: 614491984}
-  correctVoice: {fileID: 8300000, guid: 98b072141c6ef874aba8df0c91d42982, type: 3}
-  incorrectVoice: {fileID: 8300000, guid: 2e5efccfd2e840c4b9946fca2726757a, type: 3}
+  correctVoice: {fileID: 8300000, guid: 505840cfdc00afc4fbfc6ef9d1fb4df5, type: 3}
+  incorrectVoice: {fileID: 8300000, guid: 10acdc506836c2f4fb5331da4d94d6d6, type: 3}
   subtitleText: {fileID: 169854235}
   subtitlePanel: {fileID: 2079993639}
   correctRawImage: {fileID: 29356049}
@@ -15590,7 +15590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2079993640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15609,7 +15609,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -2.1420288, y: -418.3828}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -476.30518, y: -949.379}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079993641
 MonoBehaviour:

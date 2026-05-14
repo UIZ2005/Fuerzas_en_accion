@@ -6,6 +6,10 @@ public class MostrarPanelCuandoTodosLosTrofeosEstanDesbloqueados : MonoBehaviour
     // Este panel se activará cuando los tres trofeos estén desbloqueados
     public GameObject panelObjetivo;
 
+    [Header("Panel a desactivar")]
+    // Este panel se ocultará cuando los tres trofeos estén desbloqueados
+    public GameObject panelADesactivar;
+
     [Header("Claves de los trofeos")]
     public string claveBronce = "TrofeoBronce";
     public string clavePlata = "TrofeoPlata";
@@ -22,6 +26,7 @@ public class MostrarPanelCuandoTodosLosTrofeosEstanDesbloqueados : MonoBehaviour
 
     void Start()
     {
+        // El panel objetivo inicia oculto
         if (panelObjetivo != null)
             panelObjetivo.SetActive(false);
 
@@ -45,9 +50,13 @@ public class MostrarPanelCuandoTodosLosTrofeosEstanDesbloqueados : MonoBehaviour
             return;
         }
 
-        // Activar el panel
+        // Activar el panel principal
         if (panelObjetivo != null)
             panelObjetivo.SetActive(true);
+
+        // Desactivar el panel asignado
+        if (panelADesactivar != null)
+            panelADesactivar.SetActive(false);
 
         // Guardar que ya fue mostrado
         if (mostrarSoloUnaVez)

@@ -2256,23 +2256,25 @@ MonoBehaviour:
   audioSource: {fileID: 300215314}
   EsperaInicial: 3
   dialogue:
-  - audio: {fileID: 8300000, guid: b9b5f8aa5891358459790fa200bbe22f, type: 3}
-    subtitle: "Hola, \xBFc\xF3mo estas? Soy Max quien te guiar\xE1 en esta aventura"
-  - audio: {fileID: 8300000, guid: 1d55e02a270e7b748b1683b67e22136d, type: 3}
-    subtitle: 'Este laboratorio fue creado para poner a prueba tus habilidades con
-      el torque en situaciones de la vida real. '
-  - audio: {fileID: 8300000, guid: 8d4d2f13c20ebae4fb031e18f3bda529, type: 3}
-    subtitle: "Ser\xE9 tu guia en esta experirncia de aprendizaje, pero primero te
-      voy a explicar un poco los controles"
-  - audio: {fileID: 8300000, guid: 91a94617d7ac95b499172ee8287a355f, type: 3}
-    subtitle: como sabes te puedes mover con las flecha o el awsd, como tu prefieras
-  - audio: {fileID: 8300000, guid: 9ce06291078adad4495683771a64daf7, type: 3}
+  - audio: {fileID: 8300000, guid: c7f02326a9a2a9740965a43a0323efbe, type: 3}
+    subtitle: "Hola, \xBFc\xF3mo estas? Soy Max! quien te guiar\xE1 en esta aventura"
+  - audio: {fileID: 8300000, guid: 32980f9f4982e0d4d9bedd013125acb7, type: 3}
+    subtitle: "Este laboratorio fue creado para poner a prueba tus habilidades con
+      el torque en situaciones de la vida real. Ser\xE9 tu gu\xEDa en esta experiencia
+      de aprendizaje"
+  - audio: {fileID: 8300000, guid: 8a957637f00f8aa40bbca9d430af2595, type: 3}
+    subtitle: pero primero Te voy a explicar un poco los controles, como sabes te
+      puedes mover con las flechas o el awsd, como tu prefieras
+  - audio: {fileID: 8300000, guid: 90b5c4b8887d44f4d973658d07ab34b6, type: 3}
     subtitle: "La c\xE1mara la puedes mover con el mouse, y para poder seleccionar
-      algunos botones u objetos clickeables debes tener oprimida la tecla tab para
-      visualizar el mouse"
-  - audio: {fileID: 8300000, guid: b05ffe436d93cdf48807c272eeeaedd4, type: 3}
-    subtitle: "Y ya con esto, te encuentras preparado para explorar Fuerzas en acci\xF3n!"
-  - audio: {fileID: 8300000, guid: 1eb809958f74cff44be3ceed28028184, type: 3}
+      algunos botones u objetos clickeabes debes tener oprimida la tecla tab para
+      poder visualizar el mouse"
+  - audio: {fileID: 8300000, guid: 11331e93d7376bd43801eeb53dcdc00f, type: 3}
+    subtitle: Y ya con esto, te encuentras preparado para explorar Fuerzas en accion!
+  - audio: {fileID: 8300000, guid: e23075e595045714383c5e597bad7017, type: 3}
+    subtitle: "Pero antes de empezar me gustar\xEDa que pusi\xE9ramos a prueba tus
+      conocimientos, para ello ser\xEDa genial que hicieras la exploraci\xF3n pr\xE1ctica"
+  - audio: {fileID: 8300000, guid: e23075e595045714383c5e597bad7017, type: 3}
     subtitle: "Pero antes de empezar me gustar\xEDa que pusieramos a prueba tus conocimientos,
       para ello ser\xEDa genial que hicieras la exploraci\xF3n pr\xE1ctica"
 --- !u!1 &338218260

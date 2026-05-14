@@ -11059,13 +11059,13 @@ MonoBehaviour:
   isVec: 0
   time: 0
   DiagramaButton: {fileID: 0}
-  vozSource: {fileID: 0}
+  vozSource: {fileID: 1537075583}
   audioVecCorrecto: {fileID: 0}
   audioVecIncorrecto: {fileID: 0}
   audioVecSiguiente: {fileID: 0}
   audioPuntoCorrecto: {fileID: 0}
-  audioPuntoIncorrecto: {fileID: 0}
-  audioPuntoSiguiente: {fileID: 0}
+  audioPuntoIncorrecto: {fileID: 8300000, guid: 38d1ad870a88061428f5a4b72cce9159, type: 3}
+  audioPuntoSiguiente: {fileID: 8300000, guid: 506e36b8180fd244c973c07aff13dd7a, type: 3}
   audioPuntoPreguntaError: {fileID: 0}
   audioAnguloFuerza: {fileID: 0}
 --- !u!1 &469083621
@@ -15751,8 +15751,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c88613000c98d7248b3cb5761932d6e9, type: 3}
   - {fileID: 8300000, guid: 553440c37d8541c4a8d39892a550c610, type: 3}
   voces:
-  - {fileID: 8300000, guid: 7ab80dc8f4689d84ab7eb5da382837d2, type: 3}
-  - {fileID: 8300000, guid: e345c1ba89ba969478c7763073b913e4, type: 3}
+  - {fileID: 8300000, guid: 8cd8df66b4da4084cacec0f6bb6deaf3, type: 3}
+  - {fileID: 8300000, guid: e478a83ed9089144592d5a59815912f1, type: 3}
   vozSource: {fileID: 656593429}
 --- !u!82 &656593429
 AudioSource:
@@ -20231,7 +20231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 626743225}
   vozSource: {fileID: 878804946}
-  audioEntrada: {fileID: 8300000, guid: 274065d0c4b70af48b430f28f29287c9, type: 3}
+  audioEntrada: {fileID: 8300000, guid: ae709fa653009f64fa1fea702647cefd, type: 3}
 --- !u!65 &878804945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30014,13 +30014,13 @@ MonoBehaviour:
   isVec: 0
   time: 0
   DiagramaButton: {fileID: 0}
-  vozSource: {fileID: 0}
+  vozSource: {fileID: 1537075583}
   audioVecCorrecto: {fileID: 0}
   audioVecIncorrecto: {fileID: 0}
   audioVecSiguiente: {fileID: 0}
   audioPuntoCorrecto: {fileID: 0}
-  audioPuntoIncorrecto: {fileID: 0}
-  audioPuntoSiguiente: {fileID: 0}
+  audioPuntoIncorrecto: {fileID: 8300000, guid: 38d1ad870a88061428f5a4b72cce9159, type: 3}
+  audioPuntoSiguiente: {fileID: 8300000, guid: 506e36b8180fd244c973c07aff13dd7a, type: 3}
   audioPuntoPreguntaError: {fileID: 0}
   audioAnguloFuerza: {fileID: 0}
 --- !u!1001 &1371342448
@@ -33094,9 +33094,9 @@ MonoBehaviour:
   audioVecCorrecto: {fileID: 8300000, guid: e5aec08b6489c424ea591638676a71f8, type: 3}
   audioVecIncorrecto: {fileID: 8300000, guid: 6ec7d114b9f652f4088c16c4119a2705, type: 3}
   audioVecSiguiente: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
-  audioPuntoCorrecto: {fileID: 8300000, guid: e5aec08b6489c424ea591638676a71f8, type: 3}
-  audioPuntoIncorrecto: {fileID: 8300000, guid: 6ec7d114b9f652f4088c16c4119a2705, type: 3}
-  audioPuntoSiguiente: {fileID: 8300000, guid: b8d1d715e41a71d4fb5e002539ee9234, type: 3}
+  audioPuntoCorrecto: {fileID: 8300000, guid: d5fa4185cb20d8f448ad84319fd76ffa, type: 3}
+  audioPuntoIncorrecto: {fileID: 8300000, guid: 38d1ad870a88061428f5a4b72cce9159, type: 3}
+  audioPuntoSiguiente: {fileID: 8300000, guid: 506e36b8180fd244c973c07aff13dd7a, type: 3}
   audioPuntoPreguntaError: {fileID: 8300000, guid: 274065d0c4b70af48b430f28f29287c9, type: 3}
   audioAnguloFuerza: {fileID: 0}
 --- !u!82 &1537075583
@@ -36201,12 +36201,12 @@ MonoBehaviour:
   panel: {fileID: 66501818}
   texto: {fileID: 1772322557}
   panelAOcultar: {fileID: 626743225}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 656593429}
   dialogo:
-  - audio: {fileID: 0}
+  - audio: {fileID: 8300000, guid: 0db6045592d9b684f97ddbf2c187aae5, type: 3}
     subtitulo: "\xA1Excelente trabajo! Has aprendido que el torque no solo est\xE1
       en f\xF3rmulas"
-  - audio: {fileID: 0}
+  - audio: {fileID: 8300000, guid: adf492c6d5c0d1e45b2d86dc4a4a7af0, type: 3}
     subtitulo: "tambi\xE9n est\xE1 en juegos tan cotidianos como empujar un columpio."
 --- !u!1 &1673199697
 GameObject:
@@ -38147,15 +38147,15 @@ MonoBehaviour:
   isVec: 1
   time: 2.5
   DiagramaButton: {fileID: 294742930}
-  vozSource: {fileID: 0}
-  audioVecCorrecto: {fileID: 0}
+  vozSource: {fileID: 656593429}
+  audioVecCorrecto: {fileID: 8300000, guid: 439209791bfd580418d6c35bb536a7d9, type: 3}
   audioVecIncorrecto: {fileID: 0}
-  audioVecSiguiente: {fileID: 0}
+  audioVecSiguiente: {fileID: 8300000, guid: 17c8d0ba19cd7b9449bb6643239a5234, type: 3}
   audioPuntoCorrecto: {fileID: 0}
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
-  audioAnguloFuerza: {fileID: 0}
+  audioAnguloFuerza: {fileID: 8300000, guid: b22f962b4d33ccf4fafcc45d1c391bf8, type: 3}
 --- !u!64 &1745689419
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40786,15 +40786,15 @@ MonoBehaviour:
   isVec: 1
   time: 2.5
   DiagramaButton: {fileID: 294742930}
-  vozSource: {fileID: 0}
+  vozSource: {fileID: 656593429}
   audioVecCorrecto: {fileID: 0}
-  audioVecIncorrecto: {fileID: 0}
-  audioVecSiguiente: {fileID: 0}
+  audioVecIncorrecto: {fileID: 8300000, guid: 227d8fd063a2b6f4c9c54af5a0044589, type: 3}
+  audioVecSiguiente: {fileID: 8300000, guid: 17c8d0ba19cd7b9449bb6643239a5234, type: 3}
   audioPuntoCorrecto: {fileID: 0}
   audioPuntoIncorrecto: {fileID: 0}
   audioPuntoSiguiente: {fileID: 0}
   audioPuntoPreguntaError: {fileID: 0}
-  audioAnguloFuerza: {fileID: 0}
+  audioAnguloFuerza: {fileID: 8300000, guid: b22f962b4d33ccf4fafcc45d1c391bf8, type: 3}
 --- !u!64 &1845924706
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46736,7 +46736,6 @@ GameObject:
   - component: {fileID: 2125894864}
   - component: {fileID: 2125894863}
   - component: {fileID: 2125894862}
-  - component: {fileID: 2125894861}
   m_Layer: 0
   m_Name: audioSubs
   m_TagString: Untagged
@@ -46744,29 +46743,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2125894861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125894860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 2125894863}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &2125894862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46784,7 +46760,7 @@ MonoBehaviour:
   audioSource: {fileID: 2125894863}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: d395f85f08f6a7145836abcdc71cfd7a, type: 3}
     subtitle: "\xA1Bienvenido! Aqu\xED aprenderemos que no todas las fuerzas tienen
       el mismo efecto. El punto de aplicaci\xF3n cambia todo en el torque."
 --- !u!82 &2125894863

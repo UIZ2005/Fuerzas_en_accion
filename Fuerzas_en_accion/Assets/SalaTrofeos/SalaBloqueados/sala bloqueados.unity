@@ -1716,12 +1716,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99423660}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.642397, y: 4.9836483, z: 2.7076144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 964366961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100831913
 PrefabInstance:
@@ -1832,12 +1832,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105909165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.642397, y: 4.9836483, z: 2.7076144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 964366961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &105909167
 MonoBehaviour:
@@ -2839,6 +2839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelObjetivo: {fileID: 614435202}
+  panelADesactivar: {fileID: 2082410460}
   claveBronce: TrofeoBronce
   clavePlata: TrofeoPlata
   claveOro: TrofeoOro
@@ -8326,6 +8327,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d0b308ccb1900f247b9a863efc3e1cbb, type: 3}
   m_PrefabInstance: {fileID: 734893746}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &964366960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964366961}
+  m_Layer: 0
+  m_Name: TrofeoLogroManagerjefe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964366961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964366960}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.642397, y: 4.9836483, z: 2.7076144}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 105909166}
+  - {fileID: 99423664}
+  - {fileID: 1162869504}
+  - {fileID: 1634631192}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &982936065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10498,12 +10534,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162869502}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.642397, y: 4.9836483, z: 2.7076144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 964366961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1199758939
 PrefabInstance:
@@ -13699,12 +13735,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634631191}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5848045, y: 1.1386213, z: -2.1476665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.0575924, y: -3.845027, z: -4.855281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 964366961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1634631193
 MonoBehaviour:
@@ -14081,7 +14117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1691894992
 Transform:
   m_ObjectHideFlags: 0
@@ -14111,6 +14147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 2082410460}
   clavePlayerPrefs: SubsInicial
+  reiniciarAlIniciar: 0
 --- !u!1 &1703203025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: 978c605ab1b3e914589eda836c8fbdc2, type: 3}
@@ -17853,7 +17890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2082410462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17871,12 +17908,12 @@ MonoBehaviour:
   audioSource: {fileID: 2082410463}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: a29ecc98a53dfa74988dc2eab20d0675, type: 3}
     subtitle: "Bienvenid@ al Sal\xF3n de Trofeos. Aqu\xED se guardar\xE1n todos tus
       logros."
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 287f6f03a326be14b8f11bea2ba57ba0, type: 3}
     subtitle: "Cada reto, minijuego y logros desbloqueados podr\xE1n verse aqu\xED."
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 459e35bb02788ba41b6944f98092e53d, type: 3}
     subtitle: Mira aqui tus trofeos. Dale CLICK para visualizarlo mejor.
 --- !u!82 &2082410463
 AudioSource:
@@ -17983,7 +18020,7 @@ Transform:
   m_GameObject: {fileID: 2082410460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 464.9296, y: 62.4162, z: 1.5147953}
+  m_LocalPosition: {x: -1.1, y: 4.88, z: 1.5147953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18012,12 +18049,9 @@ SceneRoots:
   - {fileID: 49927566}
   - {fileID: 1861442189}
   - {fileID: 1271711287}
-  - {fileID: 105909166}
-  - {fileID: 99423664}
-  - {fileID: 1162869504}
+  - {fileID: 964366961}
   - {fileID: 623200318}
   - {fileID: 73516450}
-  - {fileID: 1634631192}
   - {fileID: 1691894992}
   - {fileID: 241243894}
   - {fileID: 2082410464}

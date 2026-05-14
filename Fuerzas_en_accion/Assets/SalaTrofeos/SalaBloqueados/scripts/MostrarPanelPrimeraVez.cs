@@ -1,49 +1,99 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MostrarPanelPrimeraVez : MonoBehaviour
 {
     [Header("Panel a mostrar")]
-    // Arrastra aquí el panel que quieres mostrar solo la primera vez
     public GameObject panel;
 
-    [Header("Clave de guardado")]
-    // Identificador único para esta escena o panel
-    // Ejemplo: "TutorialSalaTrofeos"
-    public string clavePlayerPrefs;
+    [Header("Clave única")]
+    [Tooltip("Ejemplo: TutorialSalaTrofeos")]
+    public string clavePlayerPrefs = "TutorialSalaTrofeos";
 
-    void Start()
+    [Header("Opciones de prueba")]
+    [Tooltip("Si está activado, se eliminará la clave cada vez que se inicie la escena.")]
+    public bool reiniciarAlIniciar = false;
+
+    void Awake()
     {
-        // Verifica si el panel ya fue mostrado anteriormente
-        bool yaMostrado = PlayerPrefs.GetInt(clavePlayerPrefs, 0) == 1;
+        // Validaciones básicas
+        if (panel == null)
+        {
+            Debug.LogError("No se ha asignado el panel en " + gameObject.name);
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(clavePlayerPrefs))
+        {
+            Debug.LogError("La clavePlayerPrefs está vacía en " + gameObject.name);
+            return;
+        }
+
+        // Normalizar la clave
+        string clave = clavePlayerPrefs.Trim();
+
+        // Reiniciar automáticamente si se desea (solo para pruebas)
+        if (reiniciarAlIniciar)
+        {
+            PlayerPrefs.DeleteKey(clave);
+            PlayerPrefs.Save();
+
+            // En algunas plataformas Unity mantiene valores en memoria;
+            // esta llamada fuerza a recargar los PlayerPrefs.
+            PlayerPrefs.DeleteKey(clave);
+            PlayerPrefs.Save();
+
+            Debug.Log("Clave reiniciada al iniciar: " + clave);
+        }
+
+        // IMPORTANTE:
+        // HasKey es más confiable para este caso que GetInt(..., 0),
+        // porque distingue entre "no existe" y "ya fue creada".
+        bool yaMostrado = PlayerPrefs.HasKey(clave);
+
+        Debug.Log("Clave: " + clave + " | Ya mostrada: " + yaMostrado);
 
         if (!yaMostrado)
         {
-            // Mostrar el panel por primera vez
-            if (panel != null)
-                panel.SetActive(true);
+            // Primera vez: mostrar el panel
+            panel.SetActive(true);
 
-            // Guardar que ya fue mostrado
-            PlayerPrefs.SetInt(clavePlayerPrefs, 1);
+            // Guardar inmediatamente la clave
+            PlayerPrefs.SetInt(clave, 1);
             PlayerPrefs.Save();
 
-            Debug.Log("Panel mostrado por primera vez: " + clavePlayerPrefs);
+            Debug.Log("Panel mostrado por primera vez.");
         }
         else
         {
-            // En entradas posteriores a la escena, mantenerlo oculto
-            if (panel != null)
-                panel.SetActive(false);
+            // Ya se había mostrado antes
+            panel.SetActive(false);
+
+            Debug.Log("El panel ya había sido mostrado anteriormente.");
         }
     }
 
-    // Método opcional para reiniciar el estado y volver a mostrar el panel
+    // Reinicia únicamente esta clave
+    [ContextMenu("Reiniciar esta clave")]
     public void ReiniciarPanel()
     {
-        PlayerPrefs.DeleteKey(clavePlayerPrefs);
+        if (string.IsNullOrWhiteSpace(clavePlayerPrefs))
+            return;
+
+        string clave = clavePlayerPrefs.Trim();
+
+        PlayerPrefs.DeleteKey(clave);
         PlayerPrefs.Save();
 
-        Debug.Log("Se reinició el panel: " + clavePlayerPrefs);
+        Debug.Log("Clave eliminada manualmente: " + clave);
+    }
+
+    // Borra absolutamente todas las PlayerPrefs
+    [ContextMenu("Reiniciar todas las PlayerPrefs")]
+    public void ReiniciarTodasLasPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        Debug.Log("Todas las PlayerPrefs fueron eliminadas.");
     }
 }

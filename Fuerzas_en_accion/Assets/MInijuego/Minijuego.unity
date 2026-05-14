@@ -181,7 +181,7 @@ MonoBehaviour:
   audioSource: {fileID: 66852511}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 88dfd315202c6004d9d57818315b9954, type: 3}
     subtitle: "\xA1Se acab\xF3 el tiempo! Felicidades, completaste los retos. \xA1Vuelve
       a  intentarlo para mejorar tu puntaje!"
 --- !u!82 &66852511
@@ -1770,7 +1770,7 @@ MonoBehaviour:
   pausaEntreDialogos: 3
   repetirInfinitamente: 1
   dialogue:
-  - audio: {fileID: 8300000, guid: 777046643ca12ea4780b72f4c7e584ce, type: 3}
+  - audio: {fileID: 8300000, guid: f602876b7e242a948ac5c492690771d7, type: 3}
     subtitle: "\xA1Exacto, buen trabajo!"
 --- !u!1 &785312869 stripped
 GameObject:
@@ -3933,7 +3933,6 @@ GameObject:
   - component: {fileID: 2121402369}
   - component: {fileID: 2121402368}
   - component: {fileID: 2121402367}
-  - component: {fileID: 2121402366}
   m_Layer: 0
   m_Name: audioSubs
   m_TagString: Untagged
@@ -3941,29 +3940,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2121402366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121402365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e0133f4c15d6540b9422cd2a5415b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleText: {fileID: 0}
-  subtitlePanel: {fileID: 0}
-  audioSource: {fileID: 2121402368}
-  dialogue:
-  - audio: {fileID: 8300000, guid: 9d38a5b801ba78d43b0458ab8d47b9a2, type: 3}
-    subtitle: "Como ves, el torque est\xE1 en todas partes: desde abrir una puerta
-      hasta andar en bicicleta. Y pronto, lo usar\xE1s para resolver tus propios
-      retos"
-  - audio: {fileID: 8300000, guid: cbe9e98946acc9d4588e3d2a6d98d022, type: 3}
-    subtitle: "\xBFQuieres ir a ver m\xE1s videos para aprender sobre el torque o
-      puedes continuar con los retos?"
 --- !u!114 &2121402367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3981,10 +3957,10 @@ MonoBehaviour:
   audioSource: {fileID: 2121402368}
   EsperaInicial: 0.5
   dialogue:
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 853d2bf594994994f93102ba26128d90, type: 3}
     subtitle: "\xA1Bienvenido al minijuego! Aqu\xED pondremos a prueba tu habilidad
       con la ley  de la mano derecha."
-  - audio: {fileID: 8300000, guid: d3d6b53532fab4e498f5601f9967202c, type: 3}
+  - audio: {fileID: 8300000, guid: 76ef587770a6c2449a677b3b3a1c2b7f, type: 3}
     subtitle: "Usa el mouse para orientar la mano y encuentra la direcci\xF3n  correcta
       del torque antes de que el tiempo acabe."
 --- !u!82 &2121402368
