@@ -9752,7 +9752,7 @@ RectTransform:
   m_GameObject: {fileID: 1288218495}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0599, y: 1.681, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 740529868}
@@ -12277,7 +12277,7 @@ MonoBehaviour:
   friccion: 0.3
   fuerza: 500
   enUI: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1055291657}
   sonidoCadena: {fileID: 0}
   volumenAudio: 0.4
   velocidadMinimaAudio: 5

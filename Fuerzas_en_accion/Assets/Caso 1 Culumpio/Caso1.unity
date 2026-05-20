@@ -48494,8 +48494,8 @@ MonoBehaviour:
   friccion: 0.3
   fuerza: 200
   enUI: 0
-  audioSource: {fileID: 0}
-  sonidoCadena: {fileID: 0}
+  audioSource: {fileID: 656593429}
+  sonidoCadena: {fileID: 8300000, guid: 39afba58dd7ae2d4089cbe403f0a000f, type: 3}
   volumenAudio: 0.4
   velocidadMinimaAudio: 5
 --- !u!33 &4558586931446821777
