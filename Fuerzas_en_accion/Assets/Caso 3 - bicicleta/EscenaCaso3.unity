@@ -901,6 +901,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115338115}
   m_CullTransparentMesh: 1
+--- !u!1 &129066436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129066438}
+  - component: {fileID: 129066437}
+  m_Layer: 0
+  m_Name: controladorSubs (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &129066437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129066436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 2
+  dialogue:
+  - audio: {fileID: 8300000, guid: e6d333a2fbb326543aa0b11e81bf827c, type: 3}
+    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
+      Resuelve cada reto con el torque correcto"
+  - audio: {fileID: 8300000, guid: 28b60c070b1e4d24ab170e0b73ed40a0, type: 3}
+    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
+      mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
+      y distancia correcta"
+--- !u!4 &129066438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129066436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137600874
 GameObject:
   m_ObjectHideFlags: 0
@@ -10212,7 +10268,7 @@ GameObject:
   - component: {fileID: 1486521831}
   - component: {fileID: 1486521832}
   m_Layer: 0
-  m_Name: controladorSubs
+  m_Name: controladorSubs1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10250,11 +10306,11 @@ MonoBehaviour:
   audioSource: {fileID: 249901643}
   EsperaInicial: 2
   dialogue:
-  - audio: {fileID: 8300000, guid: e6d333a2fbb326543aa0b11e81bf827c, type: 3}
-    subtitle: "\xBFHola, como te encuentras? En este espacio trabajaremos con la
-      bicicleta. Resuelve cada reto con el torque correcto"
-  - audio: {fileID: 8300000, guid: 28b60c070b1e4d24ab170e0b73ed40a0, type: 3}
-    subtitle: "Para ello debes empezar con el primer reto, el cual con la ayuda del
+  - audio: {fileID: 8300000, guid: 062ab42da542f9b44828f2347a1d8966, type: 3}
+    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
+      Resuelve cada reto con el torque correcto"
+  - audio: {fileID: 8300000, guid: 692bb32ae029d4f49a4fc925e9cbea98, type: 3}
+    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
       mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
       y distancia correcta"
 --- !u!1 &1487606407
@@ -16874,5 +16930,6 @@ SceneRoots:
   - {fileID: 1959364608}
   - {fileID: 162146857}
   - {fileID: 1486521831}
+  - {fileID: 129066438}
   - {fileID: 249901642}
   - {fileID: 1503190151}
