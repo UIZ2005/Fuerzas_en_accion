@@ -8,7 +8,7 @@ public class BackgroundMusicTest : MonoBehaviour
     public AudioClip testMusic;
 
     [Range(0f,1f)]
-    public float targetVolume = 0.4f;
+    public float targetVolume = 0.079f;
 
     public float crossfadeDuration = 0.5f;
 
