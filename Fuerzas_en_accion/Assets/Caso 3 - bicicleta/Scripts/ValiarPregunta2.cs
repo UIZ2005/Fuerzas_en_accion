@@ -27,6 +27,9 @@ public class ValiarPregunta2 : MonoBehaviour
 
     private barraProgreso progreso;
 
+    public GameObject audiomalo;
+    public GameObject audiobueno;
+
     void Start()
     {
         progreso = FindAnyObjectByType<barraProgreso>();
@@ -45,6 +48,7 @@ public class ValiarPregunta2 : MonoBehaviour
 
         // Pintar verde
         PintarBoton(boton1, Color.green);
+        audiobueno.SetActive(true);
 
         // Sonido correcto
         if (sonidoCorrecto != null)
@@ -77,6 +81,8 @@ public class ValiarPregunta2 : MonoBehaviour
         // Pintar rojo
         PintarBoton(boton2, Color.red);
 
+        audiomalo.SetActive(true);
+
         // Sonido incorrecto
         if (sonidoIncorrecto != null)
         {
@@ -107,6 +113,7 @@ public class ValiarPregunta2 : MonoBehaviour
 
         // Pintar rojo
         PintarBoton(boton3, Color.red);
+        audiomalo.SetActive(true);
 
         // Sonido incorrecto
         if (sonidoIncorrecto != null)

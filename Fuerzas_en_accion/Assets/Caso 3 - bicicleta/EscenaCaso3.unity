@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 129066438}
   - component: {fileID: 129066437}
   m_Layer: 0
-  m_Name: controladorSubs (1)
+  m_Name: controladorSubsbueno1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,15 +938,10 @@ MonoBehaviour:
   subtitlePanel: {fileID: 1503190150}
   subtitleText: {fileID: 1550379062}
   audioSource: {fileID: 249901643}
-  EsperaInicial: 2
+  EsperaInicial: 0
   dialogue:
-  - audio: {fileID: 8300000, guid: e6d333a2fbb326543aa0b11e81bf827c, type: 3}
-    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
-      Resuelve cada reto con el torque correcto"
-  - audio: {fileID: 8300000, guid: 28b60c070b1e4d24ab170e0b73ed40a0, type: 3}
-    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
-      mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
-      y distancia correcta"
+  - audio: {fileID: 8300000, guid: 006f1a91431ca5242a485017abb18661, type: 3}
+    subtitle: "Lo hiciste muy bien, ya vas entendiendo el concepto un poco m\xE1s"
 --- !u!4 &129066438
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,6 +1348,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194400278}
   m_CullTransparentMesh: 1
+--- !u!1 &206863687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206863689}
+  - component: {fileID: 206863688}
+  m_Layer: 0
+  m_Name: controladorSubsbueno2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &206863688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206863687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 809b80827989f324fa0ce84d8b959da0, type: 3}
+    subtitle: lo hiciste genial
+--- !u!4 &206863689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206863687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208972682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1452,8 @@ MonoBehaviour:
   audioSource: {fileID: 20140524}
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
+  audiobueno: {fileID: 277238595}
+  audiomalo: {fileID: 989717500}
 --- !u!1 &213334404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1538,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 606330111}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1079300599}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1703,7 +1763,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 113
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1910,6 +1970,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.275893, y: 1.1473007, z: 0.71509767}
   m_Center: {x: -0.4680797, y: -0.073656105, z: 1.3697586}
+--- !u!1 &277238595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277238597}
+  - component: {fileID: 277238596}
+  m_Layer: 0
+  m_Name: subpregunta3 bueno
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &277238596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277238595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 809b80827989f324fa0ce84d8b959da0, type: 3}
+    subtitle: lo hiciste genial
+--- !u!4 &277238597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277238595}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277617888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6064698779265180503, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
@@ -2299,6 +2410,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1938317528}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 543901408}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3016,6 +3139,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -288}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &383834359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383834361}
+  - component: {fileID: 383834360}
+  m_Layer: 0
+  m_Name: controladorSubsmalo1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &383834360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383834359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 1bdf95435e28f9d4ca59c7b783efc052, type: 3}
+    subtitle: Intenta de nuevo hallar el valor de la fuerza, recuerda la formula
+      del torque
+--- !u!4 &383834361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383834359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385311889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,6 +3708,8 @@ MonoBehaviour:
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
   gradosRotacion: 20
+  audiobueno: {fileID: 129066436}
+  audiomalo: {fileID: 383834359}
   duracionRotacion: 3
 --- !u!1 &495996598
 GameObject:
@@ -3968,6 +4145,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542864904}
   m_CullTransparentMesh: 1
+--- !u!1 &543901408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543901410}
+  - component: {fileID: 543901409}
+  m_Layer: 0
+  m_Name: subpregunta2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &543901409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543901408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: d7a1ec40a3593c642a071d853149b37f, type: 3}
+    subtitle: "Ahora pasemos a la siguiente pregunta, Cual de estos casos crees que
+      es el m\xE1s optimo de aplicar"
+--- !u!4 &543901410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543901408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552360649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,7 +6412,7 @@ RectTransform:
   m_GameObject: {fileID: 870300848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5092, y: 2.5092, z: 2.5092}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 489136731}
@@ -7426,6 +7655,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 22.891085, y: 1.0364479, z: 0.571148}
   m_Center: {x: -3.2539046, y: -0.018245397, z: 2.2157736}
+--- !u!1 &989717500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989717502}
+  - component: {fileID: 989717501}
+  m_Layer: 0
+  m_Name: subpregunta3 malo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &989717501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989717500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 6c5f09bab5e3d7b4f924833a16a627b2, type: 3}
+    subtitle: "Recuerda que el \xE1ngulo tambi\xE9n influye, ten en cuenta eso en
+      tu calculo"
+--- !u!4 &989717502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989717500}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990083860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8161,7 +8442,7 @@ RectTransform:
   m_GameObject: {fileID: 1051000505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.4808, y: 2.4808, z: 2.4808}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2022407133}
@@ -8169,7 +8450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 62}
+  m_AnchoredPosition: {x: 0, y: 92}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1062426486
@@ -8320,6 +8601,58 @@ MonoBehaviour:
   panelSiguiente: {fileID: 982168387}
   distanciaCamara: 3
   rangoColocacion: 1
+--- !u!1 &1079300599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079300601}
+  - component: {fileID: 1079300600}
+  m_Layer: 0
+  m_Name: subpregunta3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1079300600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079300599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 55f9e38eabaed3441bedb120f9b6d26f, type: 3}
+    subtitle: "El torque tambi\xE9n tiene un sentido. Usa la regla de la mano derecha
+      en este espacio tridimensional para prever la rotaci\xF3n"
+--- !u!4 &1079300601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079300599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107715674
 GameObject:
   m_ObjectHideFlags: 0
@@ -10668,15 +11001,15 @@ MonoBehaviour:
   subtitlePanel: {fileID: 1503190150}
   subtitleText: {fileID: 1550379062}
   audioSource: {fileID: 249901643}
-  EsperaInicial: 2
+  EsperaInicial: 1
   dialogue:
   - audio: {fileID: 8300000, guid: 062ab42da542f9b44828f2347a1d8966, type: 3}
-    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
+    subtitle: "\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
       Resuelve cada reto con el torque correcto"
   - audio: {fileID: 8300000, guid: 692bb32ae029d4f49a4fc925e9cbea98, type: 3}
-    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
-      mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
-      y distancia correcta"
+    subtitle: "Para el primer ejercicio necesitas una llave, y con la ayuda del mouse
+      deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza y distancia
+      correcta"
 --- !u!1 &1487606407
 GameObject:
   m_ObjectHideFlags: 0
@@ -13005,7 +13338,7 @@ RectTransform:
   m_GameObject: {fileID: 1806576727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.4808, y: 2.4808, z: 2.4808}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1560605853}
@@ -13013,7 +13346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -86}
+  m_AnchoredPosition: {x: 0, y: -123}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806576729
@@ -13978,6 +14311,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924261193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1929697357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929697359}
+  - component: {fileID: 1929697358}
+  m_Layer: 0
+  m_Name: 'controladorSubsmalo2 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1929697358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929697357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 53ba9a14992e3c94b9c41ae480eb69d9, type: 3}
+    subtitle: mmm vuelve a intentarlo
+--- !u!4 &1929697359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929697357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934321515
 GameObject:
   m_ObjectHideFlags: 0
@@ -15769,6 +16153,8 @@ MonoBehaviour:
   audioSource: {fileID: 984683658}
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
+  audiomalo: {fileID: 1929697357}
+  audiobueno: {fileID: 206863687}
 --- !u!1001 &2130117369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17470,6 +17856,13 @@ SceneRoots:
   - {fileID: 162146857}
   - {fileID: 1486521831}
   - {fileID: 129066438}
+  - {fileID: 383834361}
+  - {fileID: 543901410}
+  - {fileID: 206863689}
+  - {fileID: 1929697359}
+  - {fileID: 1079300601}
+  - {fileID: 277238597}
+  - {fileID: 989717502}
   - {fileID: 249901642}
   - {fileID: 513726392}
   - {fileID: 213837710}
