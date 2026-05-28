@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class LanzamientoBalon : MonoBehaviour
 {
-
     public Transform puntoLanzamiento;
-    public float fuerzaFija = 10f;           // fuerza siempre constante
-    public float sensibilidadScroll = 30f;   // grados por scroll
+    public float fuerzaFija = 10f;
+    public float sensibilidadScroll = 30f;
 
     [Range(10f, 80f)]
-    public float anguloActual = 35f;         // ángulo inicial en grados
+    public float anguloActual = 35f;
 
     private bool cargando = false;
     private LineRenderer line;
@@ -29,10 +28,12 @@ public class LanzamientoBalon : MonoBehaviour
 
     void Update()
     {
+        //  FIX 1: evitar error cuando el balón fue destruido
+        if (balonfisicas == null) return;
+
         if (!modoLanzamiento) return;
         if (!balonfisicas.agarrado) return;
 
-        // SCROLL controla el ángulo de tiro
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0f)
         {
@@ -40,7 +41,6 @@ public class LanzamientoBalon : MonoBehaviour
             anguloActual = Mathf.Clamp(anguloActual, 10f, 80f);
         }
 
-        // Siempre dibuja la trayectoria en modo lanzamiento
         DibujarTrayectoria();
 
         if (Input.GetMouseButtonDown(0))
@@ -56,55 +56,69 @@ public class LanzamientoBalon : MonoBehaviour
             CancelarLanzamiento();
     }
 
-    // Dirección usando el ángulo actual + dirección horizontal de la cámara
     Vector3 ObtenerDireccion()
     {
-        // Horizontal: hacia donde mira la cámara (ignorando inclinación vertical)
         Vector3 horizontal = puntoLanzamiento.forward;
         horizontal.y = 0f;
         horizontal.Normalize();
 
-        // Rotar esa dirección hacia arriba según el ángulo
         Vector3 dir = Quaternion.AngleAxis(-anguloActual, puntoLanzamiento.right)
                       * horizontal;
+
         return dir.normalized;
     }
 
     void Lanzar()
     {
+        if (balonfisicas == null) return;
+
         balonfisicas.transform.SetParent(null);
 
         balonfisicas.rb.detectCollisions = true;
         balonfisicas.rb.isKinematic = false;
         balonfisicas.rb.useGravity = true;
+
         balonfisicas.rb.velocity = Vector3.zero;
         balonfisicas.rb.angularVelocity = Vector3.zero;
 
-        // Posicionar el balón justo frente a la cámara antes de lanzar
-        balonfisicas.transform.position = puntoLanzamiento.position
-                                        + puntoLanzamiento.forward * 0.7f;
+        balonfisicas.transform.position =
+            puntoLanzamiento.position + puntoLanzamiento.forward * 0.7f;
 
-        balonfisicas.rb.AddForce(ObtenerDireccion() * fuerzaFija, ForceMode.Impulse);
+        balonfisicas.rb.AddForce(
+            ObtenerDireccion() * fuerzaFija,
+            ForceMode.Impulse
+        );
 
         balonfisicas.agarrado = false;
         modoLanzamiento = false;
+
         line.positionCount = 0;
     }
 
     void CancelarLanzamiento()
     {
+        if (balonfisicas == null) return;
+
         balonfisicas.transform.SetParent(null);
+
         balonfisicas.rb.detectCollisions = true;
         balonfisicas.rb.isKinematic = false;
         balonfisicas.rb.useGravity = true;
+
         balonfisicas.rb.velocity = Vector3.zero;
+        balonfisicas.rb.angularVelocity = Vector3.zero;
+
         balonfisicas.agarrado = false;
         modoLanzamiento = false;
+
         line.positionCount = 0;
     }
 
     void DibujarTrayectoria()
     {
+        // FIX 2: evitar uso de balón destruido
+        if (balonfisicas == null) return;
+
         line.positionCount = puntosTrayectoria;
 
         Vector3 posicionInicial = balonfisicas.transform.position;
@@ -113,9 +127,12 @@ public class LanzamientoBalon : MonoBehaviour
         for (int i = 0; i < puntosTrayectoria; i++)
         {
             float t = i * tiempoEntrePuntos;
-            Vector3 posicion = posicionInicial
-                + velocidadInicial * t
-                + 0.5f * Physics.gravity * t * t;
+
+            Vector3 posicion =
+                posicionInicial +
+                velocidadInicial * t +
+                0.5f * Physics.gravity * t * t;
+
             line.SetPosition(i, posicion);
         }
     }
@@ -123,6 +140,10 @@ public class LanzamientoBalon : MonoBehaviour
     public void ResetFuerzaLanzamiento()
     {
         anguloActual = 35f;
+
+        // FIX 3: evitar error si el balón ya no existe
+        if (balonfisicas == null) return;
+
         DibujarTrayectoria();
     }
 }
