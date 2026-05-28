@@ -98,15 +98,18 @@ public class fisicasBalon : MonoBehaviour
     void AplicarFuerza()
     {
         Vector3 direccion = (transform.position - puntoImpacto).normalized;
-        rb.AddForceAtPosition(direccion * fuerzaActual, puntoImpacto, ForceMode.Impulse);
 
-        Vector3 r = puntoImpacto - transform.position;
-        Vector3 torque = Vector3.Cross(r, direccion * fuerzaActual);
+        // Reducir acumulacion rara de velocidad
+        rb.velocity *= 0.85f;
+
+        // SOLO fuerza
+        rb.AddForceAtPosition(
+            direccion * fuerzaActual,
+            puntoImpacto,
+            ForceMode.Impulse
+        );
 
         Debug.Log("Fuerza: " + fuerzaActual);
-        Debug.Log("Torque: " + torque);
-        Debug.Log("Magnitud torque: " + torque.magnitude);
-        Debug.DrawRay(transform.position, torque, Color.red, 2f);
     }
     void ReproducirSonidoEmpuje()               
     {
@@ -153,5 +156,12 @@ public class fisicasBalon : MonoBehaviour
         transform.localRotation = Quaternion.identity;
 
         Debug.Log("Balón agarrado");
+    }
+     /// esto pes para el respawn
+    public void Inicializar(Camera cam, Transform mano, LanzamientoBalon lan)
+    {
+        playerCamera = cam;
+        puntoMano = mano;
+        lanzador = lan;
     }
 }
