@@ -20,6 +20,11 @@ public class ValidacionesCaso3 : MonoBehaviour
     public GameObject movebici;
     public Animator door;
     public GameObject limit;
+
+
+    public GameObject sonidobueno1;
+    public GameObject sonidobueno2;
+    public GameObject sonidomalo3;
     void Start()
     {
         progreso = GetComponent<barraProgreso>();
@@ -44,18 +49,22 @@ public class ValidacionesCaso3 : MonoBehaviour
     {
         if(plato.text== "16N*m")
         {
+            sonidobueno1.SetActive(true);
             plato.gameObject.GetComponent<Image>().color = Color.green;
             if (pinon.text == "4N*m")
             {
                 //PASA A LA SIGUIENTE
+                sonidobueno2.gameObject.SetActive(true);
                 pinon.gameObject.GetComponent<Image>().color = Color.green;
                 SiguientePregunta();
             }else{
                 pinon.gameObject.GetComponent<Image>().color = Color.red;
+                sonidomalo3.SetActive(true);
             }
         }
         else{
             plato.gameObject.GetComponent<Image>().color = Color.red;
+            sonidomalo3.SetActive(true);
         }
     }
     public void ValidacionPreguntaPlatoSelect()

@@ -23,6 +23,9 @@ public class ValidarPregunta1 : MonoBehaviour
     [Header("Rotacion")]
     public float gradosRotacion = 40f;
 
+    public GameObject audiobueno;
+    public GameObject audiomalo;
+
     // Duración de la animación
     public float duracionRotacion = 3f;
 
@@ -46,11 +49,13 @@ public class ValidarPregunta1 : MonoBehaviour
         // RESPUESTA CORRECTA
         if (respuesta == "40")
         {
+            audiobueno.SetActive(true);
             //PASA A LA SIGUIENTE PREGUNTA
             // Sonido correcto
             if (sonidoCorrecto != null)
             {
                 audioSource.PlayOneShot(sonidoCorrecto);
+                
                 progreso.Avanzar();
             }
 
@@ -87,6 +92,8 @@ public class ValidarPregunta1 : MonoBehaviour
             {
                 imagenInput.color = Color.red;
             }
+
+            audiomalo.SetActive(true);
         }
     }
 
