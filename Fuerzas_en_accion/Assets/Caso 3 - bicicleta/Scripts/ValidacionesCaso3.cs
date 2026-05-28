@@ -63,6 +63,14 @@ public class ValidacionesCaso3 : MonoBehaviour
             }
         }
         else{
+            if (pinon.text == "4N*m")
+            {
+              pinon.gameObject.GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+              pinon.gameObject.GetComponent<Image>().color = Color.red;
+            } 
             plato.gameObject.GetComponent<Image>().color = Color.red;
             sonidomalo3.SetActive(true);
         }
