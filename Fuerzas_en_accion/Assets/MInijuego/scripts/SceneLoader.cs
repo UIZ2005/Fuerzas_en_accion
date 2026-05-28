@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void Reiniciar()
     {
+        Time.timeScale = 1f;
         Scene escenaActual = SceneManager.GetActiveScene();
         SceneManager.LoadScene(escenaActual.name);
     }
@@ -14,6 +15,7 @@ public class SceneLoader : MonoBehaviour
     // Carga una escena específica por nombre
     public void CargarEscena(string nombreEscena)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(nombreEscena);
     }
 }

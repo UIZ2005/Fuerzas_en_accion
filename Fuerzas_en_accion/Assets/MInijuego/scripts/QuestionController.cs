@@ -18,7 +18,7 @@ public class QuestionController : MonoBehaviour
     public GameObject panelAcierto;
 
     [Header("Tiempo del panel adicional")]
-    public float tiempoPanelAcierto = 7f;   // Se desactiva después de 2 segundos
+    public float tiempoPanelAcierto = 7f;
 
     [Header("Texto Puntaje")]
     public TextMeshProUGUI scoreText;
@@ -27,6 +27,9 @@ public class QuestionController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip correctSound;
 
+    [Header("Controlador Final")]
+    public AudioController audioController;
+
     [Header("Configuración")]
     public float fadeDuration = 0.5f;
     public float panelVisibleTime = 2f;
@@ -34,6 +37,7 @@ public class QuestionController : MonoBehaviour
     private int currentQuestion = 0;
     private int score = 0;
     private bool isTransitioning = false;
+    private bool juegoTerminado = false;
 
     void Start()
     {
@@ -41,8 +45,8 @@ public class QuestionController : MonoBehaviour
         panelVectores2.alpha = 0;
         panelVectores3.alpha = 0;
         panelCorrecto.alpha = 0;
+        Time.timeScale = 1f;
 
-        // Asegurarse de que el panel adicional inicie desactivado
         if (panelAcierto != null)
         {
             panelAcierto.SetActive(false);
@@ -53,7 +57,7 @@ public class QuestionController : MonoBehaviour
 
     void Update()
     {
-        if (isTransitioning) return;
+        if (isTransitioning || juegoTerminado) return;
 
         if (CheckRotation())
         {
@@ -117,7 +121,7 @@ public class QuestionController : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Sumar puntos
+        // SUMAR PUNTOS
         score += 10;
         UpdateScoreUI();
 
@@ -127,32 +131,40 @@ public class QuestionController : MonoBehaviour
             audioSource.PlayOneShot(correctSound);
         }
 
-        // ACTIVAR PANEL ADICIONAL AL ACERTAR
+        // PANEL ACIERTO
         if (panelAcierto != null)
         {
             panelAcierto.SetActive(true);
-
-            // Iniciar corrutina para desactivarlo después de 2 segundos
             StartCoroutine(DesactivarPanelAcierto());
         }
 
-        // Mostrar panel correcto
+        // PANEL CORRECTO
         yield return StartCoroutine(Fade(panelCorrecto, 0, 1));
         yield return new WaitForSeconds(panelVisibleTime);
         yield return StartCoroutine(Fade(panelCorrecto, 1, 0));
 
-        // Ocultar panel actual
+        // OCULTAR PANEL ACTUAL
         yield return StartCoroutine(Fade(GetCurrentPanel(), 1, 0));
 
         currentQuestion++;
 
+        // TERMINÓ EL JUEGO
         if (currentQuestion >= 3)
         {
+            juegoTerminado = true;
+
             Debug.Log("Juego terminado. Puntaje: " + score);
+
+            // ACTIVAR FINAL INMEDIATAMENTE
+            if (audioController != null)
+            {
+                audioController.MostrarFinal();
+            }
+
             yield break;
         }
 
-        // Mostrar siguiente panel
+        // MOSTRAR SIGUIENTE PANEL
         yield return StartCoroutine(Fade(GetCurrentPanel(), 0, 1));
 
         isTransitioning = false;
@@ -184,6 +196,7 @@ public class QuestionController : MonoBehaviour
             case 1: return panelVectores2;
             case 2: return panelVectores3;
         }
+
         return null;
     }
 

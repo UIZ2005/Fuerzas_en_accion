@@ -31,6 +31,10 @@ public class cambioEscena : MonoBehaviour
             LoadScene();
         }
     }
+    public void changeString(string escena)
+    {
+        sceneName = escena;
+    }
     public void cerrar()
     {
         Application.Quit();
