@@ -9,7 +9,7 @@ public class AudioController : MonoBehaviour
     public AudioClip finalClip;
 
     [Header("Tiempo")]
-    public float tiempoCambio = 180f;
+    public float tiempoCambio = 58f;
     public float duracionFade = 2f;
 
     [Header("UI")]
