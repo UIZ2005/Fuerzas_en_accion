@@ -15,7 +15,19 @@ public class ValidarPregunta3 : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip sonidoCorrecto;
     public AudioClip sonidoIncorrecto;
+    private barraProgreso progreso;
 
+    public GameObject audiobueno;
+    public GameObject audiomalo;
+
+    void Start()
+    {
+        progreso = FindAnyObjectByType<barraProgreso>();
+        if (botonContinuar != null)
+        {
+            botonContinuar.SetActive(false);
+        }
+    }
     // Esta función se ejecuta al oprimir Validar
     public void Validar()
     {
@@ -25,6 +37,9 @@ public class ValidarPregunta3 : MonoBehaviour
 
         if (respuesta == "70")
         {
+            audiobueno.SetActive(true);
+            //PASA A LA SIGUIENTE
+            progreso.Avanzar();
             // Pintar verde
             if (imagenInput != null)
             {
@@ -40,6 +55,7 @@ public class ValidarPregunta3 : MonoBehaviour
         else
         {
             // Pintar rojo
+            audiomalo.SetActive(true);
             if (imagenInput != null)
             {
                 imagenInput.color = Color.red;
@@ -58,11 +74,5 @@ public class ValidarPregunta3 : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        if (botonContinuar != null)
-        {
-            botonContinuar.SetActive(false);
-        }
-    }
+
 }

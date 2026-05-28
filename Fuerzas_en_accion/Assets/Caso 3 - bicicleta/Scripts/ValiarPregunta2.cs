@@ -25,9 +25,14 @@ public class ValiarPregunta2 : MonoBehaviour
     // Evitar múltiples respuestas
     private bool respondido = false;
 
+    private barraProgreso progreso;
+
+    public GameObject audiomalo;
+    public GameObject audiobueno;
+
     void Start()
     {
-
+        progreso = FindAnyObjectByType<barraProgreso>();
         if (botonContinuar != null)
         {
             botonContinuar.SetActive(false);
@@ -43,6 +48,7 @@ public class ValiarPregunta2 : MonoBehaviour
 
         // Pintar verde
         PintarBoton(boton1, Color.green);
+        audiobueno.SetActive(true);
 
         // Sonido correcto
         if (sonidoCorrecto != null)
@@ -75,6 +81,8 @@ public class ValiarPregunta2 : MonoBehaviour
         // Pintar rojo
         PintarBoton(boton2, Color.red);
 
+        audiomalo.SetActive(true);
+
         // Sonido incorrecto
         if (sonidoIncorrecto != null)
         {
@@ -105,6 +113,7 @@ public class ValiarPregunta2 : MonoBehaviour
 
         // Pintar rojo
         PintarBoton(boton3, Color.red);
+        audiomalo.SetActive(true);
 
         // Sonido incorrecto
         if (sonidoIncorrecto != null)
@@ -143,6 +152,8 @@ public class ValiarPregunta2 : MonoBehaviour
 
     void ActivarContinuar()
     {
+        //PASA A LA SIGUIENTE
+        progreso.Avanzar();
         if (botonContinuar != null)
         {
             botonContinuar.SetActive(true);

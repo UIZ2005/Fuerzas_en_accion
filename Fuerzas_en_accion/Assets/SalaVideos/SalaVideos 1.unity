@@ -3667,7 +3667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7005ecaa10c774092cff6df8add44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoClip: {fileID: 32900000, guid: d1a83ee54978fc544991220738e93d09, type: 3}
+  videoClip: {fileID: 32900000, guid: 9b1e704de16594048a6f007ad2f7c4d8, type: 3}
   pregunta:
     texto: "En el sistema mostrado, \xBFc\xF3mo se determina la direcci\xF3n del
       vector torque a partir del sentido de rotaci\xF3n en el plano?"

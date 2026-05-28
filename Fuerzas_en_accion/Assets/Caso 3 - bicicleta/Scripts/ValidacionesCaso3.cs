@@ -15,9 +15,19 @@ public class ValidacionesCaso3 : MonoBehaviour
 
     public GameObject[] preguntas;
     private int i=0;
+    private barraProgreso progreso;
+    public GameObject staticbici;
+    public GameObject movebici;
+    public Animator door;
+    public GameObject limit;
+
+
+    public GameObject sonidobueno1;
+    public GameObject sonidobueno2;
+    public GameObject sonidomalo3;
     void Start()
     {
-        
+        progreso = GetComponent<barraProgreso>();
     }
 
     // Update is called once per frame
@@ -39,24 +49,39 @@ public class ValidacionesCaso3 : MonoBehaviour
     {
         if(plato.text== "16N*m")
         {
+            sonidobueno1.SetActive(true);
             plato.gameObject.GetComponent<Image>().color = Color.green;
             if (pinon.text == "4N*m")
             {
+                //PASA A LA SIGUIENTE
+                sonidobueno2.gameObject.SetActive(true);
                 pinon.gameObject.GetComponent<Image>().color = Color.green;
                 SiguientePregunta();
             }else{
                 pinon.gameObject.GetComponent<Image>().color = Color.red;
+                sonidomalo3.SetActive(true);
             }
         }
         else{
+            if (pinon.text == "4N*m")
+            {
+              pinon.gameObject.GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+              pinon.gameObject.GetComponent<Image>().color = Color.red;
+            } 
             plato.gameObject.GetComponent<Image>().color = Color.red;
+            sonidomalo3.SetActive(true);
         }
     }
     public void ValidacionPreguntaPlatoSelect()
     {
         if (pinonSelect ==1 && platoSelect==1)
         {
+            //ULTIMA PREGUNTA FINALIZA TODO
             SiguientePregunta();
+            progreso.Avanzar();
         }
         else
         {
@@ -71,6 +96,13 @@ public class ValidacionesCaso3 : MonoBehaviour
         if (preguntas[i] != null)
         {
             preguntas[i].SetActive(true);
+        }
+        if (i >= 2)
+        {
+            staticbici.SetActive(false);
+            movebici.SetActive(true);
+            door.SetBool("up", true);
+            limit.SetActive(false);
         }
        
        //pone aqui lo de desactivar y activar los panels poneles id o que sea progresivo no se jsjsjsjsjs

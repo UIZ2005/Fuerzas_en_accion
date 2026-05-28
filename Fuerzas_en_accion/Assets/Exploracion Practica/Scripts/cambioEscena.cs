@@ -39,4 +39,8 @@ public class cambioEscena : MonoBehaviour
     {
         Application.Quit();
     }
+    public void recargarEscena()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

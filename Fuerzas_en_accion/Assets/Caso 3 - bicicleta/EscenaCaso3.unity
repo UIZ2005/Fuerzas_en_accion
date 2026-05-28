@@ -822,6 +822,115 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58509804}
   m_CullTransparentMesh: 1
+--- !u!1 &72425395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72425397}
+  - component: {fileID: 72425396}
+  m_Layer: 0
+  m_Name: subpregunta4 buena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &72425396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72425395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 01c979688984369439744d773d303171, type: 3}
+    subtitle: "\xA1Excelente! El torque depende no solo de la fuerza, sino tambi\xE9n
+      del tama\xF1o del plato y el pi\xF1\xF3n"
+--- !u!4 &72425397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72425395}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &76698991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76698993}
+  - component: {fileID: 76698992}
+  m_Layer: 0
+  m_Name: subpregunta4 mala
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &76698992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76698991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 37e0e370ce83c3c43ba4e0e4d8ef65d9, type: 3}
+    subtitle: "Intenta de nuevo, recuerda como es la f\xF3rmula del torque y as\xF3cialo
+      los tama\xF1os del plato y el pi\xF1\xF3n"
+--- !u!4 &76698993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76698991}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &109625542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8142700391318646715, guid: c5cc02a8398c04446a162159bf101d3a, type: 3}
+  m_PrefabInstance: {fileID: 2548072586019081213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115338115
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +1021,7 @@ GameObject:
   - component: {fileID: 129066438}
   - component: {fileID: 129066437}
   m_Layer: 0
-  m_Name: controladorSubs (1)
+  m_Name: controladorSubsbueno1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,15 +1042,10 @@ MonoBehaviour:
   subtitlePanel: {fileID: 1503190150}
   subtitleText: {fileID: 1550379062}
   audioSource: {fileID: 249901643}
-  EsperaInicial: 2
+  EsperaInicial: 0
   dialogue:
-  - audio: {fileID: 8300000, guid: e6d333a2fbb326543aa0b11e81bf827c, type: 3}
-    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
-      Resuelve cada reto con el torque correcto"
-  - audio: {fileID: 8300000, guid: 28b60c070b1e4d24ab170e0b73ed40a0, type: 3}
-    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
-      mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
-      y distancia correcta"
+  - audio: {fileID: 8300000, guid: 006f1a91431ca5242a485017abb18661, type: 3}
+    subtitle: "Lo hiciste muy bien, ya vas entendiendo el concepto un poco m\xE1s"
 --- !u!4 &129066438
 Transform:
   m_ObjectHideFlags: 0
@@ -950,12 +1054,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129066436}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 310552068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137600874
 GameObject:
@@ -1348,6 +1452,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194400278}
   m_CullTransparentMesh: 1
+--- !u!1 &206863687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206863689}
+  - component: {fileID: 206863688}
+  m_Layer: 0
+  m_Name: controladorSubsbueno2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &206863688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206863687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 809b80827989f324fa0ce84d8b959da0, type: 3}
+    subtitle: lo hiciste genial
+--- !u!4 &206863689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206863687}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208972682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1556,8 @@ MonoBehaviour:
   audioSource: {fileID: 20140524}
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
+  audiobueno: {fileID: 277238595}
+  audiomalo: {fileID: 989717500}
 --- !u!1 &213334404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1642,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 606330111}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1079300599}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1698,7 +1867,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 113
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1905,6 +2074,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.275893, y: 1.1473007, z: 0.71509767}
   m_Center: {x: -0.4680797, y: -0.073656105, z: 1.3697586}
+--- !u!1 &277238595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277238597}
+  - component: {fileID: 277238596}
+  m_Layer: 0
+  m_Name: subpregunta3 bueno
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &277238596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277238595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 809b80827989f324fa0ce84d8b959da0, type: 3}
+    subtitle: lo hiciste genial
+--- !u!4 &277238597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277238595}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277617888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6064698779265180503, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
@@ -2305,6 +2525,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 543901408}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 305808722}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2355,6 +2587,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305808722}
   m_CullTransparentMesh: 1
+--- !u!1 &310552067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310552068}
+  m_Layer: 0
+  m_Name: controladores subtitulos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310552068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310552067}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148, y: 979, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 129066438}
+  - {fileID: 383834361}
+  - {fileID: 543901410}
+  - {fileID: 206863689}
+  - {fileID: 1929697359}
+  - {fileID: 1079300601}
+  - {fileID: 277238597}
+  - {fileID: 989717502}
+  - {fileID: 1749579228}
+  - {fileID: 72425397}
+  - {fileID: 1053864617}
+  - {fileID: 76698993}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312205087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,6 +3216,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1749579226}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 606330111}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3011,6 +3298,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -288}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &383834359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383834361}
+  - component: {fileID: 383834360}
+  m_Layer: 0
+  m_Name: controladorSubsmalo1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &383834360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383834359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 1bdf95435e28f9d4ca59c7b783efc052, type: 3}
+    subtitle: Intenta de nuevo hallar el valor de la fuerza, recuerda la formula
+      del torque
+--- !u!4 &383834361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383834359}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385311889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,6 +3867,8 @@ MonoBehaviour:
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
   gradosRotacion: 20
+  audiobueno: {fileID: 129066436}
+  audiomalo: {fileID: 383834359}
   duracionRotacion: 3
 --- !u!1 &495996598
 GameObject:
@@ -3731,6 +4072,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &528006619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5760102324475635363, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
+  m_PrefabInstance: {fileID: 1420845155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &528006621
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528006619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16779805da221b84298a40e874fc6a1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &533350081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,6 +4304,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542864904}
   m_CullTransparentMesh: 1
+--- !u!1 &543901408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543901410}
+  - component: {fileID: 543901409}
+  m_Layer: 0
+  m_Name: subpregunta2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &543901409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543901408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: d7a1ec40a3593c642a071d853149b37f, type: 3}
+    subtitle: "Ahora pasemos a la siguiente pregunta, Cual de estos casos crees que
+      es el m\xE1s optimo de aplicar"
+--- !u!4 &543901410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543901408}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552360649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,7 +6571,7 @@ RectTransform:
   m_GameObject: {fileID: 870300848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5092, y: 2.5092, z: 2.5092}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 489136731}
@@ -7395,6 +7814,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 22.891085, y: 1.0364479, z: 0.571148}
   m_Center: {x: -3.2539046, y: -0.018245397, z: 2.2157736}
+--- !u!1 &989717500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989717502}
+  - component: {fileID: 989717501}
+  m_Layer: 0
+  m_Name: subpregunta3 malo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &989717501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989717500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 6c5f09bab5e3d7b4f924833a16a627b2, type: 3}
+    subtitle: "Recuerda que el \xE1ngulo tambi\xE9n influye, ten en cuenta eso en
+      tu calculo"
+--- !u!4 &989717502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989717500}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990083860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,7 +8601,7 @@ RectTransform:
   m_GameObject: {fileID: 1051000505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.4808, y: 2.4808, z: 2.4808}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2022407133}
@@ -8138,9 +8609,60 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 62}
+  m_AnchoredPosition: {x: 0, y: 92}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1053864615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053864617}
+  - component: {fileID: 1053864616}
+  m_Layer: 0
+  m_Name: subpregunta3 bueno (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1053864616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053864615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 809b80827989f324fa0ce84d8b959da0, type: 3}
+    subtitle: lo hiciste genial
+--- !u!4 &1053864617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053864615}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062426486
 GameObject:
   m_ObjectHideFlags: 0
@@ -8289,6 +8811,58 @@ MonoBehaviour:
   panelSiguiente: {fileID: 982168387}
   distanciaCamara: 3
   rangoColocacion: 1
+--- !u!1 &1079300599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079300601}
+  - component: {fileID: 1079300600}
+  m_Layer: 0
+  m_Name: subpregunta3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1079300600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079300599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 55f9e38eabaed3441bedb120f9b6d26f, type: 3}
+    subtitle: "El torque tambi\xE9n tiene un sentido. Usa la regla de la mano derecha
+      en este espacio tridimensional para prever la rotaci\xF3n"
+--- !u!4 &1079300601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079300599}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107715674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,112 +8941,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107715674}
   m_CullTransparentMesh: 1
---- !u!1 &1117725279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1117725280}
-  - component: {fileID: 1117725283}
-  - component: {fileID: 1117725282}
-  - component: {fileID: 1117725281}
-  m_Layer: 0
-  m_Name: Plane (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1117725280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117725279}
-  serializedVersion: 2
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.00000006717953}
-  m_LocalPosition: {x: 1935.5461, y: 145, z: -22474}
-  m_LocalScale: {x: 4091, y: 3462.676, z: 3462.676}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1210773743}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1117725281
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117725279}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1117725282
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117725279}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1117725283
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117725279}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1125344406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8601,6 +9069,14 @@ MonoBehaviour:
   preguntas:
   - {fileID: 115338115}
   - {fileID: 1613494499}
+  - {fileID: 0}
+  staticbici: {fileID: 109625542}
+  movebici: {fileID: 8505671294468281538}
+  door: {fileID: 528006621}
+  limit: {fileID: 1951138552}
+  sonidobueno1: {fileID: 1053864615}
+  sonidobueno2: {fileID: 72425395}
+  sonidomalo3: {fileID: 76698991}
 --- !u!114 &1125344412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8781,7 +9257,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1263035968}
-  - {fileID: 1117725280}
   - {fileID: 1517591022}
   - {fileID: 22845167}
   - {fileID: 368405332}
@@ -9806,7 +10281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690017445227578167, guid: 840cd0532e7aa774cab4f54ab2830942, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4397061744447022404, guid: 840cd0532e7aa774cab4f54ab2830942, type: 3}
       propertyPath: m_Name
@@ -9815,6 +10290,10 @@ PrefabInstance:
     - target: {fileID: 4397061744447022404, guid: 840cd0532e7aa774cab4f54ab2830942, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489632058786520350, guid: 840cd0532e7aa774cab4f54ab2830942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5224553390899794127, guid: 840cd0532e7aa774cab4f54ab2830942, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10235,6 +10714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7487979106542139207, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
       propertyPath: m_Name
       value: Taller
@@ -10254,6 +10737,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1210773743}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5760102324475635363, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 528006621}
     - targetCorrespondingSourceObject: {fileID: 6064698779265180503, guid: 6d6aa2ad963037645af50188859a4e12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 277617892}
@@ -10732,15 +11218,15 @@ MonoBehaviour:
   subtitlePanel: {fileID: 1503190150}
   subtitleText: {fileID: 1550379062}
   audioSource: {fileID: 249901643}
-  EsperaInicial: 2
+  EsperaInicial: 1
   dialogue:
   - audio: {fileID: 8300000, guid: 062ab42da542f9b44828f2347a1d8966, type: 3}
-    subtitle: "-\t\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
+    subtitle: "\xBFHola como estas?, en este caso trabajaremos con la bicicleta.
       Resuelve cada reto con el torque correcto"
   - audio: {fileID: 8300000, guid: 692bb32ae029d4f49a4fc925e9cbea98, type: 3}
-    subtitle: "-\tPara el primer ejercicio necesitas una llave, y con la ayuda del
-      mouse deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza
-      y distancia correcta"
+    subtitle: "Para el primer ejercicio necesitas una llave, y con la ayuda del mouse
+      deber\xE1s ajustar una tuerca de la llanta trasera aplicando la fuerza y distancia
+      correcta"
 --- !u!1 &1487606407
 GameObject:
   m_ObjectHideFlags: 0
@@ -10927,6 +11413,169 @@ Transform:
   - {fileID: 423238649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1505383194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.42
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 284.15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.06629891
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06629891
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70399183
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.70399183
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 169.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 393777075064552474, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.99718
+      objectReference: {fileID: 0}
+    - target: {fileID: 393777075064552474, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -111.027214
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_Name
+      value: Stargate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506159455568820242, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.00543
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506159455568820242, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -77.89862
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1505383198}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1505383197}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1505383196}
+  m_SourcePrefab: {fileID: 100100000, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+--- !u!1 &1505383195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e67097afeeba9c45a70de5d1b66947e, type: 3}
+  m_PrefabInstance: {fileID: 1505383194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1505383196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505383195}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.19, y: 1, z: 5.59}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1505383197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505383195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e4d9fbae62e5c4fab4803dce610732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SalaVideos 1
+  CambioPorContacto: 1
+--- !u!95 &1505383198
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505383195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f77cafa742ba4540b310e441524f52d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1513430754
 GameObject:
   m_ObjectHideFlags: 0
@@ -12302,10 +12951,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 8
-  maxSpeed: 12
-  brakeForce: 10
+  maxSpeed: 22
   rotationSpeed: 100
+  brakeForce: 10
   seatPoint: {fileID: 1513430755}
+  jumpForce: 5
+  maxJumpCharge: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundCheckDistance: 1.2
 --- !u!65 &1666277347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12560,14 +13215,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 442480818333083575, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 635712377}
+    - target: {fileID: 996436627682720008, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1338733119}
     - target: {fileID: 1906389575470424401, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_Name
       value: MenuNormal
       objectReference: {fileID: 0}
-    - target: {fileID: 3167299888297429233, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 2589387876168528329, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 635712377}
     - target: {fileID: 3698256626728640494, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12576,50 +13239,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 935944592}
-    - target: {fileID: 3698256626728640494, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Escena
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698256626728640494, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698256626728640494, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Minijuego
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 4291546933463266817, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1503190150}
     - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 935944592}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+    - target: {fileID: 4799458066671124915, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 8300000, guid: 706cc4f5ef0ab4c42b2c8efa96ed508c, type: 3}
-    - target: {fileID: 4713667811520138717, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 249901641}
+    - target: {fileID: 5246014798954262915, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1503190150}
     - target: {fileID: 5398203351593183343, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12628,14 +13263,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 935944592}
-    - target: {fileID: 5398203351593183343, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Escena
-      objectReference: {fileID: 0}
-    - target: {fileID: 5398203351593183343, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
     - target: {fileID: 6791982498976093471, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12644,22 +13271,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 935944592}
-    - target: {fileID: 6791982498976093471, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Escena
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791982498976093471, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
+    - target: {fileID: 7653689317254393742, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 249901641}
     - target: {fileID: 7683657701253884226, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 935944592}
-    - target: {fileID: 7683657701253884226, guid: 126fd9b7750cbc54bbf9eaa76cd92e1f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12723,6 +13342,61 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14.483251, y: 0.6904113, z: 0.7276836}
   m_Center: {x: -14.954586, y: 0.15477175, z: 2.1375}
+--- !u!1 &1749579226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749579228}
+  - component: {fileID: 1749579227}
+  m_Layer: 0
+  m_Name: subpregunta4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1749579227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749579226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 300c53b4aa5078f408338665295173b3, type: 3}
+    subtitle: "Para esta pregunta debes seleccionar la combinaci\xF3n de plato y
+      pi\xF1\xF3n adecuada. Ten en cuenta que la relaci\xF3n entre ambos cambia la
+      velocidad y el torque."
+  - audio: {fileID: 8300000, guid: 55f9e38eabaed3441bedb120f9b6d26f, type: 3}
+    subtitle: Ahora responde la pregunta que se observa en la pizarra
+--- !u!4 &1749579228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749579226}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757009838
 GameObject:
   m_ObjectHideFlags: 0
@@ -12900,7 +13574,7 @@ RectTransform:
   m_GameObject: {fileID: 1806576727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.4808, y: 2.4808, z: 2.4808}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1560605853}
@@ -12908,7 +13582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -86}
+  m_AnchoredPosition: {x: 0, y: -123}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806576729
@@ -13873,6 +14547,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924261193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1929697357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929697359}
+  - component: {fileID: 1929697358}
+  m_Layer: 0
+  m_Name: 'controladorSubsmalo2 '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1929697358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929697357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e734b59584964e862507086fac333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitlePanel: {fileID: 1503190150}
+  subtitleText: {fileID: 1550379062}
+  audioSource: {fileID: 249901643}
+  EsperaInicial: 0
+  dialogue:
+  - audio: {fileID: 8300000, guid: 53ba9a14992e3c94b9c41ae480eb69d9, type: 3}
+    subtitle: mmm vuelve a intentarlo
+--- !u!4 &1929697359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929697357}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310552068}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934321515
 GameObject:
   m_ObjectHideFlags: 0
@@ -14525,7 +15250,8 @@ GameObject:
   - component: {fileID: 2010734844}
   - component: {fileID: 2010734843}
   - component: {fileID: 2010734842}
-  m_Layer: 0
+  - component: {fileID: 2010734845}
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14601,12 +15327,34 @@ Transform:
   m_GameObject: {fileID: 2010734841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -495.6, y: -0.15, z: -498.9}
+  m_LocalPosition: {x: -49.6, y: -0.15, z: -47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2010734845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010734841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2020066484
 GameObject:
   m_ObjectHideFlags: 0
@@ -15021,6 +15769,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 606330111}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1125344411}
         m_TargetAssemblyTypeName: ValidacionesCaso3, Assembly-CSharp
         m_MethodName: ValidacionPreguntaPlatoSelect
@@ -15629,6 +16389,8 @@ MonoBehaviour:
   audioSource: {fileID: 984683658}
   sonidoCorrecto: {fileID: 8300000, guid: 684bbf3f647638f43af792bbf236a18c, type: 3}
   sonidoIncorrecto: {fileID: 8300000, guid: dbf5e023928eb754b88c805c3fc9c939, type: 3}
+  audiomalo: {fileID: 1929697357}
+  audiobueno: {fileID: 206863687}
 --- !u!1001 &2130117369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16633,7 +17395,7 @@ Transform:
   m_GameObject: {fileID: 8505671294468281538}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 1.967, y: 0.119, z: 19.55}
+  m_LocalPosition: {x: 2.261, y: 0.307, z: -0.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17014,13 +17776,14 @@ GameObject:
   - component: {fileID: 1666277347}
   - component: {fileID: 1666277346}
   - component: {fileID: 8505671294468281539}
+  - component: {fileID: 8505671294468281540}
   m_Layer: 0
   m_Name: Bicycle.obj.cleaner.materialmerger.gles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &8505671294468281539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17042,6 +17805,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.79, y: 1, z: 1.72}
   m_Center: {x: 0, y: -0.47, z: 0}
+--- !u!54 &8505671294468281540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505671294468281538}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1001 &8549444800633334898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17060,7 +17850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2173397063493908054, guid: 14a7f41f5df027d48aa346c525babe20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.03
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 2173397063493908054, guid: 14a7f41f5df027d48aa346c525babe20, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17294,13 +18084,14 @@ SceneRoots:
   - {fileID: 778410461}
   - {fileID: 1549873650}
   - {fileID: 2010734844}
+  - {fileID: 1505383194}
   - {fileID: 748314248}
   - {fileID: 2026675557}
   - {fileID: 635712378}
   - {fileID: 1959364608}
   - {fileID: 162146857}
   - {fileID: 1486521831}
-  - {fileID: 129066438}
+  - {fileID: 310552068}
   - {fileID: 249901642}
   - {fileID: 513726392}
   - {fileID: 213837710}
