@@ -318,7 +318,7 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
                 pregunta4_2.SetActive(false);
             });
 
-            sistemapuntos.SetActive(true);
+            
         }
         else
         {

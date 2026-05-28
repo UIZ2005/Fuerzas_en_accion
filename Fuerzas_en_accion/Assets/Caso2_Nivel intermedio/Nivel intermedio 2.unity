@@ -979,6 +979,7 @@ MonoBehaviour:
   limitsup: 340
   limitin: 15
   answer: N
+  sistemaPuntos: {fileID: 0}
   panelSubtitulos: {fileID: 1889032762}
   textoSubtitulos: {fileID: 1107021761}
   dialogoRespuestaCorrecta: "Muy bien! La masa x la gravedad siempre actua hacia
@@ -16196,6 +16197,7 @@ MonoBehaviour:
   limitsup: 340
   limitin: 15
   answer: Nm
+  sistemaPuntos: {fileID: 0}
   panelSubtitulos: {fileID: 1732478323}
   textoSubtitulos: {fileID: 836351218}
   dialogoRespuestaCorrecta: Muy bien! Es la respuesta correcta
@@ -22341,6 +22343,7 @@ MonoBehaviour:
   limitsup: 340
   limitin: 15
   answer: Y
+  sistemaPuntos: {fileID: 705684150}
   panelSubtitulos: {fileID: 1535572835}
   textoSubtitulos: {fileID: 1836934987}
   dialogoRespuestaCorrecta: "Muy bien el torque solo actua cuando hay una fuerza
@@ -25087,6 +25090,7 @@ MonoBehaviour:
   limitsup: 340
   limitin: 15
   answer: f
+  sistemaPuntos: {fileID: 0}
   panelSubtitulos: {fileID: 966962541}
   textoSubtitulos: {fileID: 972894925}
   dialogoRespuestaCorrecta: "\xA1Exacto! El torque es igual en ambos. El torque depende

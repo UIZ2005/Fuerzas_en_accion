@@ -28,6 +28,7 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
     public float limitsup = 340;
     public float limitin = 15;
     public string answer = "f";
+    public GameObject sistemaPuntos;
 
     [Header("Audio")]
     private AudioManager audio;
@@ -296,6 +297,7 @@ public class ValidacionDiagramaCaso2 : MonoBehaviour
 
                             if ((z > limitsup || z < limitin) && goodinput)
                             {
+                                sistemaPuntos.SetActive(true);
                                 MostrarRespuestaCorrecta();
                                 return;
                             }

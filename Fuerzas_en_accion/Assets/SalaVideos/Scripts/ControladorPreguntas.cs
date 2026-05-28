@@ -43,6 +43,9 @@ public class ControladorPreguntas : MonoBehaviour
 
         preguntaActual = p;
         videoPlayer = vp;
+
+        // IMPORTANTE:
+        // Solo reiniciar cuando cambia de video
         preguntaMostrada = false;
 
         // Resetear UI
@@ -70,7 +73,10 @@ public class ControladorPreguntas : MonoBehaviour
         Debug.Log("Tiempo video: " + videoPlayer.time);
         Debug.Log("Tiempo pregunta: " + preguntaActual.tiempoEnVideo);
 
-        if (!preguntaMostrada && videoPlayer.time >= preguntaActual.tiempoEnVideo)
+        // Mostrar solo una vez
+        if (!preguntaMostrada &&
+            !panelPreguntas.activeSelf &&
+            videoPlayer.time >= preguntaActual.tiempoEnVideo)
         {
             MostrarPregunta();
             preguntaMostrada = true;
@@ -193,6 +199,9 @@ public class ControladorPreguntas : MonoBehaviour
     IEnumerator ContinuarVideo()
     {
         yield return new WaitForSeconds(1f);
+
+        // Ya fue respondida
+        preguntaMostrada = true;
 
         // Resetear colores
         for (int i = 0; i < imagenesFondo.Length; i++)
