@@ -22,6 +22,7 @@ public class ValidacionDiagrama : MonoBehaviour
     public GameObject diagrama;
 
     private AudioManager audio;
+    public GameObject portal;
 
     [Header("Subtítulos")]
     public SubtitleSystem subtitleSystem;
@@ -61,6 +62,7 @@ public class ValidacionDiagrama : MonoBehaviour
                                 progreso.Avanzar();
                                 audio.seleccionAudio(1);
                                 diagrama.SetActive(false);
+                                portal.SetActive(true);
 
                                 // SUBTÍTULOS SISTEMA 2
                                 if (sistema2 != null)

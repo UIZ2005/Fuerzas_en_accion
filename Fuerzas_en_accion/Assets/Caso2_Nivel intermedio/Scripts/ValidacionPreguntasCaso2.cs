@@ -39,7 +39,7 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
     [Header("Pregunta 4.2")]
     public GameObject pregunta4_2;
     public TMP_InputField Balon4_2;
-
+    public GameObject sistemapuntos;
     [Header("Sistema de Subtítulos")]
     public GameObject panelSubtitulos;          // Panel que contiene el subtítulo
     public TextMeshProUGUI textoSubtitulos;     // Texto donde se mostrará el subtítulo
@@ -317,11 +317,14 @@ public class ValidacionPreguntasCaso2 : MonoBehaviour
             {
                 pregunta4_2.SetActive(false);
             });
+
+            sistemapuntos.SetActive(true);
         }
         else
         {
             Balon4_2.gameObject.GetComponent<Image>().color = Color.red;
             MostrarRespuestaIncorrecta();
         }
+
     }
 }       
