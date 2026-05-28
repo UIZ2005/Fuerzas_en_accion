@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,31 +7,35 @@ using UnityEngine.Video;
 
 public class ControladorPreguntas : MonoBehaviour
 {
+    [Header("UI")]
     public GameObject panelPreguntas;
     public Text textoPregunta;
 
     public Button[] botones;
-    public Text[] textosOpciones; // 
+    public Text[] textosOpciones;
     public Image[] imagenesFondo;
 
+    [Header("Colores")]
     public Color colorDefault = Color.white;
     public Color colorCorrecto = Color.green;
     public Color colorIncorrecto = Color.red;
 
+    [Header("Reintentar")]
     public GameObject botonReintentar;
 
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip acierto;
     public AudioClip error;
-
-    private Pregunta preguntaActual;
-    private VideoPlayer videoPlayer;
 
     [Header("Cursor")]
     public Texture2D cursorMano;
     public Texture2D cursorNormal;
 
-    private bool preguntaMostrada = false; //
+    private Pregunta preguntaActual;
+    private VideoPlayer videoPlayer;
+
+    private bool preguntaMostrada = false;
 
     public void Inicializar(Pregunta p, VideoPlayer vp)
     {
@@ -41,11 +44,28 @@ public class ControladorPreguntas : MonoBehaviour
         preguntaActual = p;
         videoPlayer = vp;
         preguntaMostrada = false;
+
+        // Resetear UI
+        panelPreguntas.SetActive(false);
+        botonReintentar.SetActive(false);
+
+        // Reactivar botones
+        foreach (Button b in botones)
+        {
+            b.interactable = true;
+        }
+
+        // Resetear colores
+        for (int i = 0; i < imagenesFondo.Length; i++)
+        {
+            imagenesFondo[i].color = colorDefault;
+        }
     }
 
     void Update()
     {
-        if (preguntaActual == null || videoPlayer == null) return;
+        if (preguntaActual == null || videoPlayer == null)
+            return;
 
         Debug.Log("Tiempo video: " + videoPlayer.time);
         Debug.Log("Tiempo pregunta: " + preguntaActual.tiempoEnVideo);
@@ -69,11 +89,23 @@ public class ControladorPreguntas : MonoBehaviour
 
     void MostrarPregunta()
     {
+        if (preguntaActual == null || videoPlayer == null)
+            return;
+
         videoPlayer.Pause();
 
         panelPreguntas.SetActive(true);
+        botonReintentar.SetActive(false);
+
         textoPregunta.text = preguntaActual.texto;
 
+        // Resetear colores
+        for (int i = 0; i < imagenesFondo.Length; i++)
+        {
+            imagenesFondo[i].color = colorDefault;
+        }
+
+        // Configurar botones
         for (int i = 0; i < botones.Length; i++)
         {
             if (i < preguntaActual.opciones.Length)
@@ -81,16 +113,14 @@ public class ControladorPreguntas : MonoBehaviour
                 int index = i;
 
                 botones[i].gameObject.SetActive(true);
+                botones[i].interactable = true;
 
-                //
                 textosOpciones[i].text = preguntaActual.opciones[i];
 
                 botones[i].onClick.RemoveAllListeners();
                 botones[i].onClick.AddListener(() => EvaluarRespuesta(index));
 
-
-                // esto es para que pase de cursor a mano
-
+                // Configurar hover cursor
                 EventTrigger trigger = botones[i].GetComponent<EventTrigger>();
 
                 if (trigger == null)
@@ -98,13 +128,13 @@ public class ControladorPreguntas : MonoBehaviour
 
                 trigger.triggers.Clear();
 
-                // Entrar (hover)
+                // Hover entrar
                 EventTrigger.Entry entryEnter = new EventTrigger.Entry();
                 entryEnter.eventID = EventTriggerType.PointerEnter;
                 entryEnter.callback.AddListener((data) => { CambiarCursorMano(); });
                 trigger.triggers.Add(entryEnter);
 
-                // Salir
+                // Hover salir
                 EventTrigger.Entry entryExit = new EventTrigger.Entry();
                 entryExit.eventID = EventTriggerType.PointerExit;
                 entryExit.callback.AddListener((data) => { RestaurarCursor(); });
@@ -119,7 +149,7 @@ public class ControladorPreguntas : MonoBehaviour
 
     void EvaluarRespuesta(int seleccion)
     {
-        // bloquear todos
+        // Bloquear botones
         foreach (Button b in botones)
         {
             b.interactable = false;
@@ -130,8 +160,8 @@ public class ControladorPreguntas : MonoBehaviour
             audioSource.PlayOneShot(acierto);
 
             imagenesFondo[seleccion].color = colorCorrecto;
-            StartCoroutine(ContinuarVideo());
 
+            StartCoroutine(ContinuarVideo());
         }
         else
         {
@@ -147,13 +177,13 @@ public class ControladorPreguntas : MonoBehaviour
     {
         botonReintentar.SetActive(false);
 
-        // resetear colores
+        // Resetear colores
         for (int i = 0; i < imagenesFondo.Length; i++)
         {
             imagenesFondo[i].color = colorDefault;
         }
 
-        // volver a activar botones
+        // Reactivar botones
         foreach (Button b in botones)
         {
             b.interactable = true;
@@ -164,7 +194,22 @@ public class ControladorPreguntas : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
+        // Resetear colores
+        for (int i = 0; i < imagenesFondo.Length; i++)
+        {
+            imagenesFondo[i].color = colorDefault;
+        }
+
+        // Reactivar botones
+        foreach (Button b in botones)
+        {
+            b.interactable = true;
+        }
+
+        botonReintentar.SetActive(false);
+
         panelPreguntas.SetActive(false);
+
         videoPlayer.Play();
     }
 }
