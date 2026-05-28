@@ -37,6 +37,7 @@ public class cambioEscena : MonoBehaviour
     }
     public void cerrar()
     {
+        Debug.Log("cerrando Aplicativo");
         Application.Quit();
     }
     public void recargarEscena()

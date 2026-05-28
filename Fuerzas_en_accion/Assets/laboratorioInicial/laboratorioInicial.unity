@@ -6799,7 +6799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e4d9fbae62e5c4fab4803dce610732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SalaVideos 1
+  sceneName: ExploracionPractica
   CambioPorContacto: 1
 --- !u!65 &828652418
 BoxCollider:
