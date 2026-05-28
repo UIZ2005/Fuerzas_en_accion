@@ -1973,7 +1973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &286149069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2049,7 +2049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &298980969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8080,6 +8080,7 @@ GameObject:
   - component: {fileID: 1125344408}
   - component: {fileID: 1125344407}
   - component: {fileID: 1125344411}
+  - component: {fileID: 1125344412}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -8194,6 +8195,28 @@ MonoBehaviour:
   preguntas:
   - {fileID: 115338115}
   - {fileID: 1613494499}
+--- !u!114 &1125344412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125344406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d27d9bfa86ed64b8d60504c2019ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barra: {fileID: 993245233}
+  check1: {fileID: 286149068}
+  check2: {fileID: 1293400634}
+  check3: {fileID: 298980968}
+  candado: {fileID: 1191124553}
+  claveTrofeo: TrofeoBronce
+  audioSourceTrofeo: {fileID: 0}
+  sonidoTrofeo: {fileID: 0}
+  volumenTrofeo: 0.2
+  panelDesbloqueo: {fileID: 0}
 --- !u!1 &1130517921
 GameObject:
   m_ObjectHideFlags: 0
@@ -9304,7 +9327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1293400635
 RectTransform:
   m_ObjectHideFlags: 0
