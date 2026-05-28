@@ -15,9 +15,14 @@ public class ValidacionesCaso3 : MonoBehaviour
 
     public GameObject[] preguntas;
     private int i=0;
+    private barraProgreso progreso;
+    public GameObject staticbici;
+    public GameObject movebici;
+    public Animator door;
+    public GameObject limit;
     void Start()
     {
-        
+        progreso = GetComponent<barraProgreso>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,7 @@ public class ValidacionesCaso3 : MonoBehaviour
             plato.gameObject.GetComponent<Image>().color = Color.green;
             if (pinon.text == "4N*m")
             {
+                //PASA A LA SIGUIENTE
                 pinon.gameObject.GetComponent<Image>().color = Color.green;
                 SiguientePregunta();
             }else{
@@ -56,7 +62,9 @@ public class ValidacionesCaso3 : MonoBehaviour
     {
         if (pinonSelect ==1 && platoSelect==1)
         {
+            //ULTIMA PREGUNTA FINALIZA TODO
             SiguientePregunta();
+            progreso.Avanzar();
         }
         else
         {
@@ -71,6 +79,13 @@ public class ValidacionesCaso3 : MonoBehaviour
         if (preguntas[i] != null)
         {
             preguntas[i].SetActive(true);
+        }
+        if (i >= 2)
+        {
+            staticbici.SetActive(false);
+            movebici.SetActive(true);
+            door.SetBool("up", true);
+            limit.SetActive(false);
         }
        
        //pone aqui lo de desactivar y activar los panels poneles id o que sea progresivo no se jsjsjsjsjs

@@ -26,6 +26,12 @@ public class ValidarPregunta1 : MonoBehaviour
     // Duración de la animación
     public float duracionRotacion = 3f;
 
+    private barraProgreso progreso;
+
+    private void Start()
+    {
+        progreso = FindAnyObjectByType<barraProgreso>();
+    }
 
     public void Validar()
     {
@@ -38,12 +44,14 @@ public class ValidarPregunta1 : MonoBehaviour
             inputRespuesta.GetComponent<Image>();
 
         // RESPUESTA CORRECTA
-        if (respuesta == "20")
+        if (respuesta == "40")
         {
+            //PASA A LA SIGUIENTE PREGUNTA
             // Sonido correcto
             if (sonidoCorrecto != null)
             {
                 audioSource.PlayOneShot(sonidoCorrecto);
+                progreso.Avanzar();
             }
 
             // Pintar input verde

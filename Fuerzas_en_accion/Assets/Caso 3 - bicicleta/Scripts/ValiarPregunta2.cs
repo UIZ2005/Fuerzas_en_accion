@@ -25,9 +25,11 @@ public class ValiarPregunta2 : MonoBehaviour
     // Evitar múltiples respuestas
     private bool respondido = false;
 
+    private barraProgreso progreso;
+
     void Start()
     {
-
+        progreso = FindAnyObjectByType<barraProgreso>();
         if (botonContinuar != null)
         {
             botonContinuar.SetActive(false);
@@ -143,6 +145,8 @@ public class ValiarPregunta2 : MonoBehaviour
 
     void ActivarContinuar()
     {
+        //PASA A LA SIGUIENTE
+        progreso.Avanzar();
         if (botonContinuar != null)
         {
             botonContinuar.SetActive(true);
