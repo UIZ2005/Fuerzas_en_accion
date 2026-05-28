@@ -9,7 +9,7 @@ public class AudioController : MonoBehaviour
     public AudioClip finalClip;
 
     [Header("Tiempo")]
-    public float tiempoCambio = 180f;
+    public float tiempoCambio = 58f;
     public float duracionFade = 2f;
 
     [Header("UI")]
@@ -20,15 +20,16 @@ public class AudioController : MonoBehaviour
     public GameObject panelActivar;
 
     [Header("Velocidad")]
-    public float tiempoRestanteParaAcelerar = 30f; // cuando falten 30s
+    public float tiempoRestanteParaAcelerar = 30f;
     public float velocidadAcelerada = 1.5f;
+
+    private bool finalMostrado = false;
 
     void Start()
     {
         canvasFinal.alpha = 0;
         canvasFinal.gameObject.SetActive(true);
 
-        // Asegurar que el panel adicional comience desactivado
         if (panelActivar != null)
         {
             panelActivar.SetActive(false);
@@ -36,11 +37,14 @@ public class AudioController : MonoBehaviour
 
         StartCoroutine(ControlAudio());
         StartCoroutine(AcelerarMusica());
+        Time.timeScale = 1f;
     }
 
     IEnumerator ControlAudio()
     {
         yield return new WaitForSeconds(tiempoCambio - duracionFade);
+
+        if (finalMostrado) yield break;
 
         float volumenInicial = audioSource.volume;
         float t = 0;
@@ -54,23 +58,38 @@ public class AudioController : MonoBehaviour
 
         audioSource.volume = 0;
 
-        audioSource.Stop();
-        audioSource.clip = finalClip;
-        audioSource.pitch = 1f;
-        audioSource.volume = 1f;
-        audioSource.Play();
-
-        StartCoroutine(FadeInCanvas());
+        MostrarFinal();
     }
 
     IEnumerator AcelerarMusica()
     {
-        // Espera hasta que falten 30 segundos
         float tiempoParaAcelerar = tiempoCambio - tiempoRestanteParaAcelerar;
 
         yield return new WaitForSeconds(tiempoParaAcelerar);
 
-        audioSource.pitch = velocidadAcelerada;
+        if (!finalMostrado)
+        {
+            audioSource.pitch = velocidadAcelerada;
+        }
+    }
+
+    public void MostrarFinal()
+    {
+        if (finalMostrado) return;
+
+        finalMostrado = true;
+
+        audioSource.Stop();
+
+        if (finalClip != null)
+        {
+            audioSource.clip = finalClip;
+            audioSource.pitch = 1f;
+            audioSource.volume = 1f;
+            audioSource.Play();
+        }
+
+        StartCoroutine(FadeInCanvas());
     }
 
     IEnumerator FadeInCanvas()
@@ -84,10 +103,8 @@ public class AudioController : MonoBehaviour
             yield return null;
         }
 
-        // Asegurar alpha final
         canvasFinal.alpha = 1;
 
-        // ACTIVAR EL PANEL ASIGNADO
         if (panelActivar != null)
         {
             panelActivar.SetActive(true);
